@@ -2,7 +2,7 @@
 
 MainMenu MENU DISCARDABLE
 {
-    POPUP "File"
+    POPUP "&File"
     {
         MENUITEM "New", MENU_FILE_ID_NEW
         MENUITEM "Open", MENU_FILE_ID_OPEN
@@ -18,7 +18,7 @@ MainMenu MENU DISCARDABLE
         MENUITEM "Exit", MENU_FILE_ID_EXIT
     }
 
-    POPUP "Edit"
+    POPUP "&Edit"
     {
         MENUITEM "Undo", MENU_EDIT_ID_UNDO
         MENUITEM "Redo", MENU_EDIT_ID_REDO
@@ -31,14 +31,14 @@ MainMenu MENU DISCARDABLE
         MENUITEM "Transform", MENU_EDIT_ID_TRANSFORM
     }
 
-    POPUP "Shp"
+    POPUP "&Shp"
     {
         MENUITEM "Type", MENU_SHP_ID_TYPE
         MENUITEM "Add Frame", MENU_SHP_ID_ADD_FRAME
         MENUITEM "Delete Frame", MENU_SHP_ID_DELETE_FRAME
     }
 
-    POPUP "Palette"
+    POPUP "&Palette"
     {
         MENUITEM "Load", MENU_PALETTE_ID_LOAD
         MENUITEM "Custom", MENU_PALETTE_ID_CUSTOM
@@ -49,7 +49,7 @@ MainMenu MENU DISCARDABLE
         MENUITEM "Yuri's Revenge", MENU_PALETTE_ID_YURI
     }
 
-    POPUP "Filter"
+    POPUP "&Filter"
     {
         MENUITEM "Smooth (Conservative)", MENU_FILTER_ID_SMOOTH_CONSERVATIVE
         MENUITEM "Smooth (Mean)", MENU_FILTER_ID_SMOOTH_MEAN
@@ -58,20 +58,20 @@ MainMenu MENU DISCARDABLE
         MENUITEM "Arithmetics", MENU_FILTER_ID_ARITHMETICS
         MENUITEM "Texturize", MENU_FILTER_ID_TEXTURIZE
         MENUITEM "3D", MENU_FILTER_ID_3D
-        MENUITEM "OTHER", MENU_FILTER_ID_OTHER
+        MENUITEM "Other", MENU_FILTER_ID_OTHER
     }
 
-    POPUP "View"
+    POPUP "&View"
     {
 
     }
 
-    POPUP "Options"
+    POPUP "&Options"
     {
         MENUITEM "Preferences", MENU_OPTIONS_ID_PREFERENCES
     }
 
-    POPUP "Help"
+    POPUP "&Help"
     {
 
     }

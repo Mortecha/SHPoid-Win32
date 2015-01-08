@@ -32,6 +32,62 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     // what was the message?
     switch(msg)
     {
+        case WM_COMMAND:
+            {
+                switch(LOWORD(wParam))
+                {
+                    case MENU_FILE_ID_NEW: break;
+                    case MENU_FILE_ID_OPEN: break;
+                    case MENU_FILE_ID_OPEN_RECENT: break;
+                    case MENU_FILE_ID_CLOSE: break;
+                    case MENU_FILE_ID_CLOSE_ALL: break;
+                    case MENU_FILE_ID_SAVE: break;
+                    case MENU_FILE_ID_SAVE_AS: break;
+                    case MENU_FILE_ID_SAVE_ALL: break;
+                    case MENU_FILE_ID_BATCH_CONVERT: break;
+                    case MENU_FILE_ID_IMPORT: break;
+                    case MENU_FILE_ID_EXPORT: break;
+                    case MENU_FILE_ID_EXIT: break;
+
+                    case MENU_EDIT_ID_UNDO: break;
+                    case MENU_EDIT_ID_REDO: break;
+                    case MENU_EDIT_ID_CUT: break;
+                    case MENU_EDIT_ID_COPY: break;
+                    case MENU_EDIT_ID_PASTE: break;
+                    case MENU_EDIT_ID_CLEAR: break;
+                    case MENU_EDIT_ID_RESIZE_CANVAS: break;
+                    case MENU_EDIT_ID_RESIZE: break;
+                    case MENU_EDIT_ID_TRANSFORM: break;
+
+                    case MENU_SHP_ID_TYPE: break;
+                    case MENU_SHP_ID_ADD_FRAME: break;
+                    case MENU_SHP_ID_DELETE_FRAME: break;
+
+                    case MENU_PALETTE_ID_LOAD: break;
+                    case MENU_PALETTE_ID_CUSTOM: break;
+                    case MENU_PALETTE_ID_TIBERIAN_DAWN: break;
+                    case MENU_PALETTE_ID_RED_ALERT: break;
+                    case MENU_PALETTE_ID_TIBERIAN_SUN: break;
+                    case MENU_PALETTE_ID_RED_ALERT_2: break;
+                    case MENU_PALETTE_ID_YURI: break;
+
+                    case MENU_FILTER_ID_SMOOTH_CONSERVATIVE: break;
+                    case MENU_FILTER_ID_SMOOTH_MEAN: break;
+                    case MENU_FILTER_ID_SMOOTH_MEDIAN: break;
+                    case MENU_FILTER_ID_SHARPEN: break;
+                    case MENU_FILTER_ID_ARITHMETICS: break;
+                    case MENU_FILTER_ID_TEXTURIZE: break;
+                    case MENU_FILTER_ID_3D: break;
+                    case MENU_FILTER_ID_OTHER: break;
+
+                    //case MENU_VIEW_ID_...
+
+                    case MENU_OPTIONS_ID_PREFERENCES: break;
+
+                    //case MENU_HELP_ID_ABOUT
+                }
+            }
+
         case WM_CREATE:
             {
                 // do initialisation here
@@ -112,11 +168,11 @@ int WINAPI WinMain(HINSTANCE hInstance,
                                NULL)))                              // extra creation params
         return 0;
 
-    HMENU hMenuHandle = LoadMenu(hInstance, "MainMenu"); // load menu resource
-    SetMenu(hwnd, hMenuHandle);
     mainWindowHandle = hwnd; // save main window handle
     HDC hdc = GetDC(hwnd); // save device context
     srand(GetTickCount()); // seed random number generator
+    HMENU hMenuHandle = LoadMenu(hInstance, "MainMenu"); // load menu resource
+    SetMenu(hwnd, hMenuHandle);
 
     // main event loop
     while(TRUE)
@@ -130,6 +186,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
             TranslateMessage(&msg); // translate any accelerator keys
             DispatchMessage(&msg); // send the message to the window proc
         } // end if
+
+        // main processing goes here
 
         if (KEYDOWN(VK_ESCAPE))
            SendMessage(hwnd, WM_CLOSE, 0, 0);
