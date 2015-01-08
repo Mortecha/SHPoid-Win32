@@ -1,0 +1,79 @@
+#include "resources.h"
+
+MainMenu MENU DISCARDABLE
+{
+    POPUP "File"
+    {
+        MENUITEM "New", MENU_FILE_ID_NEW
+        MENUITEM "Open", MENU_FILE_ID_OPEN
+        MENUITEM "Open Recent", MENU_FILE_ID_OPEN_RECENT
+        MENUITEM "Close", MENU_FILE_ID_CLOSE
+        MENUITEM "Close All", MENU_FILE_ID_CLOSE_ALL
+        MENUITEM "Save", MENU_FILE_ID_SAVE
+        MENUITEM "Save As", MENU_FILE_ID_SAVE_AS
+        MENUITEM "Save All", MENU_FILE_ID_SAVE_ALL
+        MENUITEM "Batch Conversion", MENU_FILE_ID_BATCH_CONVERT
+        MENUITEM "Import", MENU_FILE_ID_IMPORT
+        MENUITEM "Export", MENU_FILE_ID_EXPORT
+        MENUITEM "Exit", MENU_FILE_ID_EXIT
+    }
+
+    POPUP "Edit"
+    {
+        MENUITEM "Undo", MENU_EDIT_ID_UNDO
+        MENUITEM "Redo", MENU_EDIT_ID_REDO
+        MENUITEM "Cut", MENU_EDIT_ID_CUT
+        MENUITEM "Copy", MENU_EDIT_ID_COPY
+        MENUITEM "Paste", MENU_EDIT_ID_PASTE
+        MENUITEM "Clear", MENU_EDIT_ID_CLEAR
+        MENUITEM "Resize Canvas", MENU_EDIT_ID_RESIZE_CANVAS
+        MENUITEM "Resize", MENU_EDIT_ID_RESIZE
+        MENUITEM "Transform", MENU_EDIT_ID_TRANSFORM
+    }
+
+    POPUP "Shp"
+    {
+        MENUITEM "Type", MENU_SHP_ID_TYPE
+        MENUITEM "Add Frame", MENU_SHP_ID_ADD_FRAME
+        MENUITEM "Delete Frame", MENU_SHP_ID_DELETE_FRAME
+    }
+
+    POPUP "Palette"
+    {
+        MENUITEM "Load", MENU_PALETTE_ID_LOAD
+        MENUITEM "Custom", MENU_PALETTE_ID_CUSTOM
+        MENUITEM "Tiberian Dawn", MENU_PALETTE_ID_TIBERIAN_DAWN
+        MENUITEM "Red Alert", MENU_PALETTE_ID_RED_ALERT
+        MENUITEM "Tiberian Sun", MENU_PALETTE_ID_TIBERIAN_SUN
+        MENUITEM "Red Alert 2", MENU_PALETTE_ID_RED_ALERT_2
+        MENUITEM "Yuri's Revenge", MENU_PALETTE_ID_YURI
+    }
+
+    POPUP "Filter"
+    {
+        MENUITEM "Smooth (Conservative)", MENU_FILTER_ID_SMOOTH_CONSERVATIVE
+        MENUITEM "Smooth (Mean)", MENU_FILTER_ID_SMOOTH_MEAN
+        MENUITEM "Smooth (Median)", MENU_FILTER_ID_SMOOTH_MEDIAN
+        MENUITEM "Sharpen", MENU_FILTER_ID_SHARPEN
+        MENUITEM "Arithmetics", MENU_FILTER_ID_ARITHMETICS
+        MENUITEM "Texturize", MENU_FILTER_ID_TEXTURIZE
+        MENUITEM "3D", MENU_FILTER_ID_3D
+        MENUITEM "OTHER", MENU_FILTER_ID_OTHER
+    }
+
+    POPUP "View"
+    {
+
+    }
+
+    POPUP "Options"
+    {
+        MENUITEM "Preferences", MENU_OPTIONS_ID_PREFERENCES
+    }
+
+    POPUP "Help"
+    {
+
+    }
+}
+

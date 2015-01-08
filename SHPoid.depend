@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1420644012 source:c:\users\admin\dropbox\applications\shpoid\main.cpp
+	<windows.h>
+	<windowsx.h>
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<vector>
+

@@ -8,6 +8,8 @@
 #include <math.h>
 #include <vector>
 
+#include "resources.h"
+
 // DEFINES /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Defines for Windows
 #define WINDOW_CLASS_NAME "WINCLASS1"
@@ -111,6 +113,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
         return 0;
 
     HMENU hMenuHandle = LoadMenu(hInstance, "MainMenu"); // load menu resource
+    SetMenu(hwnd, hMenuHandle);
     mainWindowHandle = hwnd; // save main window handle
     HDC hdc = GetDC(hwnd); // save device context
     srand(GetTickCount()); // seed random number generator
