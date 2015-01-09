@@ -45,9 +45,16 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     case MENU_FILE_ID_SAVE_AS: break;
                     case MENU_FILE_ID_SAVE_ALL: break;
                     case MENU_FILE_ID_BATCH_CONVERT: break;
-                    case MENU_FILE_ID_IMPORT: break;
-                    case MENU_FILE_ID_EXPORT: break;
-                    case MENU_FILE_ID_EXIT: break;
+                    case MENU_FILE_ID_IMPORT_IMAGE_TO_SHP: break;
+
+                    case MENU_FILE_ID_EXPORT_FRAME_TO_IMAGE: break;
+                    case MENU_FILE_ID_EXPORT_FRAMES_TO_IMAGES: break;
+                    case MENU_FILE_ID_EXPORT_SHP_TO_IMAGES: break;
+                    case MENU_FILE_ID_EXPORT_SHP_TO_SPRITESHEET: break;
+
+                    case MENU_FILE_ID_EXIT:
+                        PostMessage(hwnd, WM_CLOSE, 0, 0);
+                        break;
 
                     case MENU_EDIT_ID_UNDO: break;
                     case MENU_EDIT_ID_REDO: break;
@@ -59,32 +66,49 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     case MENU_EDIT_ID_RESIZE: break;
                     case MENU_EDIT_ID_TRANSFORM: break;
 
-                    case MENU_SHP_ID_TYPE: break;
-                    case MENU_SHP_ID_ADD_FRAME: break;
+                    case MENU_SHP_ID_SHPTYPE: break;
+                    case MENU_SHP_ID_AUTOSELECT_SHPTYPE: break;
+                    case MENU_SHP_ID_INSERT_FRAME: break;
                     case MENU_SHP_ID_DELETE_FRAME: break;
+                    case MENU_SHP_ID_PALETTE_LOAD: break;
+                    case MENU_SHP_ID_PALETTE_CUSTOM: break;
+                    case MENU_SHP_ID_PALETTE_TIBERIAN_DAWN: break;
+                    case MENU_SHP_ID_PALETTE_RED_ALERT: break;
+                    case MENU_SHP_ID_PALETTE_TIBERIAN_SUN: break;
+                    case MENU_SHP_ID_PALETTE_RED_ALERT_2: break;
+                    case MENU_SHP_ID_PALETTE_YURI: break;
+                    case MENU_SHP_ID_PALETTE_UPDATE: break;
 
-                    case MENU_PALETTE_ID_LOAD: break;
-                    case MENU_PALETTE_ID_CUSTOM: break;
-                    case MENU_PALETTE_ID_TIBERIAN_DAWN: break;
-                    case MENU_PALETTE_ID_RED_ALERT: break;
-                    case MENU_PALETTE_ID_TIBERIAN_SUN: break;
-                    case MENU_PALETTE_ID_RED_ALERT_2: break;
-                    case MENU_PALETTE_ID_YURI: break;
-
+                    case MENU_FILTER_ID_SETTINGS: break;
                     case MENU_FILTER_ID_SMOOTH_CONSERVATIVE: break;
-                    case MENU_FILTER_ID_SMOOTH_MEAN: break;
-                    case MENU_FILTER_ID_SMOOTH_MEDIAN: break;
-                    case MENU_FILTER_ID_SHARPEN: break;
-                    case MENU_FILTER_ID_ARITHMETICS: break;
-                    case MENU_FILTER_ID_TEXTURIZE: break;
-                    case MENU_FILTER_ID_3D: break;
-                    case MENU_FILTER_ID_OTHER: break;
+                    case MENU_FILTER_ID_SMOOTH_POLYGON_MEAN: break;
+                    case MENU_FILTER_ID_SMOOTH_MEAN_MINIMUM: break;
+                    case MENU_FILTER_ID_SMOOTH_MEAN_3X3: break;
+                    case MENU_FILTER_ID_SMOOTH_MEAN_5X5: break;
+                    case MENU_FILTER_ID_SMOOTH_MEAN_7X7: break;
+                    case MENU_FILTER_ID_SMOOTH_MEAN_SQUARED_3X3: break;
+                    case MENU_FILTER_ID_SMOOTH_MEAN_SQUARED_5X5: break;
+                    case MENU_FILTER_ID_SMOOTH_MEAN_SQUARED_7X7: break;
+                    case MENU_FILTER_ID_SMOOTH_MEDIAN_MINIMUM: break;
+                    case MENU_FILTER_ID_SMOOTH_MEDIAN_3X3: break;
+                    case MENU_FILTER_ID_SMOOTH_MEDIAN_5X5: break;
+                    case MENU_FILTER_ID_SMOOTH_MEDIAN_7X7: break;
+                    case MENU_FILTER_ID_SHARPEN_UNSHARP_MASK: break;
+                    case MENU_FILTER_ID_SHARPEN_WEAK: break;
+                    case MENU_FILTER_ID_SHARPEN_STRONG: break;
+                    case MENU_FILTER_ID_ARITHMETICS_EXP: break;
+                    case MENU_FILTER_ID_ARITHMETICS_LOG: break;
+                    case MENU_FILTER_ID_ARITHMETICS_LOG_LIGHT: break;
+                    case MENU_FILTER_ID_ARITHMETICS_LOG_DARK: break;
 
                     //case MENU_VIEW_ID_...
 
                     case MENU_OPTIONS_ID_PREFERENCES: break;
 
-                    //case MENU_HELP_ID_ABOUT
+                    case MENU_HELP_ID_HELP: break;
+                    case MENU_HELP_ID_REPORT_BUG: break;
+                    case MENU_HELP_ID_ABOUT: break;
+
                 }
             }
 
@@ -196,6 +220,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 // release the device context
 ReleaseDC(hwnd,hdc);
 
-// return to Windows like this
+// return to Windows
 return(msg.wParam);
 } // end WinMain
+
