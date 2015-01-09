@@ -98,32 +98,39 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     case MENU_FILTER_ID_SMOOTH_CONSERVATIVE: break;
                     case MENU_FILTER_ID_SMOOTH_POLYGON_MEAN: break;
                     case MENU_FILTER_ID_SMOOTH_MEAN_MINIMUM: break;
+
                     case MENU_FILTER_ID_SMOOTH_MEAN_3X3: break;
                     case MENU_FILTER_ID_SMOOTH_MEAN_5X5: break;
                     case MENU_FILTER_ID_SMOOTH_MEAN_7X7: break;
                     case MENU_FILTER_ID_SMOOTH_MEAN_SQUARED_3X3: break;
                     case MENU_FILTER_ID_SMOOTH_MEAN_SQUARED_5X5: break;
                     case MENU_FILTER_ID_SMOOTH_MEAN_SQUARED_7X7: break;
+
                     case MENU_FILTER_ID_SMOOTH_MEDIAN_MINIMUM: break;
                     case MENU_FILTER_ID_SMOOTH_MEDIAN_3X3: break;
                     case MENU_FILTER_ID_SMOOTH_MEDIAN_5X5: break;
                     case MENU_FILTER_ID_SMOOTH_MEDIAN_7X7: break;
+
                     case MENU_FILTER_ID_SHARPEN_UNSHARP_MASK: break;
                     case MENU_FILTER_ID_SHARPEN_WEAK: break;
                     case MENU_FILTER_ID_SHARPEN_STRONG: break;
+
                     case MENU_FILTER_ID_ARITHMETICS_EXP: break;
                     case MENU_FILTER_ID_ARITHMETICS_LOG: break;
                     case MENU_FILTER_ID_ARITHMETICS_LOG_LIGHT: break;
                     case MENU_FILTER_ID_ARITHMETICS_LOG_DARK: break;
+
                     case MENU_FILTER_ID_TEXTURIZE_BASIC: break;
                     case MENU_FILTER_ID_TEXTURIZE_ICED: break;
                     case MENU_FILTER_ID_TEXTURIZE_WHITE: break;
                     case MENU_FILTER_ID_TEXTURIZE_PETRO: break;
                     case MENU_FILTER_ID_TEXTURIZE_STONIFY: break;
                     case MENU_FILTER_ID_TEXTURIZE_ROCK: break;
+
                     case MENU_FILTER_ID_3D_BUTTONIZE_WEAK: break;
                     case MENU_FILTER_ID_3D_BUTTONIZE_STRONG: break;
                     case MENU_FILTER_3D_BUTTONIZE_VERYSTRONG: break;
+
                     case MENU_FILTER_ID_OTHER_MESS: break;
                     case MENU_FILTER_ID_OTHER_SQUARE_DEPTH: break;
                     case MENU_FILTER_ID_OTHER_XDEPTH: break;
