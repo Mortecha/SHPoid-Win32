@@ -22,15 +22,21 @@
 #define MENU_EDIT_ID_COPY                       2150
 #define MENU_EDIT_ID_PASTE                      2200
 #define MENU_EDIT_ID_CLEAR                      2250
-#define MENU_EDIT_ID_RESIZE_CANVAS              2300
-#define MENU_EDIT_ID_RESIZE                     2350
-#define MENU_EDIT_ID_TRANSFORM                  2400
+#define MENU_EDIT_ID_SHP_SIZE                   2300
+#define MENU_EDIT_ID_CANVAS_SIZE                2350
+#define MENU_EDIT_ID_SHP_ROTATION_180           2400
+#define MENU_EDIT_ID_SHP_ROTATION_90CW          2420
+#define MENU_EDIT_ID_SHP_ROTATION_90CCW         2440
+#define MENU_EDIT_ID_SHP_ROTATION_ARBITRARY     2460
+#define MENU_EDIT_ID_TRANSFORM                  2480
 
 // defines for the top level menu SHP
-#define MENU_SHP_ID_SHPTYPE                     3000
-#define MENU_SHP_ID_AUTOSELECT_SHPTYPE          3020
+#define MENU_SHP_ID_TYPE                        3000
+#define MENU_SHP_ID_AUTOSELECT_TYPE             3020
 #define MENU_SHP_ID_INSERT_FRAME                3050
 #define MENU_SHP_ID_DELETE_FRAME                3100
+#define MENU_SHP_ID_SPLIT_FRAMES                3150
+
 #define MENU_SHP_ID_PALETTE_LOAD                4000
 #define MENU_SHP_ID_PALETTE_CUSTOM              4050
 #define MENU_SHP_ID_PALETTE_TIBERIAN_DAWN       4100
@@ -39,34 +45,68 @@
 #define MENU_SHP_ID_PALETTE_RED_ALERT_2         4250
 #define MENU_SHP_ID_PALETTE_YURI                4300
 #define MENU_SHP_ID_PALETTE_UPDATE              4350
+
 #define MENU_SHP_ID_COLOURSCHEME_SETTINGS       4400
 #define MENU_SHP_ID_COLOURSCHEME_APPLY          4450
 #define MENU_SHP_ID_COLOURSCHEME_UPDATE         4500
 
+#define MENU_SHP_ID_SEQUENCE                    4550
+#define MENU_SHP_ID_SHADOWS_AUTO                4600
+#define MENU_SHP_ID_SHADOWS_CONVERT             4650
+#define MENU_SHP_ID_SHADOWS_FIX                 4660
+#define MENU_SHP_ID_GENERATE_CAMEO              4700
+
 // defines for the top level menu FILTER
 #define MENU_FILTER_ID_SETTINGS                 5000
+
 #define MENU_FILTER_ID_SMOOTH_CONSERVATIVE      5020
 #define MENU_FILTER_ID_SMOOTH_POLYGON_MEAN      5040
+
 #define MENU_FILTER_ID_SMOOTH_MEAN_MINIMUM      5060
 #define MENU_FILTER_ID_SMOOTH_MEAN_3X3          5080
-#define MENU_FILTER_ID_SMOOTH_MEAN_5X5         5100
+#define MENU_FILTER_ID_SMOOTH_MEAN_5X5          5100
 #define MENU_FILTER_ID_SMOOTH_MEAN_7X7          5120
 #define MENU_FILTER_ID_SMOOTH_MEAN_SQUARED_3X3  5140
 #define MENU_FILTER_ID_SMOOTH_MEAN_SQUARED_5X5  5160
 #define MENU_FILTER_ID_SMOOTH_MEAN_SQUARED_7X7  5180
+
 #define MENU_FILTER_ID_SMOOTH_MEDIAN_MINIMUM    5200
 #define MENU_FILTER_ID_SMOOTH_MEDIAN_3X3        5220
 #define MENU_FILTER_ID_SMOOTH_MEDIAN_5X5        5240
 #define MENU_FILTER_ID_SMOOTH_MEDIAN_7X7        5260
+
 #define MENU_FILTER_ID_SHARPEN_UNSHARP_MASK     5280
 #define MENU_FILTER_ID_SHARPEN_WEAK             5300
 #define MENU_FILTER_ID_SHARPEN_STRONG           5320
+
 #define MENU_FILTER_ID_ARITHMETICS_EXP          5340
 #define MENU_FILTER_ID_ARITHMETICS_LOG          5360
 #define MENU_FILTER_ID_ARITHMETICS_LOG_LIGHT    5380
 #define MENU_FILTER_ID_ARITHMETICS_LOG_DARK     5400
 
+#define MENU_FILTER_ID_TEXTURIZE_BASIC          5420
+#define MENU_FILTER_ID_TEXTURIZE_ICED           5440
+#define MENU_FILTER_ID_TEXTURIZE_WHITE          5460
+#define MENU_FILTER_ID_TEXTURIZE_PETRO          5480
+#define MENU_FILTER_ID_TEXTURIZE_STONIFY        5500
+#define MENU_FILTER_ID_TEXTURIZE_ROCK           5520
+
+#define MENU_FILTER_ID_3D_BUTTONIZE_WEAK        5540
+#define MENU_FILTER_ID_3D_BUTTONIZE_STRONG      5560
+#define MENU_FILTER_3D_BUTTONIZE_VERYSTRONG     5580
+
+#define MENU_FILTER_ID_OTHER_MESS               5600
+#define MENU_FILTER_ID_OTHER_SQUARE_DEPTH       5620
+#define MENU_FILTER_ID_OTHER_XDEPTH             5640
+#define MENU_FILTER_ID_OTHER_UBER               5660
+#define MENU_FILTER_ID_OTHER_UNFOCUS            5680
+#define MENU_FILTER_ID_OTHER_UNDERLINE          5700
+
 // defines for the top level menu VIEW
+#define MENU_VIEW_ID_ZOOM_IN                    6000
+#define MENU_VIEW_ID_ZOOM_OUT                   6100
+#define MENU_VIEW_ID_PREVIEW                    6200
+#define MENU_VIEW_ID_SHOW_CENTER                6300
 
 // defines for the top level menu OPTIONS
 #define MENU_OPTIONS_ID_PREFERENCES             7000

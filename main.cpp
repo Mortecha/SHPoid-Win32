@@ -46,7 +46,6 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     case MENU_FILE_ID_SAVE_ALL: break;
                     case MENU_FILE_ID_BATCH_CONVERT: break;
                     case MENU_FILE_ID_IMPORT_IMAGE_TO_SHP: break;
-
                     case MENU_FILE_ID_EXPORT_FRAME_TO_IMAGE: break;
                     case MENU_FILE_ID_EXPORT_FRAMES_TO_IMAGES: break;
                     case MENU_FILE_ID_EXPORT_SHP_TO_IMAGES: break;
@@ -62,14 +61,20 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     case MENU_EDIT_ID_COPY: break;
                     case MENU_EDIT_ID_PASTE: break;
                     case MENU_EDIT_ID_CLEAR: break;
-                    case MENU_EDIT_ID_RESIZE_CANVAS: break;
-                    case MENU_EDIT_ID_RESIZE: break;
+                    case MENU_EDIT_ID_SHP_SIZE: break;
+                    case MENU_EDIT_ID_CANVAS_SIZE: break;
+                    case MENU_EDIT_ID_SHP_ROTATION_180: break;
+                    case MENU_EDIT_ID_SHP_ROTATION_90CW: break;
+                    case MENU_EDIT_ID_SHP_ROTATION_90CCW: break;
+                    case MENU_EDIT_ID_SHP_ROTATION_ARBITRARY: break;
                     case MENU_EDIT_ID_TRANSFORM: break;
 
-                    case MENU_SHP_ID_SHPTYPE: break;
-                    case MENU_SHP_ID_AUTOSELECT_SHPTYPE: break;
+                    case MENU_SHP_ID_TYPE: break;
+                    case MENU_SHP_ID_AUTOSELECT_TYPE: break;
                     case MENU_SHP_ID_INSERT_FRAME: break;
                     case MENU_SHP_ID_DELETE_FRAME: break;
+                    case MENU_SHP_ID_SPLIT_FRAMES: break;
+
                     case MENU_SHP_ID_PALETTE_LOAD: break;
                     case MENU_SHP_ID_PALETTE_CUSTOM: break;
                     case MENU_SHP_ID_PALETTE_TIBERIAN_DAWN: break;
@@ -78,6 +83,16 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     case MENU_SHP_ID_PALETTE_RED_ALERT_2: break;
                     case MENU_SHP_ID_PALETTE_YURI: break;
                     case MENU_SHP_ID_PALETTE_UPDATE: break;
+
+                    case MENU_SHP_ID_COLOURSCHEME_SETTINGS: break;
+                    case MENU_SHP_ID_COLOURSCHEME_APPLY: break;
+                    case MENU_SHP_ID_COLOURSCHEME_UPDATE: break;
+
+                    case MENU_SHP_ID_SEQUENCE: break;
+                    case MENU_SHP_ID_SHADOWS_AUTO: break;
+                    case MENU_SHP_ID_SHADOWS_CONVERT: break;
+                    case MENU_SHP_ID_SHADOWS_FIX: break;
+                    case MENU_SHP_ID_GENERATE_CAMEO: break;
 
                     case MENU_FILTER_ID_SETTINGS: break;
                     case MENU_FILTER_ID_SMOOTH_CONSERVATIVE: break;
@@ -100,8 +115,26 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     case MENU_FILTER_ID_ARITHMETICS_LOG: break;
                     case MENU_FILTER_ID_ARITHMETICS_LOG_LIGHT: break;
                     case MENU_FILTER_ID_ARITHMETICS_LOG_DARK: break;
+                    case MENU_FILTER_ID_TEXTURIZE_BASIC: break;
+                    case MENU_FILTER_ID_TEXTURIZE_ICED: break;
+                    case MENU_FILTER_ID_TEXTURIZE_WHITE: break;
+                    case MENU_FILTER_ID_TEXTURIZE_PETRO: break;
+                    case MENU_FILTER_ID_TEXTURIZE_STONIFY: break;
+                    case MENU_FILTER_ID_TEXTURIZE_ROCK: break;
+                    case MENU_FILTER_ID_3D_BUTTONIZE_WEAK: break;
+                    case MENU_FILTER_ID_3D_BUTTONIZE_STRONG: break;
+                    case MENU_FILTER_3D_BUTTONIZE_VERYSTRONG: break;
+                    case MENU_FILTER_ID_OTHER_MESS: break;
+                    case MENU_FILTER_ID_OTHER_SQUARE_DEPTH: break;
+                    case MENU_FILTER_ID_OTHER_XDEPTH: break;
+                    case MENU_FILTER_ID_OTHER_UBER: break;
+                    case MENU_FILTER_ID_OTHER_UNFOCUS: break;
+                    case MENU_FILTER_ID_OTHER_UNDERLINE: break;
 
-                    //case MENU_VIEW_ID_...
+                    case MENU_VIEW_ID_ZOOM_IN: break;
+                    case MENU_VIEW_ID_ZOOM_OUT: break;
+                    case MENU_VIEW_ID_PREVIEW: break;
+                    case MENU_VIEW_ID_SHOW_CENTER: break;
 
                     case MENU_OPTIONS_ID_PREFERENCES: break;
 
@@ -194,7 +227,6 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
     mainWindowHandle = hwnd; // save main window handle
     HDC hdc = GetDC(hwnd); // save device context
-    srand(GetTickCount()); // seed random number generator
     HMENU hMenuHandle = LoadMenu(hInstance, "MainMenu"); // load menu resource
     SetMenu(hwnd, hMenuHandle);
 

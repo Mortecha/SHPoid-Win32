@@ -17,11 +17,21 @@ MainMenu MENU DISCARDABLE
         MENUITEM SEPARATOR
         MENUITEM "Batch Conversion", MENU_FILE_ID_BATCH_CONVERT
 
+        // "Import" will revert back to a MENUITEM at a later stage
+        // and current menu items will be contained within it
+        // the modal will have functionality to browse for a specific file
+        // and also determine how best to proceed based upon the format of
+        // the specific file in question
         POPUP "Import"
         {
             MENUITEM "Image -> SHP", MENU_FILE_ID_IMPORT_IMAGE_TO_SHP
         }
 
+        // "Export" will revert back to a MENUITEM at a later stage
+        // and current menu items will be contained within it
+        // the modal will have functionality to browse for a specific location
+        // to export too and also determine how best to proceed based upon a specific option
+        // selected by the user
         POPUP "Export"
         {
             MENUITEM "Frame -> Image", MENU_FILE_ID_EXPORT_FRAME_TO_IMAGE
@@ -44,18 +54,34 @@ MainMenu MENU DISCARDABLE
         MENUITEM "Paste", MENU_EDIT_ID_PASTE
         MENUITEM "Clear", MENU_EDIT_ID_CLEAR
         MENUITEM SEPARATOR
-        MENUITEM "Resize Canvas", MENU_EDIT_ID_RESIZE_CANVAS
-        MENUITEM "Resize", MENU_EDIT_ID_RESIZE
+        MENUITEM "SHP Size",MENU_EDIT_ID_SHP_SIZE
+        MENUITEM "Canvas Size",MENU_EDIT_ID_CANVAS_SIZE
+
+        POPUP "SHP Rotation"
+        {
+            MENUITEM "180°" ,MENU_EDIT_ID_SHP_ROTATION_180
+            MENUITEM "90° CW" ,MENU_EDIT_ID_SHP_ROTATION_90CW
+            MENUITEM "90° CCW" ,MENU_EDIT_ID_SHP_ROTATION_90CCW
+            MENUITEM "Arbitrary",MENU_EDIT_ID_SHP_ROTATION_ARBITRARY
+        }
+
+        MENUITEM SEPARATOR
         MENUITEM "Transform", MENU_EDIT_ID_TRANSFORM
     }
 
     POPUP "&Shp"
     {
-        MENUITEM "SHP Type", MENU_SHP_ID_SHPTYPE
-        MENUITEM "AutoSelect SHP Type", MENU_SHP_ID_AUTOSELECT_SHPTYPE
+        MENUITEM "Type", MENU_SHP_ID_TYPE
+        MENUITEM "AutoSelect Type", MENU_SHP_ID_AUTOSELECT_TYPE
         MENUITEM SEPARATOR
-        MENUITEM "Insert Frame", MENU_SHP_ID_INSERT_FRAME
-        MENUITEM "Delete Frame", MENU_SHP_ID_DELETE_FRAME
+
+        POPUP "Frames"
+        {
+            MENUITEM "Insert Frame", MENU_SHP_ID_INSERT_FRAME
+            MENUITEM "Delete Frame", MENU_SHP_ID_DELETE_FRAME
+            MENUITEM "Split Frames", MENU_SHP_ID_SPLIT_FRAMES
+        }
+
         MENUITEM SEPARATOR
 
         // all Palette functionality will eventually be contained within a modal
@@ -82,12 +108,25 @@ MainMenu MENU DISCARDABLE
             MENUITEM SEPARATOR
             MENUITEM "Update Colour Scheme List", MENU_SHP_ID_COLOURSCHEME_UPDATE
         }
-    }
 
+        MENUITEM SEPARATOR
+        MENUITEM "Sequence", MENU_SHP_ID_SEQUENCE
+
+        POPUP "Shadows"
+        {
+            MENUITEM "AutoShadows", MENU_SHP_ID_SHADOWS_AUTO
+            // creates modal that allows the user to select the appropriate shadow to convert too
+            MENUITEM "Convert Shadows", MENU_SHP_ID_SHADOWS_CONVERT
+            MENUITEM "Fix Shadows", MENU_SHP_ID_SHADOWS_FIX
+        }
+
+        MENUITEM "Generate Cameo", MENU_SHP_ID_GENERATE_CAMEO
+    }
     POPUP "&Filter"
     {
         MENUITEM "Settings", MENU_FILTER_ID_SETTINGS
         MENUITEM SEPARATOR
+
         POPUP "Smooth (Conservative)"
         {
             MENUITEM "Conservative Smooth", MENU_FILTER_ID_SMOOTH_CONSERVATIVE
@@ -132,24 +171,41 @@ MainMenu MENU DISCARDABLE
 
         POPUP "Texturize"
         {
-
+            MENUITEM "Texturize (Basic)", MENU_FILTER_ID_TEXTURIZE_BASIC
+            MENUITEM "Texturize (Iced)", MENU_FILTER_ID_TEXTURIZE_ICED
+            MENUITEM "Texturize (White)", MENU_FILTER_ID_TEXTURIZE_WHITE
+            MENUITEM "Petroglyph (Sobel)", MENU_FILTER_ID_TEXTURIZE_PETRO
+            MENUITEM "Stonify (Prewitt)", MENU_FILTER_ID_TEXTURIZE_STONIFY
+            MENUITEM "Rock It", MENU_FILTER_ID_TEXTURIZE_ROCK
         }
 
         POPUP "3D"
         {
-
+            MENUITEM "Buttonize (Weak)", MENU_FILTER_ID_3D_BUTTONIZE_WEAK
+            MENUITEM "Buttonize (Strong)", MENU_FILTER_ID_3D_BUTTONIZE_STRONG
+            MENUITEM "Buttonize (Very Strong)", MENU_FILTER_3D_BUTTONIZE_VERYSTRONG
         }
 
         MENUITEM SEPARATOR
+
         POPUP "Other"
         {
-
+            MENUITEM "Mess It Up", MENU_FILTER_ID_OTHER_MESS
+            MENUITEM "Square Depth", MENU_FILTER_ID_OTHER_SQUARE_DEPTH
+            MENUITEM "X-Depth", MENU_FILTER_ID_OTHER_XDEPTH
+            MENUITEM "Uber Noise", MENU_FILTER_ID_OTHER_UBER
+            MENUITEM "UnFocus", MENU_FILTER_ID_OTHER_UNFOCUS
+            MENUITEM "Underline", MENU_FILTER_ID_OTHER_UNDERLINE
         }
     }
 
     POPUP "&View"
     {
-
+        MENUITEM "Zoom In", MENU_VIEW_ID_ZOOM_IN
+        MENUITEM "Zoom Out", MENU_VIEW_ID_ZOOM_OUT
+        MENUITEM SEPARATOR
+        MENUITEM "Preview", MENU_VIEW_ID_PREVIEW
+        MENUITEM "Show Center", MENU_VIEW_ID_SHOW_CENTER
     }
 
     POPUP "&Options"
