@@ -7,12 +7,14 @@
 #include <stdlib.h>
 #include <math.h>
 #include <vector>
+#include <commctrl.h>
 
 #include "resources.h"
 
 // DEFINES /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Defines for Windows
-#define WINDOW_CLASS_NAME "WINCLASS1"
+#define WINDOW_CLASS_NAME "SHPOID"
+#define TOOLBAR_CLASS_NAME "SHPOID_TOOLBAR"
 
 // MACROS //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #define KEYDOWN(vk_code) ((GetAsyncKeyState(vk_code) & 0x8000) ? 1 : 0)
@@ -21,6 +23,7 @@
 // Globals /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 HWND mainWindowHandle = NULL;
 HINSTANCE hInstanceApp = NULL;
+HIMAGELIST hToolbarImageList = NULL;
 
 // Functions ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -185,6 +188,24 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     // process any messages that we didn't take care of
     return DefWindowProc(hwnd, msg, wParam, lParam);
 }
+// SHPOID_TOOLBAR //////////////////////////////////////////////////////////////////////////////////////////////////////
+HWND CreateMainToolbar (HWND hwnd)
+{
+    HWND hwndToolBar;
+    InitCommonControls();
+    if(!(hwndToolBar = CreateWindowEx(0,
+                                      TOOLBAR_CLASS_NAME,
+                                      NULL,
+                                      WS_CHILD | WS_VISIBLE,
+                                      0, 0, 0, 0,
+                                      hwnd,
+                                      NULL,
+                                      hInstanceApp,
+                                      NULL)))
+        return 0;
+
+        SendMessage(hwndToolBar, TB_BUTTONSTRUCTSIZE, (WPARAM)sizeof(TBBUTTON), 0);
+}
 
 // WINMAIN /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int WINAPI WinMain(HINSTANCE hInstance,
@@ -196,7 +217,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     HWND hwnd;              // generic window handle
     MSG msg;                // generic message
 
-    // first fill the window class structure
+    // SHPoid window class structure
     wndClassEx.cbSize = sizeof(WNDCLASSEX);
     wndClassEx.style = CS_DBLCLKS | CS_OWNDC | CS_HREDRAW | CS_VREDRAW;
     wndClassEx.lpfnWndProc = WindowProc;
@@ -236,6 +257,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
     HDC hdc = GetDC(hwnd); // save device context
     HMENU hMenuHandle = LoadMenu(hInstance, "MainMenu"); // load menu resource
     SetMenu(hwnd, hMenuHandle);
+
+    CreateMainToolbar(hwnd);
 
     // main event loop
     while(TRUE)

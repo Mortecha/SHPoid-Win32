@@ -115,3 +115,7 @@
 #define MENU_HELP_ID_HELP                       8000
 #define MENU_HELP_ID_REPORT_BUG                 8050
 #define MENU_HELP_ID_ABOUT                      8100
+
+#define ID_FILE_NEW 10000
+#define ID_FILE_OPEN 10001
+#define ID_FILE_SAVEAS 10002
