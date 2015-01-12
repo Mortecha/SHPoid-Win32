@@ -9,23 +9,101 @@
 #include <vector>
 #include <commctrl.h>
 
-#include "resources.h"
+#include "resource.h"
 
 // DEFINES /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Defines for Windows
 #define WINDOW_CLASS_NAME "SHPOID"
-#define TOOLBAR_CLASS_NAME "SHPOID_TOOLBAR"
 
 // MACROS //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #define KEYDOWN(vk_code) ((GetAsyncKeyState(vk_code) & 0x8000) ? 1 : 0)
 #define KEYUP(vk_code) ((GetAsyncKeyState(vk_code) & 0x8000) ? 1 : 0)
 
-// Globals /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// GLOBALS /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 HWND mainWindowHandle = NULL;
 HINSTANCE hInstanceApp = NULL;
-HIMAGELIST hToolbarImageList = NULL;
 
-// Functions ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PROTOTYPES //////////////////////////////////////////////////////////////////////////////////////////////////////////
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+// WINMAIN /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+int WINAPI WinMain(HINSTANCE hInstance,
+                   HINSTANCE hPrevInstance,
+                   LPSTR lpCmdLine,
+                   int nCmdShow)
+{
+    WNDCLASSEX wndClassEx;  // this will hold the created class
+    HWND hwnd;              // generic window handle
+    MSG msg;                // generic message
+
+    // SHPoid window class structure
+    wndClassEx.cbSize = sizeof(WNDCLASSEX);
+    wndClassEx.style = CS_DBLCLKS | CS_OWNDC | CS_HREDRAW | CS_VREDRAW;
+    wndClassEx.lpfnWndProc = WindowProc;
+    wndClassEx.cbClsExtra = 0;
+    wndClassEx.cbWndExtra = 0;
+    wndClassEx.hInstance = hInstance;
+    wndClassEx.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+    wndClassEx.hCursor = LoadCursor(NULL, IDC_ARROW);
+    wndClassEx.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+    wndClassEx.lpszMenuName = NULL;
+    wndClassEx.lpszClassName = WINDOW_CLASS_NAME;
+    wndClassEx.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
+
+    // save hInstance in global
+    hInstanceApp = hInstance;
+
+    // register the window class
+    if(!RegisterClassEx(&wndClassEx))
+        return 0;
+
+    // create the window
+    if(!(hwnd = CreateWindowEx(0,                                   // extended style
+                               WINDOW_CLASS_NAME,                   // class
+                               "SHPoid",                            // title
+                               WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+                               GetSystemMetrics(SM_CXSCREEN) / 4,   // initial x
+                               GetSystemMetrics(SM_CYSCREEN) / 4,   // initial y
+                               GetSystemMetrics(SM_CXSCREEN) / 2,   // initial width
+                               GetSystemMetrics(SM_CYSCREEN) / 2,   // initial height
+                               HWND_DESKTOP,                        // handle to parent
+                               LoadMenu(hInstance, "MainMenu"),     // handle to menu
+                               hInstance,                           // instance of this application
+                               NULL)))                              // extra creation params
+        return 0;
+
+    mainWindowHandle = hwnd; // save main window handle
+    HDC hdc = GetDC(hwnd); // save device context
+    HMENU hMenuHandle = LoadMenu(hInstance, "MainMenu"); // load menu resource
+    SetMenu(hwnd, hMenuHandle);
+
+    // main event loop
+    while(TRUE)
+    {
+        // tests if there is a message in the queue
+        if(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+        {
+            if(msg.message == WM_QUIT) //test if this is a quit message
+                break;
+
+            TranslateMessage(&msg); // translate any accelerator keys
+            DispatchMessage(&msg); // send the message to the window proc
+        } // end if
+
+        // main processing goes here
+
+        if (KEYDOWN(VK_ESCAPE))
+           SendMessage(hwnd, WM_CLOSE, 0, 0);
+	} // end while
+
+// release the device context
+ReleaseDC(hwnd,hdc);
+
+// return to Windows
+return(msg.wParam);
+} // end WinMain
+
+// FUNCTIONS ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     // this is the main main message handler of the system
@@ -152,6 +230,14 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     case MENU_HELP_ID_REPORT_BUG: break;
                     case MENU_HELP_ID_ABOUT: break;
 
+                    // messages from the main tool bar
+                    case TOOLBAR_ID_NEW: break;
+                    case TOOLBAR_ID_OPEN: break;
+                    case TOOLBAR_ID_SAVE: break;
+                    case TOOLBAR_ID_CROSSHAIR: break;
+                    case TOOLBAR_ID_GRID: break;
+                    case TOOLBAR_ID_PREVIOUS_FRAME: break;
+                    case TOOLBAR_ID_NEXT_FRAME: break;
                 }
             }
 
@@ -188,101 +274,3 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     // process any messages that we didn't take care of
     return DefWindowProc(hwnd, msg, wParam, lParam);
 }
-// SHPOID_TOOLBAR //////////////////////////////////////////////////////////////////////////////////////////////////////
-HWND CreateMainToolbar (HWND hwnd)
-{
-    HWND hwndToolBar;
-    InitCommonControls();
-    if(!(hwndToolBar = CreateWindowEx(0,
-                                      TOOLBAR_CLASS_NAME,
-                                      NULL,
-                                      WS_CHILD | WS_VISIBLE,
-                                      0, 0, 0, 0,
-                                      hwnd,
-                                      NULL,
-                                      hInstanceApp,
-                                      NULL)))
-        return 0;
-
-        SendMessage(hwndToolBar, TB_BUTTONSTRUCTSIZE, (WPARAM)sizeof(TBBUTTON), 0);
-}
-
-// WINMAIN /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-int WINAPI WinMain(HINSTANCE hInstance,
-                   HINSTANCE hPrevInstance,
-                   LPSTR lpCmdLine,
-                   int nCmdShow)
-{
-    WNDCLASSEX wndClassEx;  // this will hold the created class
-    HWND hwnd;              // generic window handle
-    MSG msg;                // generic message
-
-    // SHPoid window class structure
-    wndClassEx.cbSize = sizeof(WNDCLASSEX);
-    wndClassEx.style = CS_DBLCLKS | CS_OWNDC | CS_HREDRAW | CS_VREDRAW;
-    wndClassEx.lpfnWndProc = WindowProc;
-    wndClassEx.cbClsExtra = 0;
-    wndClassEx.cbWndExtra = 0;
-    wndClassEx.hInstance = hInstance;
-    wndClassEx.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-    wndClassEx.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wndClassEx.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
-    wndClassEx.lpszMenuName = NULL;
-    wndClassEx.lpszClassName = WINDOW_CLASS_NAME;
-    wndClassEx.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
-
-    // save hInstance in global
-    hInstanceApp = hInstance;
-
-    // register the window class
-    if(!RegisterClassEx(&wndClassEx))
-        return 0;
-
-    // create the window
-    if(!(hwnd = CreateWindowEx(0,                                   // extended style
-                               WINDOW_CLASS_NAME,                   // class
-                               "SHPoid",                            // title
-                               WS_OVERLAPPEDWINDOW | WS_VISIBLE,
-                               GetSystemMetrics(SM_CXSCREEN) / 4,   // initial x
-                               GetSystemMetrics(SM_CYSCREEN) / 4,   // initial y
-                               GetSystemMetrics(SM_CXSCREEN) / 2,   // initial width
-                               GetSystemMetrics(SM_CYSCREEN) / 2,   // initial height
-                               HWND_DESKTOP,                        // handle to parent
-                               LoadMenu(hInstance, "MainMenu"),     // handle to menu
-                               hInstance,                           // instance of this application
-                               NULL)))                              // extra creation params
-        return 0;
-
-    mainWindowHandle = hwnd; // save main window handle
-    HDC hdc = GetDC(hwnd); // save device context
-    HMENU hMenuHandle = LoadMenu(hInstance, "MainMenu"); // load menu resource
-    SetMenu(hwnd, hMenuHandle);
-
-    CreateMainToolbar(hwnd);
-
-    // main event loop
-    while(TRUE)
-    {
-        // tests if there is a message in the queue
-        if(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
-        {
-            if(msg.message == WM_QUIT) //test if this is a quit message
-                break;
-
-            TranslateMessage(&msg); // translate any accelerator keys
-            DispatchMessage(&msg); // send the message to the window proc
-        } // end if
-
-        // main processing goes here
-
-        if (KEYDOWN(VK_ESCAPE))
-           SendMessage(hwnd, WM_CLOSE, 0, 0);
-	} // end while
-
-// release the device context
-ReleaseDC(hwnd,hdc);
-
-// return to Windows
-return(msg.wParam);
-} // end WinMain
-

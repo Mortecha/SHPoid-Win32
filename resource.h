@@ -116,6 +116,11 @@
 #define MENU_HELP_ID_REPORT_BUG                 8050
 #define MENU_HELP_ID_ABOUT                      8100
 
-#define ID_FILE_NEW 10000
-#define ID_FILE_OPEN 10001
-#define ID_FILE_SAVEAS 10002
+// defines for main toolbar
+#define TOOLBAR_ID_NEW                          9000
+#define TOOLBAR_ID_OPEN                         9100
+#define TOOLBAR_ID_SAVE                         9200
+#define TOOLBAR_ID_CROSSHAIR                    9300
+#define TOOLBAR_ID_GRID                         9400
+#define TOOLBAR_ID_PREVIOUS_FRAME               9500
+#define TOOLBAR_ID_NEXT_FRAME                   9600

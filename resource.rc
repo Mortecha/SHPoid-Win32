@@ -1,4 +1,4 @@
-#include "resources.h"
+#include "resource.h"
 
 MainMenu MENU DISCARDABLE
 {
@@ -212,12 +212,37 @@ MainMenu MENU DISCARDABLE
     {
         MENUITEM "Preferences", MENU_OPTIONS_ID_PREFERENCES
     }
-
     POPUP "&Help"
+
     {
         MENUITEM "Help", MENU_HELP_ID_HELP
         MENUITEM "Report Bug", MENU_HELP_ID_REPORT_BUG
         MENUITEM "About", MENU_HELP_ID_ABOUT
     }
 }
+
+//TOOLBAR_ID_NEW                  ICON        ".ico"
+//TOOLBAR_ID_OPEN                 ICON        ".ico"
+//TOOLBAR_ID_SAVE                 ICON        ".ico"
+//TOOLBAR_ID_CROSSHAIR            ICON        ".ico"
+//TOOLBAR_ID_GRID                 ICON        ".ico"
+//TOOLBAR_ID_PREVIOUS_FRAME       ICON        ".ico"
+//TOOLBAR_ID_NEXT_FRAME           ICON        ".ico"
+
+// this is an alternative way to set up button resources
+MainToolbar TOOLBAR DISCARDABLE 16, 16
+{
+    BUTTON TOOLBAR_ID_NEW
+    BUTTON TOOLBAR_ID_OPEN
+    BUTTON TOOLBAR_ID_SAVE
+    SEPARATOR
+    BUTTON TOOLBAR_ID_CROSSHAIR
+    BUTTON TOOLBAR_ID_GRID
+    SEPARATOR
+    BUTTON TOOLBAR_ID_PREVIOUS_FRAME
+    BUTTON TOOLBAR_ID_NEXT_FRAME
+}
+
+
+
 
