@@ -21,13 +21,16 @@
 #define KEYUP(vk_code) ((GetAsyncKeyState(vk_code) & 0x8000) ? 1 : 0)
 
 // GLOBALS /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+HINSTANCE g_hInstance = NULL;
 HWND g_hWnd = NULL;
 HWND g_hWndMainToolbar = NULL;
-HINSTANCE g_hInstance = NULL;
 HIMAGELIST g_hImageList = NULL;
+HWND g_hWndSecondatyToolbar = NULL;
+HWND g_hWndTooltip = NULL;
 
 // PROTOTYPES //////////////////////////////////////////////////////////////////////////////////////////////////////////
 HWND CreateToolbar(HWND hWndParent);
+HWND CreateSecondaryToolbar(HWND hWndParent);
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 // WINMAIN /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,8 +53,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
     wndClassEx.hInstance = hInstance;
     wndClassEx.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wndClassEx.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wndClassEx.hbrBackground = (HBRUSH)GetStockObject(RGB(245,246,247));
-    wndClassEx.lpszMenuName = MAKEINTRESOURCE(MENU_ID_MAIN);//NULL;
+    wndClassEx.hbrBackground = (HBRUSH)GetStockObject(RGB(245, 246, 247));
+    wndClassEx.lpszMenuName = MAKEINTRESOURCE(MENU_ID_MAIN);
     wndClassEx.lpszClassName = WINDOW_CLASS_NAME;
     wndClassEx.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
@@ -74,16 +77,10 @@ int WINAPI WinMain(HINSTANCE hInstance,
                                NULL)))                              // extra creation params
         return 0;
 
-    g_hWnd = hWnd; // save main window handle
+    g_hWnd = hWnd; // main window handle
     HDC hdc = GetDC(hWnd); // save device context
-
-    INITCOMMONCONTROLSEX InitCtrlEx;
-    InitCtrlEx.dwSize = sizeof(INITCOMMONCONTROLSEX);
-    InitCtrlEx.dwICC = ICC_BAR_CLASSES;
-    InitCommonControlsEx(&InitCtrlEx);
-
     g_hWndMainToolbar = CreateToolbar(hWnd);
-    SetWindowPos(g_hWndMainToolbar, NULL, 0, 0, 0, 500, SWP_NOZORDER);
+    //g_hWndSecondatyToolbar = CreateSecondaryToolbar(hWnd);
 
     // main event loop
     while(TRUE)
@@ -117,10 +114,15 @@ HWND CreateToolbar(HWND hWndParent)
     const int iconSize = 16;
     const DWORD buttonStyles = BTNS_AUTOSIZE;
 
+    INITCOMMONCONTROLSEX InitCtrlEx;
+    InitCtrlEx.dwSize = sizeof(INITCOMMONCONTROLSEX);
+    InitCtrlEx.dwICC = ICC_BAR_CLASSES;
+    InitCommonControlsEx(&InitCtrlEx);
+
     HWND hWndToolbar = CreateWindowEx(0,
                                       TOOLBARCLASSNAME,
                                       NULL,
-                                      TBSTYLE_FLAT | WS_CHILD | WS_VISIBLE,
+                                      TBSTYLE_FLAT | WS_CHILD | WS_VISIBLE | WS_BORDER,
                                       0, 0, 0, 0,
                                       hWndParent,
                                       NULL,
@@ -168,8 +170,48 @@ HWND CreateToolbar(HWND hWndParent)
 
     // Add buttons and autosize toolbar.
     SendMessage(hWndToolbar, TB_BUTTONSTRUCTSIZE, (WPARAM)sizeof(TBBUTTON), 0);
-    SendMessage(hWndToolbar, TB_ADDBUTTONS,       (WPARAM)numButtons,       (LPARAM)&tbButtons);
+    SendMessage(hWndToolbar, TB_ADDBUTTONS, (WPARAM)numButtons, (LPARAM)&tbButtons);
     SendMessage(hWndToolbar, TB_AUTOSIZE, 0, 0);
+    return hWndToolbar;
+}
+
+HWND CreateSecondaryToolbar(HWND hWndParent)
+{
+    const int numButtons = 3;
+
+    INITCOMMONCONTROLSEX InitCtrlEx;
+    InitCtrlEx.dwSize = sizeof(INITCOMMONCONTROLSEX);
+    InitCtrlEx.dwICC = ICC_BAR_CLASSES;
+    InitCommonControlsEx(&InitCtrlEx);
+
+    // Define the buttons.
+    // IDM_NEW, IDM_0PEN, and IDM_SAVE are application-defined command IDs.
+    TBBUTTON tbButtons[numButtons] =
+    {
+        {STD_FILENEW,  MENU_FILE_ID_NEW,  TBSTATE_ENABLED | TBSTATE_WRAP, BTNS_BUTTON, {0}, 0L, 0},
+        {STD_FILEOPEN, MENU_FILE_ID_OPEN, TBSTATE_ENABLED | TBSTATE_WRAP, BTNS_BUTTON, {0}, 0L, 0},
+        {STD_FILESAVE, MENU_FILE_ID_SAVE, TBSTATE_ENABLED | TBSTATE_WRAP, BTNS_BUTTON, {0}, 0L, 0}
+    };
+
+    // Create the toolbar window.
+    HWND hWndToolbar = CreateWindowEx(0, TOOLBARCLASSNAME, NULL,
+                                      WS_CHILD | WS_VISIBLE | CCS_VERT, 0, 0, 0, 0,
+                                      hWndParent, NULL, g_hInstance, NULL);
+
+    // Create the image list.
+    g_hImageList = ImageList_Create(24, 24,                   // Dimensions of individual bitmaps.
+                                    ILC_COLOR16 | ILC_MASK,   // Ensures transparent background.
+                                    numButtons, 0);
+
+    // Set the image list.
+    SendMessage(hWndToolbar, TB_SETIMAGELIST, 0, (LPARAM)g_hImageList);
+
+    // Load the button images.
+    SendMessage(hWndToolbar, TB_LOADIMAGES, (WPARAM)IDB_STD_LARGE_COLOR, (LPARAM)HINST_COMMCTRL);
+
+    // Add them to the toolbar.
+    SendMessage(hWndToolbar, TB_BUTTONSTRUCTSIZE,       (WPARAM)sizeof(TBBUTTON), 0);
+    SendMessage(hWndToolbar, TB_ADDBUTTONS, numButtons, (LPARAM)&tbButtons);
 
     return hWndToolbar;
 }
@@ -337,6 +379,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
             {
                 // resize all child windows
                 SendMessage(g_hWndMainToolbar, TB_AUTOSIZE, 0, 0);
+                SendMessage(g_hWndSecondatyToolbar, TB_AUTOSIZE, 0, 0);
             } break;
 
         case WM_CLOSE:
