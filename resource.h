@@ -129,3 +129,5 @@
 #define TOOLBAR_ID_GRID                         9400
 #define TOOLBAR_ID_PREVIOUS_FRAME               9500
 #define TOOLBAR_ID_NEXT_FRAME                   9600
+#define TOOLBAR_ID_ZOOM_IN                      9700
+#define TOOLBAR_ID_ZOOM_OUT                     9800

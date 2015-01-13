@@ -22,14 +22,13 @@
 
 // GLOBALS /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 HWND g_hWnd = NULL;
+HWND g_hWndMainToolbar = NULL;
 HINSTANCE g_hInstance = NULL;
 HIMAGELIST g_hImageList = NULL;
 
 // PROTOTYPES //////////////////////////////////////////////////////////////////////////////////////////////////////////
-// toolbar creation functions
-void CreateToolbar(HWND hWndParent);
-
-LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+HWND CreateToolbar(HWND hWndParent);
+LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 // WINMAIN /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int WINAPI WinMain(HINSTANCE hInstance,
@@ -38,12 +37,11 @@ int WINAPI WinMain(HINSTANCE hInstance,
                    int nCmdShow)
 {
     g_hInstance = hInstance;
+    WNDCLASSEX wndClassEx;
+    HWND hWnd;
+    MSG msg;
 
-    WNDCLASSEX wndClassEx;  // this will hold the created class
-    HWND hwnd;              // generic window handle
-    MSG msg;                // generic message
-
-    // SHPoid window class structure
+    // main window class structure
     wndClassEx.cbSize = sizeof(WNDCLASSEX);
     wndClassEx.style = CS_DBLCLKS | CS_OWNDC | CS_HREDRAW | CS_VREDRAW;
     wndClassEx.lpfnWndProc = WindowProc;
@@ -52,20 +50,17 @@ int WINAPI WinMain(HINSTANCE hInstance,
     wndClassEx.hInstance = hInstance;
     wndClassEx.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wndClassEx.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wndClassEx.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+    wndClassEx.hbrBackground = (HBRUSH)GetStockObject(RGB(245,246,247));
     wndClassEx.lpszMenuName = MAKEINTRESOURCE(MENU_ID_MAIN);//NULL;
     wndClassEx.lpszClassName = WINDOW_CLASS_NAME;
     wndClassEx.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
-
-    // save hInstance in global
-
 
     // register the window class
     if(!RegisterClassEx(&wndClassEx))
         return 0;
 
-    // create the window
-    if(!(hwnd = CreateWindowEx(0,                                   // extended style
+    // create main window
+    if(!(hWnd = CreateWindowEx(0,                                   // extended style
                                WINDOW_CLASS_NAME,                   // class
                                "SHPoid",                            // title
                                WS_OVERLAPPEDWINDOW | WS_VISIBLE,
@@ -74,29 +69,25 @@ int WINAPI WinMain(HINSTANCE hInstance,
                                GetSystemMetrics(SM_CXSCREEN) / 2,   // initial width
                                GetSystemMetrics(SM_CYSCREEN) / 2,   // initial height
                                HWND_DESKTOP,                        // handle to parent
-                               NULL,//LoadMenu(hInstance, "MainMenu"),     // handle to menu
+                               NULL,                                // handle to menu
                                hInstance,                           // instance of this application
                                NULL)))                              // extra creation params
         return 0;
 
-    g_hWnd = hwnd; // save main window handle
-    HDC hdc = GetDC(hwnd); // save device context
-    //HMENU hMenuHandle = LoadMenu(hInstance, "MainMenu"); // load menu resource
-    //SetMenu(hwnd, hMenuHandle);
-
+    g_hWnd = hWnd; // save main window handle
+    HDC hdc = GetDC(hWnd); // save device context
 
     INITCOMMONCONTROLSEX InitCtrlEx;
     InitCtrlEx.dwSize = sizeof(INITCOMMONCONTROLSEX);
     InitCtrlEx.dwICC = ICC_BAR_CLASSES;
     InitCommonControlsEx(&InitCtrlEx);
 
-
-    CreateToolbar(hwnd);
+    g_hWndMainToolbar = CreateToolbar(hWnd);
+    SetWindowPos(g_hWndMainToolbar, NULL, 0, 0, 0, 500, SWP_NOZORDER);
 
     // main event loop
     while(TRUE)
     {
-        // tests if there is a message in the queue
         if(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
         {
             if(msg.message == WM_QUIT) //test if this is a quit message
@@ -109,46 +100,49 @@ int WINAPI WinMain(HINSTANCE hInstance,
         // main processing goes here
 
         if (KEYDOWN(VK_ESCAPE))
-           SendMessage(hwnd, WM_CLOSE, 0, 0);
+           SendMessage(hWnd, WM_CLOSE, 0, 0);
 	} // end while
 
     // release the device context
-    ReleaseDC(hwnd,hdc);
+    ReleaseDC(hWnd,hdc);
 
     // return to Windows
     return(msg.wParam);
 } // end WinMain
 
-void CreateToolbar(HWND hWndParent)
+HWND CreateToolbar(HWND hWndParent)
 {
-    // Declare and initialize local constants.
-    const int ImageListID    = 0;
-    const int numButtons     = 10;
-    const int bitmapSize     = 16;
-
+    const int ImageListID = 0;
+    const int numButtons = 12;
+    const int iconSize = 16;
     const DWORD buttonStyles = BTNS_AUTOSIZE;
 
-    // Create the toolbar.
-    HWND hWndToolbar = CreateWindowEx(0, TOOLBARCLASSNAME, NULL,
-                                      CCS_ADJUSTABLE | CCS_NODIVIDER | WS_CHILD | WS_VISIBLE, 0, 0, 0, 0,
-                                      hWndParent, NULL, g_hInstance, NULL);
+    HWND hWndToolbar = CreateWindowEx(0,
+                                      TOOLBARCLASSNAME,
+                                      NULL,
+                                      TBSTYLE_FLAT | WS_CHILD | WS_VISIBLE,
+                                      0, 0, 0, 0,
+                                      hWndParent,
+                                      NULL,
+                                      g_hInstance,
+                                      NULL);
 
     if (hWndToolbar == NULL)
-        return;
+        return NULL;
 
-    // Create the image list.
-    g_hImageList = ImageList_Create(bitmapSize, bitmapSize,   // Dimensions of individual bitmaps.
+    // Create image list.
+    g_hImageList = ImageList_Create(iconSize, iconSize,   // Dimensions of individual bitmaps.
                                     ILC_COLOR24 | ILC_MASK,   // Ensures transparent background.
                                     numButtons, 0);
 
-    // Set the image list.
+    // Set image list.
     SendMessage(hWndToolbar, TB_SETIMAGELIST,
-        (WPARAM)ImageListID,
-        (LPARAM)g_hImageList);
+                (WPARAM)ImageListID,
+                (LPARAM)g_hImageList);
 
+    // create buttons
     TBBUTTON tbButtons[numButtons] =
     {
-        { MAKELONG(0, 0), 0, 0, TBSTYLE_SEP, {0}, 0, 0 }, // Separator
         { MAKELONG(ImageList_AddIcon(g_hImageList, LoadIcon(g_hInstance, MAKEINTRESOURCE(TOOLBAR_ID_NEW))),
                    ImageListID), MENU_FILE_ID_NEW, TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_AddIcon(g_hImageList, LoadIcon(g_hInstance, MAKEINTRESOURCE(TOOLBAR_ID_OPEN))),
@@ -164,28 +158,28 @@ void CreateToolbar(HWND hWndParent)
         { MAKELONG(ImageList_AddIcon(g_hImageList, LoadIcon(g_hInstance, MAKEINTRESOURCE(TOOLBAR_ID_PREVIOUS_FRAME))),
                    ImageListID), TOOLBAR_ID_PREVIOUS_FRAME, TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_AddIcon(g_hImageList, LoadIcon(g_hInstance, MAKEINTRESOURCE(TOOLBAR_ID_NEXT_FRAME))),
-                   ImageListID), TOOLBAR_ID_NEXT_FRAME, TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 }
+                   ImageListID), TOOLBAR_ID_NEXT_FRAME, TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
+        { MAKELONG(0, 0), 0, 0, TBSTYLE_SEP, {0}, 0, 0 }, // Separator
+        { MAKELONG(ImageList_AddIcon(g_hImageList, LoadIcon(g_hInstance, MAKEINTRESOURCE(TOOLBAR_ID_ZOOM_IN))),
+                   ImageListID), MENU_VIEW_ID_ZOOM_IN, TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
+        { MAKELONG(ImageList_AddIcon(g_hImageList, LoadIcon(g_hInstance, MAKEINTRESOURCE(TOOLBAR_ID_ZOOM_OUT))),
+                   ImageListID), MENU_VIEW_ID_ZOOM_OUT, TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 }
     };
 
-    // Add buttons.
+    // Add buttons and autosize toolbar.
     SendMessage(hWndToolbar, TB_BUTTONSTRUCTSIZE, (WPARAM)sizeof(TBBUTTON), 0);
     SendMessage(hWndToolbar, TB_ADDBUTTONS,       (WPARAM)numButtons,       (LPARAM)&tbButtons);
-
-    // Resize the toolbar, and then show it.
     SendMessage(hWndToolbar, TB_AUTOSIZE, 0, 0);
-    ShowWindow(hWndToolbar,  TRUE);
+
+    return hWndToolbar;
 }
 
 // FUNCTIONS ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-    // this is the main main message handler of the system
-    //_SHPoid.ProcessMessage(msg);
-
     PAINTSTRUCT ps;
     HDC hdc;
 
-    // what was the message?
     switch(msg)
     {
         case WM_COMMAND:
@@ -194,9 +188,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                 {
                     // messages from file
                     case MENU_FILE_ID_NEW: break;
-                    case MENU_FILE_ID_OPEN:
-                        MessageBox(hwnd, "Blaaa ... Open File", "Menu", 0);
-                        break;
+                    case MENU_FILE_ID_OPEN: break;
                     case MENU_FILE_ID_OPEN_RECENT: break;
                     case MENU_FILE_ID_CLOSE: break;
                     case MENU_FILE_ID_CLOSE_ALL: break;
@@ -211,7 +203,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                     case MENU_FILE_ID_EXPORT_SHP_TO_SPRITESHEET: break;
 
                     case MENU_FILE_ID_EXIT:
-                        PostMessage(hwnd, WM_CLOSE, 0, 0);
+                        PostMessage(hWnd, WM_CLOSE, 0, 0);
                         break;
 
                     // messages from edit
@@ -336,9 +328,15 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
         case WM_PAINT:
             {
-                hdc = BeginPaint(hwnd, &ps);
-                EndPaint(hwnd, &ps);
+                hdc = BeginPaint(hWnd, &ps);
+                EndPaint(hWnd, &ps);
                 return 0;
+            } break;
+
+        case WM_SIZE:
+            {
+                // resize all child windows
+                SendMessage(g_hWndMainToolbar, TB_AUTOSIZE, 0, 0);
             } break;
 
         case WM_CLOSE:
@@ -358,6 +356,5 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         default: break;
     } // end switch
 
-    // process any messages that we didn't take care of
-    return DefWindowProc(hwnd, msg, wParam, lParam);
+    return DefWindowProc(hWnd, msg, wParam, lParam);
 }

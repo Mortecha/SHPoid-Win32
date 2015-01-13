@@ -231,6 +231,8 @@ TOOLBAR_ID_CROSSHAIR            ICON          "rc\\crosshair.ico"
 TOOLBAR_ID_GRID                 ICON          "rc\\grid.ico"
 TOOLBAR_ID_PREVIOUS_FRAME       ICON          "rc\\prevFrame.ico"
 TOOLBAR_ID_NEXT_FRAME           ICON          "rc\\nextFrame.ico"
+TOOLBAR_ID_ZOOM_IN              ICON          "rc\\zoomIn.ico"
+TOOLBAR_ID_ZOOM_OUT             ICON          "rc\\zoomOut.ico"
 
 
 // this is an alternative way to set up button resources
