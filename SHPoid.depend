@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1420828010 source:c:\users\admin\dropbox\applications\shpoid\main.cpp
+1421165757 source:c:\users\admin\dropbox\applications\shpoid\main.cpp
 	<windows.h>
 	<windowsx.h>
 	<stdio.h>
@@ -7,10 +7,20 @@
 	<math.h>
 	<vector>
 	<commctrl.h>
-	"resources.h"
+	"resource.h"
 
 1420829949 c:\users\admin\dropbox\applications\shpoid\resources.h
 
 1420822625 source:c:\users\admin\dropbox\applications\shpoid\resources.rc
 	"resources.h"
+
+1421166134 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
+	"resource.h"
+
+1421166083 c:\users\admin\dropbox\applications\shpoid\resource.h
+
+1421150220 source:c:\users\admin\dropbox\applications\shpoid\src\toolbar.cpp
+	"Toolbar.h"
+
+1421150208 c:\users\admin\dropbox\applications\shpoid\include\toolbar.h
 

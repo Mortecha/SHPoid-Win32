@@ -1,3 +1,5 @@
+#define MENU_ID_MAIN                             999
+
 // defines for the top level menu FILE
 #define MENU_FILE_ID_NEW                        1000
 #define MENU_FILE_ID_OPEN                       1050
@@ -107,6 +109,7 @@
 #define MENU_VIEW_ID_ZOOM_OUT                   6100
 #define MENU_VIEW_ID_PREVIEW                    6200
 #define MENU_VIEW_ID_SHOW_CENTER                6300
+#define MENU_VIEW_ID_SHOW_GRID                  6400
 
 // defines for the top level menu OPTIONS
 #define MENU_OPTIONS_ID_PREFERENCES             7000
@@ -117,9 +120,11 @@
 #define MENU_HELP_ID_ABOUT                      8100
 
 // defines for main toolbar
+//#define TOOLBAR_ID_MAIN                         8999
 #define TOOLBAR_ID_NEW                          9000
 #define TOOLBAR_ID_OPEN                         9100
 #define TOOLBAR_ID_SAVE                         9200
+
 #define TOOLBAR_ID_CROSSHAIR                    9300
 #define TOOLBAR_ID_GRID                         9400
 #define TOOLBAR_ID_PREVIOUS_FRAME               9500

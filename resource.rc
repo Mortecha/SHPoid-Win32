@@ -1,6 +1,6 @@
 #include "resource.h"
 
-MainMenu MENU DISCARDABLE
+MENU_ID_MAIN MENU DISCARDABLE
 {
     POPUP "&File"
     {
@@ -206,6 +206,7 @@ MainMenu MENU DISCARDABLE
         MENUITEM SEPARATOR
         MENUITEM "Preview", MENU_VIEW_ID_PREVIEW
         MENUITEM "Show Center", MENU_VIEW_ID_SHOW_CENTER
+        MENUITEM "Show Grid", MENU_VIEW_ID_SHOW_GRID
     }
 
     POPUP "&Options"
@@ -221,27 +222,30 @@ MainMenu MENU DISCARDABLE
     }
 }
 
-//TOOLBAR_ID_NEW                  ICON        ".ico"
-//TOOLBAR_ID_OPEN                 ICON        ".ico"
-//TOOLBAR_ID_SAVE                 ICON        ".ico"
-//TOOLBAR_ID_CROSSHAIR            ICON        ".ico"
-//TOOLBAR_ID_GRID                 ICON        ".ico"
-//TOOLBAR_ID_PREVIOUS_FRAME       ICON        ".ico"
-//TOOLBAR_ID_NEXT_FRAME           ICON        ".ico"
+//TOOLBAR_ID_MAIN                 BITMAP          "standardDetailed.bmp"
+//
+TOOLBAR_ID_NEW                  ICON          "rc\\newFile.ico"
+TOOLBAR_ID_OPEN                 ICON          "rc\\openFile.ico"
+TOOLBAR_ID_SAVE                 ICON          "rc\\saveFile.ico"
+TOOLBAR_ID_CROSSHAIR            ICON          "rc\\crosshair.ico"
+TOOLBAR_ID_GRID                 ICON          "rc\\grid.ico"
+TOOLBAR_ID_PREVIOUS_FRAME       ICON          "rc\\prevFrame.ico"
+TOOLBAR_ID_NEXT_FRAME           ICON          "rc\\nextFrame.ico"
+
 
 // this is an alternative way to set up button resources
-MainToolbar TOOLBAR DISCARDABLE 16, 16
-{
-    BUTTON TOOLBAR_ID_NEW
-    BUTTON TOOLBAR_ID_OPEN
-    BUTTON TOOLBAR_ID_SAVE
-    SEPARATOR
-    BUTTON TOOLBAR_ID_CROSSHAIR
-    BUTTON TOOLBAR_ID_GRID
-    SEPARATOR
-    BUTTON TOOLBAR_ID_PREVIOUS_FRAME
-    BUTTON TOOLBAR_ID_NEXT_FRAME
-}
+//IDR_MAIN_MENU TOOLBAR DISCARDABLE 16, 16
+//{
+//    BUTTON TOOLBAR_ID_NEW
+//    BUTTON TOOLBAR_ID_OPEN
+//    BUTTON TOOLBAR_ID_SAVE
+//    SEPARATOR
+//    BUTTON TOOLBAR_ID_CROSSHAIR
+//    BUTTON TOOLBAR_ID_GRID
+//    SEPARATOR
+//    BUTTON TOOLBAR_ID_PREVIOUS_FRAME
+//    BUTTON TOOLBAR_ID_NEXT_FRAME
+//}
 
 
 
