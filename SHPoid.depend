@@ -1,13 +1,6 @@
 # depslib dependency file v1.0
-1421184734 source:c:\users\admin\dropbox\applications\shpoid\main.cpp
-	<windows.h>
-	<windowsx.h>
-	<stdio.h>
-	<stdlib.h>
-	<math.h>
-	<vector>
-	<commctrl.h>
-	"resource.h"
+1421244489 source:c:\users\admin\dropbox\applications\shpoid\main.cpp
+	"SHPoid.h"
 
 1420829949 c:\users\admin\dropbox\applications\shpoid\resources.h
 
@@ -23,4 +16,30 @@
 	"Toolbar.h"
 
 1421150208 c:\users\admin\dropbox\applications\shpoid\include\toolbar.h
+
+1421169361 c:\users\admin\dropbox\applications\shpoid\include\resource.h
+
+1421244992 c:\users\admin\dropbox\applications\shpoid\include\shpoid.h
+	"BaseWindow.h"
+
+1421240115 c:\users\admin\dropbox\applications\shpoid\include\shpoidproc.h
+
+1421244226 c:\users\admin\dropbox\applications\shpoid\include\basewindow.h
+	<windows.h>
+	<windowsx.h>
+
+1421244617 source:c:\users\admin\dropbox\applications\shpoid\src\shpoid.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"resource.h"
+	"BaseWindow.h"
+	"SHPoid.h"
+
+1421240125 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
+	<windows.h>
+	<windowsx.h>
+	"resource.h"
+	"SHPoid.h"
+	"SHPoidProc.h"
 
