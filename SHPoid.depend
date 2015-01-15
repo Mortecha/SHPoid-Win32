@@ -38,7 +38,7 @@
 	"BaseWindow.h"
 	"SHPoid.h"
 
-1421346178 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
+1421351241 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
@@ -50,10 +50,9 @@
 	<windowsx.h>
 	"SHPoidProc.h"
 
-1421340724 c:\users\admin\dropbox\applications\shpoid\include\shpoidbasewindow.h
+1421350530 c:\users\admin\dropbox\applications\shpoid\include\shpoidbasewindow.h
 	<windows.h>
 	<windowsx.h>
-	<Resource.h>
 
 1421328535 source:c:\users\admin\dropbox\applications\shpoid\src\fileproc.cpp
 	"FileProc.h"
@@ -73,7 +72,7 @@
 	<windows.h>
 	<windowsx.h>
 
-1421349702 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
+1421351373 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
 	<commctrl.h>
 
 1421349481 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp

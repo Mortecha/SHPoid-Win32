@@ -14,8 +14,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR pCmdLine, int nCmdShow)
 
     ShowWindow(proc.Window(), nCmdShow);
 
-    // Run the message loop.
-
     MSG msg = { };
     while (GetMessage(&msg, NULL, 0, 0))
     {

@@ -4,8 +4,6 @@
 #include <windows.h>
 #include <windowsx.h>
 
-#include <Resource.h>
-
 template <class DERIVED_TYPE>
 class SHPoidBaseWindow
 {

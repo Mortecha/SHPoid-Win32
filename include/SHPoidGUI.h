@@ -18,8 +18,8 @@ class SHPoidGUI
     private:
         HWND m_hMainToolbar;
 
-        void AddMainMenuButtons(HWND hWndToolbar, HINSTANCE hInstance);
-        void CreateMainToolbar(HWND hwnd, HINSTANCE hInstance);
+        void AddButtons(HWND hWndToolbar, HINSTANCE hInstance);
+        void CreateToolbar(HWND hwnd, HINSTANCE hInstance);
 };
 
 #endif // SHPOIDGUI_H
