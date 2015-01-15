@@ -131,3 +131,6 @@
 #define TOOLBAR_ID_NEXT_FRAME                   9600
 #define TOOLBAR_ID_ZOOM_IN                      9700
 #define TOOLBAR_ID_ZOOM_OUT                     9800
+
+#define IDD_MENU_FILE_NEWDIALOG                 10000
+#define IDD_NEWFILE                             10001

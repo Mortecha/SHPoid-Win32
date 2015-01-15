@@ -7,8 +7,8 @@
 1420822625 source:c:\users\admin\dropbox\applications\shpoid\resources.rc
 	"resources.h"
 
-1421169315 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
-	"resource.h"
+1421260723 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
+	"include\Resource.h"
 
 1421169361 c:\users\admin\dropbox\applications\shpoid\resource.h
 
@@ -17,12 +17,14 @@
 
 1421150208 c:\users\admin\dropbox\applications\shpoid\include\toolbar.h
 
-1421169361 c:\users\admin\dropbox\applications\shpoid\include\resource.h
+1421259657 c:\users\admin\dropbox\applications\shpoid\include\resource.h
 
 1421244992 c:\users\admin\dropbox\applications\shpoid\include\shpoid.h
 	"BaseWindow.h"
 
-1421240115 c:\users\admin\dropbox\applications\shpoid\include\shpoidproc.h
+1421347763 c:\users\admin\dropbox\applications\shpoid\include\shpoidproc.h
+	"SHPoidBaseWindow.h"
+	"SHPoidGUI.h"
 
 1421244226 c:\users\admin\dropbox\applications\shpoid\include\basewindow.h
 	<windows.h>
@@ -36,10 +38,48 @@
 	"BaseWindow.h"
 	"SHPoid.h"
 
-1421240125 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
+1421346178 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
 	<windows.h>
 	<windowsx.h>
-	"resource.h"
-	"SHPoid.h"
+	<commctrl.h>
 	"SHPoidProc.h"
+	"Resource.h"
+
+1421341214 source:c:\users\admin\dropbox\applications\shpoid\shpoid.cpp
+	<windows.h>
+	<windowsx.h>
+	"SHPoidProc.h"
+
+1421340724 c:\users\admin\dropbox\applications\shpoid\include\shpoidbasewindow.h
+	<windows.h>
+	<windowsx.h>
+	<Resource.h>
+
+1421328535 source:c:\users\admin\dropbox\applications\shpoid\src\fileproc.cpp
+	"FileProc.h"
+
+1421328535 c:\users\admin\dropbox\applications\shpoid\include\fileproc.h
+
+1421339323 c:\users\admin\dropbox\applications\shpoid\include\bangproc.h
+	"Base.h"
+
+1421338800 source:c:\users\admin\dropbox\applications\shpoid\src\bangproc.cpp
+	<windows.h>
+	<windowsx.h>
+	"BangProc.h"
+	"Resource.h"
+
+1421339013 c:\users\admin\dropbox\applications\shpoid\include\base.h
+	<windows.h>
+	<windowsx.h>
+
+1421349702 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
+	<commctrl.h>
+
+1421349481 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"SHPoidGUI.h"
+	"Resource.h"
 

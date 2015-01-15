@@ -4,6 +4,8 @@
 #include <windows.h>
 #include <windowsx.h>
 
+#include <Resource.h>
+
 template <class DERIVED_TYPE>
 class SHPoidBaseWindow
 {
@@ -43,7 +45,7 @@ public:
                 int y = CW_USEDEFAULT,
                 int nWidth = CW_USEDEFAULT,
                 int nHeight = CW_USEDEFAULT,
-                HWND hWndParent = 0,
+                HWND hWndParent = HWND_DESKTOP,
                 HMENU hMenu = 0)
     {
         WNDCLASS wc = {0};
