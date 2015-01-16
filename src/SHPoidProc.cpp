@@ -2,8 +2,9 @@
 #include <windowsx.h>
 #include <commctrl.h>
 
-#include "SHPoidProc.h"
-#include "Resource.h"
+#include "shpoidproc.h"
+#include "fileproc.h"
+#include "resource.h"
 
 BOOL SHPoidProc::OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct)
 {
@@ -33,39 +34,33 @@ void SHPoidProc::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code)
     switch(id)
     {
         // messages from file
-        case MENU_FILE_ID_NEW:break;
-        case MENU_FILE_ID_OPEN: break;
-        case MENU_FILE_ID_OPEN_RECENT: break;
-        case MENU_FILE_ID_CLOSE: break;
-        case MENU_FILE_ID_CLOSE_ALL: break;
-        case MENU_FILE_ID_SAVE: break;
-        case MENU_FILE_ID_SAVE_AS: break;
-        case MENU_FILE_ID_SAVE_ALL: break;
-        case MENU_FILE_ID_BATCH_CONVERT: break;
-        case MENU_FILE_ID_IMPORT_IMAGE_TO_SHP: break;
-        case MENU_FILE_ID_EXPORT_FRAME_TO_IMAGE: break;
-        case MENU_FILE_ID_EXPORT_FRAMES_TO_IMAGES: break;
-        case MENU_FILE_ID_EXPORT_SHP_TO_IMAGES: break;
-        case MENU_FILE_ID_EXPORT_SHP_TO_SPRITESHEET: break;
-
-        case MENU_FILE_ID_EXIT:
-            PostMessage(m_hwnd, WM_CLOSE, 0, 0);
-            break;
+        case MENU_FILE_ID_NEW:              m_FileProc.New(); break;
+        case MENU_FILE_ID_OPEN:             m_FileProc.Open(); break;
+        case MENU_FILE_ID_OPEN_RECENT:      break;
+        case MENU_FILE_ID_CLOSE:            m_FileProc.Close(); break;
+        case MENU_FILE_ID_CLOSE_ALL:        break;
+        case MENU_FILE_ID_SAVE:             m_FileProc.Save(); break;
+        case MENU_FILE_ID_SAVE_AS:          m_FileProc.SaveAs(); break;
+        case MENU_FILE_ID_SAVE_ALL:         m_FileProc.SaveAll(); break;
+        case MENU_FILE_ID_BATCH_CONVERT:    break;
+        case MENU_FILE_ID_IMPORT:           m_FileProc.Import(); break;
+        case MENU_FILE_ID_EXPORT:           m_FileProc.Export(); break;
+        case MENU_FILE_ID_EXIT:             m_FileProc.Exit(hwnd); break;
 
         // messages from edit
-        case MENU_EDIT_ID_UNDO: break;
-        case MENU_EDIT_ID_REDO: break;
-        case MENU_EDIT_ID_CUT: break;
-        case MENU_EDIT_ID_COPY: break;
-        case MENU_EDIT_ID_PASTE: break;
-        case MENU_EDIT_ID_CLEAR: break;
-        case MENU_EDIT_ID_SHP_SIZE: break;
-        case MENU_EDIT_ID_CANVAS_SIZE: break;
-        case MENU_EDIT_ID_SHP_ROTATION_180: break;
-        case MENU_EDIT_ID_SHP_ROTATION_90CW: break;
-        case MENU_EDIT_ID_SHP_ROTATION_90CCW: break;
-        case MENU_EDIT_ID_SHP_ROTATION_ARBITRARY: break;
-        case MENU_EDIT_ID_TRANSFORM: break;
+        case MENU_EDIT_ID_UNDO:             m_EditProc.Undo(); break;
+        case MENU_EDIT_ID_REDO:             m_EditProc.Redo(); break;
+        case MENU_EDIT_ID_CUT:              m_EditProc.Cut(); break;
+        case MENU_EDIT_ID_COPY:             m_EditProc.Copy(); break;
+        case MENU_EDIT_ID_PASTE:            m_EditProc.Paste(); break;
+        case MENU_EDIT_ID_CLEAR:            m_EditProc.Clear(); break;
+        case MENU_EDIT_ID_SHP_SIZE:         m_EditProc.ResizeShp(); break;
+        case MENU_EDIT_ID_CANVAS_SIZE:      m_EditProc.ResizeCanvas(); break;
+        case MENU_EDIT_ID_SHP_ROT_180:      m_EditProc.Rot180(); break;
+        case MENU_EDIT_ID_SHP_ROT_90CW:     m_EditProc.Rot90CW(); break;
+        case MENU_EDIT_ID_SHP_ROT_90CCW:    m_EditProc.Rot90CCW(); break;
+        case MENU_EDIT_ID_SHP_ROT_ARB:      m_EditProc.RotArb(); break;
+        case MENU_EDIT_ID_TRANSFORM:        m_EditProc.Transform(); break;
 
         // messages from shp
         case MENU_SHP_ID_TYPE: break;
@@ -170,7 +165,7 @@ void SHPoidProc::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code)
 
 void SHPoidProc::OnClose(HWND hwnd)
 {
-    int msgBoxID = MessageBox(m_hwnd,
+    int msgBoxID = MessageBox(hwnd,
     (LPSTR)"Save changes to the SHPoid document DOCUMENT_NAME_HERE before quitting?",
     (LPSTR)"SHPoid", MB_YESNOCANCEL);
 
@@ -178,20 +173,20 @@ void SHPoidProc::OnClose(HWND hwnd)
     {
     case IDYES:
         {
-            SendMessage(m_hwnd, MENU_FILE_ID_SAVE_AS, 0, 0);
+            SendMessage(hwnd, MENU_FILE_ID_SAVE_AS, 0, 0);
             break;
         }
 
     case IDNO:
         {
-            DestroyWindow(m_hwnd);
+            DestroyWindow(hwnd);
         }
     }
 }
 
 void SHPoidProc::OnDestroy(HWND hwnd)
 {
-    PostMessage(m_hwnd, WM_QUIT, 0, 0);
+    PostMessage(hwnd, WM_QUIT, 0, 0);
 }
 
 LRESULT SHPoidProc::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)

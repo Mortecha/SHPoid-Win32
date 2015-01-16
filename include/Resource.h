@@ -10,11 +10,13 @@
 #define MENU_FILE_ID_SAVE_AS                    1300
 #define MENU_FILE_ID_SAVE_ALL                   1350
 #define MENU_FILE_ID_BATCH_CONVERT              1400
-#define MENU_FILE_ID_IMPORT_IMAGE_TO_SHP        1450
-#define MENU_FILE_ID_EXPORT_FRAME_TO_IMAGE      1500
-#define MENU_FILE_ID_EXPORT_FRAMES_TO_IMAGES    1501
-#define MENU_FILE_ID_EXPORT_SHP_TO_IMAGES       1502
-#define MENU_FILE_ID_EXPORT_SHP_TO_SPRITESHEET  1503
+//#define MENU_FILE_ID_IMPORT_IMAGE_TO_SHP        1450
+#define MENU_FILE_ID_IMPORT                     1450
+#define MENU_FILE_ID_EXPORT                     1500
+//#define MENU_FILE_ID_EXPORT_FRAME_TO_IMAGE      1500
+//#define MENU_FILE_ID_EXPORT_FRAMES_TO_IMAGES    1501
+//#define MENU_FILE_ID_EXPORT_SHP_TO_IMAGES       1502
+//#define MENU_FILE_ID_EXPORT_SHP_TO_SPRITESHEET  1503
 #define MENU_FILE_ID_EXIT                       1550
 
 // defines for the top level menu EDIT
@@ -26,10 +28,10 @@
 #define MENU_EDIT_ID_CLEAR                      2250
 #define MENU_EDIT_ID_SHP_SIZE                   2300
 #define MENU_EDIT_ID_CANVAS_SIZE                2350
-#define MENU_EDIT_ID_SHP_ROTATION_180           2400
-#define MENU_EDIT_ID_SHP_ROTATION_90CW          2420
-#define MENU_EDIT_ID_SHP_ROTATION_90CCW         2440
-#define MENU_EDIT_ID_SHP_ROTATION_ARBITRARY     2460
+#define MENU_EDIT_ID_SHP_ROT_180                2400
+#define MENU_EDIT_ID_SHP_ROT_90CW               2420
+#define MENU_EDIT_ID_SHP_ROT_90CCW              2440
+#define MENU_EDIT_ID_SHP_ROT_ARB                2460
 #define MENU_EDIT_ID_TRANSFORM                  2480
 
 // defines for the top level menu SHP

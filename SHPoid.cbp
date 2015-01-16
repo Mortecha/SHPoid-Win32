@@ -39,11 +39,20 @@
 			<Add library="kernel32" />
 			<Add library="comctl32" />
 		</Linker>
-		<Unit filename="main.cpp" />
-		<Unit filename="resource.h" />
-		<Unit filename="resource.rc">
+		<Unit filename="Resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="SHPoid.cpp" />
+		<Unit filename="include/FileProc.h" />
+		<Unit filename="include/Resource.h" />
+		<Unit filename="include/SHPoidBaseWindow.h" />
+		<Unit filename="include/SHPoidGUI.h" />
+		<Unit filename="include/SHPoidProc.h" />
+		<Unit filename="include/editproc.h" />
+		<Unit filename="src/FileProc.cpp" />
+		<Unit filename="src/SHPoidGUI.cpp" />
+		<Unit filename="src/SHPoidProc.cpp" />
+		<Unit filename="src/editproc.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

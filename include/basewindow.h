@@ -5,7 +5,7 @@
 #include <windowsx.h>
 
 template <class DERIVED_TYPE>
-class SHPoidBaseWindow
+class BaseWindow
 {
 public:
     static LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -34,7 +34,7 @@ public:
         }
     }
 
-    SHPoidBaseWindow() : m_hwnd(NULL) { }
+    BaseWindow() : m_hwnd(NULL) { }
 
     BOOL Create(LPSTR lpWindowName,
                 DWORD dwStyle,

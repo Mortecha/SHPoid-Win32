@@ -4,8 +4,8 @@
 #include <windowsx.h>
 #include <commctrl.h>
 
-#include "SHPoidGUI.h"
-#include "Resource.h"
+#include "shpoidgui.h"
+#include "resource.h"
 
 SHPoidGUI::SHPoidGUI()
 {

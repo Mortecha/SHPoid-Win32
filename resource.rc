@@ -1,4 +1,4 @@
-#include "include\Resource.h"
+#include "include\resource.h"
 
 MENU_ID_MAIN MENU DISCARDABLE
 {
@@ -22,23 +22,25 @@ MENU_ID_MAIN MENU DISCARDABLE
         // the modal will have functionality to browse for a specific file
         // and also determine how best to proceed based upon the format of
         // the specific file in question
-        POPUP "Import"
-        {
-            MENUITEM "Image -> SHP", MENU_FILE_ID_IMPORT_IMAGE_TO_SHP
-        }
+        MENUITEM "Import", MENU_FILE_ID_IMPORT
+//        POPUP "Import"
+//        {
+//            MENUITEM "Image -> SHP", MENU_FILE_ID_IMPORT_IMAGE_TO_SHP
+//        }
 
         // "Export" will revert back to a MENUITEM at a later stage
         // and current menu items will be contained within it
         // the modal will have functionality to browse for a specific location
         // to export too and also determine how best to proceed based upon a specific option
         // selected by the user
-        POPUP "Export"
-        {
-            MENUITEM "Frame -> Image", MENU_FILE_ID_EXPORT_FRAME_TO_IMAGE
-            MENUITEM "Frames -> Images", MENU_FILE_ID_EXPORT_FRAMES_TO_IMAGES
-            MENUITEM "SHP -> Images", MENU_FILE_ID_EXPORT_SHP_TO_IMAGES
-            MENUITEM "SHP -> Sprite Sheet", MENU_FILE_ID_EXPORT_SHP_TO_SPRITESHEET
-        }
+        MENUITEM "Export", MENU_FILE_ID_EXPORT
+//        POPUP "Export"
+//        {
+//            MENUITEM "Frame -> Image", MENU_FILE_ID_EXPORT_FRAME_TO_IMAGE
+//            MENUITEM "Frames -> Images", MENU_FILE_ID_EXPORT_FRAMES_TO_IMAGES
+//            MENUITEM "SHP -> Images", MENU_FILE_ID_EXPORT_SHP_TO_IMAGES
+//            MENUITEM "SHP -> Sprite Sheet", MENU_FILE_ID_EXPORT_SHP_TO_SPRITESHEET
+//        }
 
         MENUITEM SEPARATOR
         MENUITEM "Exit", MENU_FILE_ID_EXIT
@@ -57,12 +59,12 @@ MENU_ID_MAIN MENU DISCARDABLE
         MENUITEM "SHP Size",MENU_EDIT_ID_SHP_SIZE
         MENUITEM "Canvas Size",MENU_EDIT_ID_CANVAS_SIZE
 
-        POPUP "SHP Rotation"
+        POPUP "Rotate"
         {
-            MENUITEM "180°" ,MENU_EDIT_ID_SHP_ROTATION_180
-            MENUITEM "90° CW" ,MENU_EDIT_ID_SHP_ROTATION_90CW
-            MENUITEM "90° CCW" ,MENU_EDIT_ID_SHP_ROTATION_90CCW
-            MENUITEM "Arbitrary",MENU_EDIT_ID_SHP_ROTATION_ARBITRARY
+            MENUITEM "180°" ,MENU_EDIT_ID_SHP_ROT_180
+            MENUITEM "90° CW" ,MENU_EDIT_ID_SHP_ROT_90CW
+            MENUITEM "90° CCW" ,MENU_EDIT_ID_SHP_ROT_90CCW
+            MENUITEM "Arbitrary",MENU_EDIT_ID_SHP_ROT_ARB
         }
 
         MENUITEM SEPARATOR

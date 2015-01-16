@@ -1,10 +1,12 @@
 #ifndef SHPOIDPROC_H
 #define SHPOIDPROC_H
 
-#include "SHPoidBaseWindow.h"
-#include "SHPoidGUI.h"
+#include "basewindow.h"
+#include "shpoidgui.h"
+#include "fileproc.h"
+#include "editproc.h"
 
-class SHPoidProc : public SHPoidBaseWindow<SHPoidProc>
+class SHPoidProc : public BaseWindow<SHPoidProc>
 {
 public:
     LPSTR ClassName() const { return (LPSTR)"SHPoidClass"; }
@@ -18,6 +20,8 @@ public:
 
 private:
     SHPoidGUI m_SHPoidGUI;
+    FileProc m_FileProc;
+    EditProc m_EditProc;
 };
 
 #endif // SHPOIDPROC_H
