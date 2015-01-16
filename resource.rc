@@ -224,8 +224,6 @@ MENU_ID_MAIN MENU DISCARDABLE
     }
 }
 
-//TOOLBAR_ID_MAIN                 BITMAP          "standardDetailed.bmp"
-//
 TOOLBAR_ID_NEW                  ICON          "rc\\newFile.ico"
 TOOLBAR_ID_OPEN                 ICON          "rc\\openFile.ico"
 TOOLBAR_ID_SAVE                 ICON          "rc\\saveFile.ico"
@@ -235,21 +233,6 @@ TOOLBAR_ID_PREVIOUS_FRAME       ICON          "rc\\prevFrame.ico"
 TOOLBAR_ID_NEXT_FRAME           ICON          "rc\\nextFrame.ico"
 TOOLBAR_ID_ZOOM_IN              ICON          "rc\\zoomIn.ico"
 TOOLBAR_ID_ZOOM_OUT             ICON          "rc\\zoomOut.ico"
-
-
-// this is an alternative way to set up button resources
-//IDR_MAIN_MENU TOOLBAR DISCARDABLE 16, 16
-//{
-//    BUTTON TOOLBAR_ID_NEW
-//    BUTTON TOOLBAR_ID_OPEN
-//    BUTTON TOOLBAR_ID_SAVE
-//    SEPARATOR
-//    BUTTON TOOLBAR_ID_CROSSHAIR
-//    BUTTON TOOLBAR_ID_GRID
-//    SEPARATOR
-//    BUTTON TOOLBAR_ID_PREVIOUS_FRAME
-//    BUTTON TOOLBAR_ID_NEXT_FRAME
-//}
 
 
 

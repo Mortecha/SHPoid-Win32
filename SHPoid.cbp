@@ -39,25 +39,24 @@
 			<Add library="kernel32" />
 			<Add library="comctl32" />
 		</Linker>
-		<Unit filename="Resource.rc">
+		<Unit filename="include/basewindow.h" />
+		<Unit filename="include/editproc.h" />
+		<Unit filename="include/fileproc.h" />
+		<Unit filename="include/resource.h" />
+		<Unit filename="include/shpoidgui.h" />
+		<Unit filename="include/shpoidproc.h" />
+		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
-		<Unit filename="SHPoid.cpp" />
-		<Unit filename="include/FileProc.h" />
-		<Unit filename="include/Resource.h" />
-		<Unit filename="include/SHPoidBaseWindow.h" />
-		<Unit filename="include/SHPoidGUI.h" />
-		<Unit filename="include/SHPoidProc.h" />
-		<Unit filename="include/editproc.h" />
-		<Unit filename="src/FileProc.cpp" />
-		<Unit filename="src/SHPoidGUI.cpp" />
-		<Unit filename="src/SHPoidProc.cpp" />
+		<Unit filename="shpoid.cpp" />
 		<Unit filename="src/editproc.cpp" />
+		<Unit filename="src/fileproc.cpp" />
+		<Unit filename="src/shpoidgui.cpp" />
+		<Unit filename="src/shpoidproc.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
-			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

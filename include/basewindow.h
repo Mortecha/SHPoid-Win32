@@ -79,3 +79,4 @@ protected:
 };
 
 #endif // SHPOIDBASEWINDOW_H
+
