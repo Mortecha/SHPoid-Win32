@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1421413968 source:c:\users\admin\dropbox\applications\shpoid\shpoid.cpp
+	<windows.h>
+	<windowsx.h>
+	"shpoidproc.h"
+
+1421422832 c:\users\admin\dropbox\applications\shpoid\include\shpoidproc.h
+	"base/basewindow.h"
+	"shpoidgui.h"
+	"processors/fileproc.h"
+	"processors/editproc.h"
+	"processors/shpproc.h"
+	"processors/filterproc.h"
+	"processors/viewproc.h"
+	"processors/optionsproc.h"
+	"processors/helpproc.h"
+
+1421413955 c:\users\admin\dropbox\applications\shpoid\include\basewindow.h
+	<windows.h>
+	<windowsx.h>
+
+1421414017 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
+	<commctrl.h>
+
+1421421194 c:\users\admin\dropbox\applications\shpoid\include\fileproc.h
+	<windows.h>
+	<windowsx.h>
+
+1421413985 c:\users\admin\dropbox\applications\shpoid\include\editproc.h
+
+1421413884 source:c:\users\admin\dropbox\applications\shpoid\src\editproc.cpp
+	"editproc.h"
+
+1421413915 source:c:\users\admin\dropbox\applications\shpoid\src\fileproc.cpp
+	"fileproc.h"
+
+1421413930 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"shpoidgui.h"
+	"resource.h"
+
+1421420924 c:\users\admin\dropbox\applications\shpoid\include\resource.h
+
+1421421008 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
+	"include\resource.h"
+
+1421413955 c:\users\admin\dropbox\applications\shpoid\include\base\basewindow.h
+	<windows.h>
+	<windowsx.h>
+
+1421423560 c:\users\admin\dropbox\applications\shpoid\include\processors\fileproc.h
+	<windows.h>
+	<windowsx.h>
+
+1421413985 c:\users\admin\dropbox\applications\shpoid\include\processors\editproc.h
+
+1421426858 c:\users\admin\dropbox\applications\shpoid\include\processors\shpproc.h
+
+1421425954 c:\users\admin\dropbox\applications\shpoid\include\processors\filterproc.h
+
+1421426392 c:\users\admin\dropbox\applications\shpoid\include\processors\viewproc.h
+
+1421426448 c:\users\admin\dropbox\applications\shpoid\include\processors\optionsproc.h
+
+1421426664 c:\users\admin\dropbox\applications\shpoid\include\processors\helpproc.h
+
+1421422579 source:c:\users\admin\dropbox\applications\shpoid\src\processors\editproc.cpp
+	"processors/editproc.h"
+

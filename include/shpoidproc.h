@@ -1,10 +1,15 @@
 #ifndef SHPOIDPROC_H
 #define SHPOIDPROC_H
 
-#include "basewindow.h"
+#include "base/basewindow.h"
 #include "shpoidgui.h"
-#include "fileproc.h"
-#include "editproc.h"
+#include "processors/fileproc.h"
+#include "processors/editproc.h"
+#include "processors/shpproc.h"
+#include "processors/filterproc.h"
+#include "processors/viewproc.h"
+#include "processors/optionsproc.h"
+#include "processors/helpproc.h"
 
 class SHPoidProc : public BaseWindow<SHPoidProc>
 {
@@ -22,6 +27,11 @@ private:
     SHPoidGUI m_SHPoidGUI;
     FileProc m_FileProc;
     EditProc m_EditProc;
+    ShpProc m_ShpProc;
+    FilterProc m_FilterProc;
+    ViewProc m_ViewProc;
+    OptionsProc m_OptionsProc;
+    HelpProc m_HelpProc;
 };
 
 #endif // SHPOIDPROC_H

@@ -11,9 +11,12 @@ class FileProc
         virtual ~FileProc();
         void New();
         void Open();
+        void OpenRecent();
         void Close();
+        void CloseAll();
         void Save();
         void SaveAs();
+        void Batch();
         void SaveAll();
         void Import();
         void Export();

@@ -1,4 +1,4 @@
-#include "editproc.h"
+#include "processors/editproc.h"
 
 EditProc::EditProc()
 {
