@@ -1,25 +1,25 @@
-#ifndef ABOUTDIALOG_H
-#define ABOUTDIALOG_H
+#ifndef EXPORTDIALOG_H
+#define EXPORTDIALOG_H
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <tchar.h>
 #include "resource.h"
 
-class AboutDialog
+class ExportDialog
 {
 public:
-    static INT_PTR CALLBACK AboutDialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+    static INT_PTR CALLBACK ExportDialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
-        AboutDialog *pThis = reinterpret_cast<AboutDialog*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+        ExportDialog *pThis = reinterpret_cast<ExportDialog*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
 
         if (!pThis)
         {
             if (uMsg == WM_INITDIALOG)
             {
-                pThis = reinterpret_cast<AboutDialog*>(lParam);
+                pThis = reinterpret_cast<ExportDialog*>(lParam);
                 pThis->m_hwnd = hwnd;
-                SetWindowLongPtr(hwnd,GWLP_USERDATA,lParam);
+                SetWindowLongPtr(hwnd, GWLP_USERDATA, lParam);
             }
             else
             {
@@ -35,7 +35,7 @@ public:
         return DialogBoxParam(GetModuleHandle(0),
                               MAKEINTRESOURCE(id),
                               hParent,
-                              AboutDialogProc,
+                              ExportDialogProc,
                               reinterpret_cast<LPARAM>(this));
     }
 
@@ -46,7 +46,7 @@ public:
         {
             if (LOWORD(wp) == IDOK || LOWORD(wp) == IDCANCEL)
             {
-                EndDialog(m_hwnd,LOWORD(wp));
+                EndDialog(m_hwnd, LOWORD(wp));
                 return 1;
             }
         }
@@ -57,4 +57,4 @@ protected:
     HWND m_hwnd;
 };
 
-#endif // ABOUTDIALOG_H
+#endif // EXPORTDIALOG_H

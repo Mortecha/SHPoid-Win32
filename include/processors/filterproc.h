@@ -8,6 +8,7 @@ class FilterProc
         FilterProc();
         virtual ~FilterProc();
         void EditSettings();
+        void ChangeColourScheme();
         void SmoothConservative();
         void SmoothPolyMean();
         void SmoothMeanMin();

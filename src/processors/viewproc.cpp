@@ -1,4 +1,5 @@
 #include "processors/viewproc.h"
+#include "dialogboxes/previewdialog.h"
 
 ViewProc::ViewProc()
 {
@@ -22,7 +23,8 @@ void ViewProc::ZoomOut()
 
 void ViewProc::Preview()
 {
-
+    PreviewDialog previewDialog;
+    previewDialog.Create(IDD_PREVIEW);
 }
 
 void ViewProc::ShowCenter()

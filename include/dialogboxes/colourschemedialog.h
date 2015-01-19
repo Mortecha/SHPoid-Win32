@@ -1,23 +1,23 @@
-#ifndef ABOUTDIALOG_H
-#define ABOUTDIALOG_H
+#ifndef COLOURSCHEMEDIALOG_H
+#define COLOURSCHEMEDIALOG_H
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <tchar.h>
 #include "resource.h"
 
-class AboutDialog
+class ColourSchemeDialog
 {
 public:
-    static INT_PTR CALLBACK AboutDialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+    static INT_PTR CALLBACK ColourSchemeDialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
-        AboutDialog *pThis = reinterpret_cast<AboutDialog*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+        ColourSchemeDialog *pThis = reinterpret_cast<ColourSchemeDialog*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
 
         if (!pThis)
         {
             if (uMsg == WM_INITDIALOG)
             {
-                pThis = reinterpret_cast<AboutDialog*>(lParam);
+                pThis = reinterpret_cast<ColourSchemeDialog*>(lParam);
                 pThis->m_hwnd = hwnd;
                 SetWindowLongPtr(hwnd,GWLP_USERDATA,lParam);
             }
@@ -35,7 +35,7 @@ public:
         return DialogBoxParam(GetModuleHandle(0),
                               MAKEINTRESOURCE(id),
                               hParent,
-                              AboutDialogProc,
+                              ColourSchemeDialogProc,
                               reinterpret_cast<LPARAM>(this));
     }
 
@@ -57,4 +57,4 @@ protected:
     HWND m_hwnd;
 };
 
-#endif // ABOUTDIALOG_H
+#endif // COLOURSCHEMEDIALOG_H

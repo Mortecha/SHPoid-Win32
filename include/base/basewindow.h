@@ -18,7 +18,6 @@ public:
             CREATESTRUCT* pCreate = (CREATESTRUCT*)lParam;
             pThis = (DERIVED_TYPE*)pCreate->lpCreateParams;
             SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)pThis);
-
             pThis->m_hwnd = hwnd;
         }
         else

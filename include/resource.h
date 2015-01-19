@@ -42,17 +42,8 @@
 #define MENU_SHP_ID_SPLIT_FRAMES                3150
 
 #define MENU_SHP_ID_PALETTE_LOAD                4000
-#define MENU_SHP_ID_PALETTE_CUSTOM              4050
-#define MENU_SHP_ID_PALETTE_TIBERIAN_DAWN       4100
-#define MENU_SHP_ID_PALETTE_RED_ALERT           4150
-#define MENU_SHP_ID_PALETTE_TIBERIAN_SUN        4200
-#define MENU_SHP_ID_PALETTE_RED_ALERT_2         4250
-#define MENU_SHP_ID_PALETTE_YURI                4300
+#define MENU_SHP_ID_PALETTE_CHANGE              4050
 #define MENU_SHP_ID_PALETTE_UPDATE              4350
-
-#define MENU_SHP_ID_COLOURSCHEME_SETTINGS       4400
-#define MENU_SHP_ID_COLOURSCHEME_APPLY          4450
-#define MENU_SHP_ID_COLOURSCHEME_UPDATE         4500
 
 #define MENU_SHP_ID_SEQUENCE                    4550
 #define MENU_SHP_ID_SHADOWS_AUTO                4600
@@ -62,6 +53,7 @@
 
 // defines for the top level menu FILTER
 #define MENU_FILTER_ID_SETTINGS                 5000
+#define MENU_FILTER_ID_COLOURSCHEME             5010
 
 #define MENU_FILTER_ID_SMOOTH_CONSERVATIVE      5020
 #define MENU_FILTER_ID_SMOOTH_POLYGON_MEAN      5040
@@ -135,3 +127,21 @@
 
 // defines for dialog boxes
 #define IDD_ABOUT                              10000
+#define IDD_BATCH                              10001
+#define IDD_CANVASRESIZE                       10002
+#define IDD_CHANGEPALETTE                      10003
+#define IDD_COLOURSCHEME                       10004
+#define IDD_EDITSEQUENCE                       10005
+#define IDD_EXPORT                             10006
+#define IDD_FILTERSETTINGS                     10007
+#define IDD_GENERATECAMEO                      10008
+#define IDD_IMPORT                             10009
+#define IDD_NEW                                10010
+#define IDD_PREFERENCES                        10011
+#define IDD_PREVIEW                            10012
+#define IDD_REPORTBUG                          10013
+#define IDD_ROTATEARB                          10014
+#define IDD_SHPRESIZE                          10015
+#define IDD_SHPTYPE                            10016
+#define IDD_TRANSFORM                          10017
+#define IDD_UPDATEPALETTE                      10018

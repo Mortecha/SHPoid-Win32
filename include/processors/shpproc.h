@@ -15,12 +15,7 @@ class ShpProc
         void NextFrame();
         void SplitFrames();
         void LoadPalette();
-        void LoadCustomPalette();
-        void LoadTDPalette();
-        void LoadRAPalette();
-        void LoadTSPalette();
-        void LoadRA2Palette();
-        void LoadYuriPalette();
+        void ChangePalette();
         void UpdatePalettes();
         void ChangeColourSchemeSettings();
         void ApplyColourScheme();

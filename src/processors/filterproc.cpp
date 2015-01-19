@@ -1,4 +1,6 @@
 #include "processors/filterproc.h"
+#include "dialogboxes/filtersettingsdialog.h"
+#include "dialogboxes/colourschemedialog.h"
 
 FilterProc::FilterProc()
 {
@@ -12,7 +14,14 @@ FilterProc::~FilterProc()
 
 void FilterProc::EditSettings()
 {
+    FilterSettingsDialog filterSettingsDialog;
+    filterSettingsDialog.Create(IDD_FILTERSETTINGS);
+}
 
+void FilterProc::ChangeColourScheme()
+{
+    ColourSchemeDialog colourSchemeDialog;
+    colourSchemeDialog.Create(IDD_COLOURSCHEME);
 }
 
 void FilterProc::SmoothConservative()

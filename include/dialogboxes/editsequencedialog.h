@@ -1,23 +1,23 @@
-#ifndef ABOUTDIALOG_H
-#define ABOUTDIALOG_H
+#ifndef EDITSEQUENCEDIALOG_H
+#define EDITSEQUENCEDIALOG_H
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <tchar.h>
 #include "resource.h"
 
-class AboutDialog
+class EditSequenceDialog
 {
 public:
-    static INT_PTR CALLBACK AboutDialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+    static INT_PTR CALLBACK EditSequenceDialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
-        AboutDialog *pThis = reinterpret_cast<AboutDialog*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+        EditSequenceDialog *pThis = reinterpret_cast<EditSequenceDialog*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
 
         if (!pThis)
         {
             if (uMsg == WM_INITDIALOG)
             {
-                pThis = reinterpret_cast<AboutDialog*>(lParam);
+                pThis = reinterpret_cast<EditSequenceDialog*>(lParam);
                 pThis->m_hwnd = hwnd;
                 SetWindowLongPtr(hwnd,GWLP_USERDATA,lParam);
             }
@@ -35,7 +35,7 @@ public:
         return DialogBoxParam(GetModuleHandle(0),
                               MAKEINTRESOURCE(id),
                               hParent,
-                              AboutDialogProc,
+                              EditSequenceDialogProc,
                               reinterpret_cast<LPARAM>(this));
     }
 
@@ -57,4 +57,4 @@ protected:
     HWND m_hwnd;
 };
 
-#endif // ABOUTDIALOG_H
+#endif // EDITSEQUENCEDIALOG_H

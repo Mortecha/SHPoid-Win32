@@ -1,4 +1,9 @@
 #include "processors/shpproc.h"
+#include "dialogboxes/shptypedialog.h"
+#include "dialogboxes/changepalettedialog.h"
+#include "dialogboxes/updatepalettedialog.h"
+#include "dialogboxes/editsequencedialog.h"
+#include "dialogboxes/generatecameodialog.h"
 
 ShpProc::ShpProc()
 {
@@ -12,7 +17,8 @@ ShpProc::~ShpProc()
 
 void ShpProc::ChangeType()
 {
-
+    ShpTypeDialog shpTypeDialog;
+    shpTypeDialog.Create(IDD_SHPTYPE);
 }
 
 void ShpProc::AutoselectType()
@@ -50,59 +56,23 @@ void ShpProc::LoadPalette()
 
 }
 
-void ShpProc::LoadCustomPalette()
+
+void ShpProc::ChangePalette()
 {
-
-}
-
-void ShpProc::LoadTDPalette()
-{
-
-}
-
-void ShpProc::LoadRAPalette()
-{
-
-}
-
-void ShpProc::LoadTSPalette()
-{
-
-}
-
-void ShpProc::LoadRA2Palette()
-{
-
-}
-
-void ShpProc::LoadYuriPalette()
-{
-
+    ChangePaletteDialog changePaletteDialog;
+    changePaletteDialog.Create(IDD_CHANGEPALETTE);
 }
 
 void ShpProc::UpdatePalettes()
 {
-
-}
-
-void ShpProc::ChangeColourSchemeSettings()
-{
-
-}
-
-void ShpProc::ApplyColourScheme()
-{
-
-}
-
-void ShpProc::UpdateColourSchemes()
-{
-
+    UpdatePaletteDialog updatePaletteDialog;
+    updatePaletteDialog.Create(IDD_UPDATEPALETTE);
 }
 
 void ShpProc::Sequence()
 {
-
+    EditSequenceDialog editSequenceDialog;
+    editSequenceDialog.Create(IDD_EDITSEQUENCE);
 }
 
 void ShpProc::AutoShadows()
@@ -122,5 +92,6 @@ void ShpProc::FixShadows()
 
 void ShpProc::GenerateCameo()
 {
-
+    GenerateCameoDialog generateCameoDialog;
+    generateCameoDialog.Create(IDD_GENERATECAMEO);
 }

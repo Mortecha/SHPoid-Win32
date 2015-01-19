@@ -69,17 +69,8 @@ void SHPoidProc::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code)
         case MENU_SHP_ID_SPLIT_FRAMES:              m_ShpProc.SplitFrames(); break;
 
         case MENU_SHP_ID_PALETTE_LOAD:              m_ShpProc.LoadPalette(); break;
-        case MENU_SHP_ID_PALETTE_CUSTOM:            m_ShpProc.LoadCustomPalette(); break;
-        case MENU_SHP_ID_PALETTE_TIBERIAN_DAWN:     m_ShpProc.LoadTDPalette(); break;
-        case MENU_SHP_ID_PALETTE_RED_ALERT:         m_ShpProc.LoadRAPalette(); break;
-        case MENU_SHP_ID_PALETTE_TIBERIAN_SUN:      m_ShpProc.LoadTSPalette(); break;
-        case MENU_SHP_ID_PALETTE_RED_ALERT_2:       m_ShpProc.LoadRA2Palette(); break;
-        case MENU_SHP_ID_PALETTE_YURI:              m_ShpProc.LoadYuriPalette(); break;
+        case MENU_SHP_ID_PALETTE_CHANGE:            m_ShpProc.ChangePalette(); break;
         case MENU_SHP_ID_PALETTE_UPDATE:            m_ShpProc.UpdatePalettes(); break;
-
-        case MENU_SHP_ID_COLOURSCHEME_SETTINGS:     m_ShpProc.ChangeColourSchemeSettings(); break;
-        case MENU_SHP_ID_COLOURSCHEME_APPLY:        m_ShpProc.ApplyColourScheme(); break;
-        case MENU_SHP_ID_COLOURSCHEME_UPDATE:       m_ShpProc.UpdateColourSchemes(); break;
 
         case MENU_SHP_ID_SEQUENCE:                  m_ShpProc.Sequence(); break;
         case MENU_SHP_ID_SHADOWS_AUTO:              m_ShpProc.AutoShadows(); break;
@@ -88,6 +79,7 @@ void SHPoidProc::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code)
         case MENU_SHP_ID_GENERATE_CAMEO:            m_ShpProc.GenerateCameo(); break;
 
         case MENU_FILTER_ID_SETTINGS:               m_FilterProc.EditSettings(); break;
+        case MENU_FILTER_ID_COLOURSCHEME:           m_FilterProc.ChangeColourScheme(); break;
 
         // messages from filter->smooth
         case MENU_FILTER_ID_SMOOTH_CONSERVATIVE:    m_FilterProc.SmoothConservative(); break;

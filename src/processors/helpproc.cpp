@@ -1,4 +1,5 @@
 #include "processors/helpproc.h"
+#include "dialogboxes/reportbug.h"
 #include "dialogboxes/aboutdialog.h"
 
 HelpProc::HelpProc()
@@ -18,7 +19,8 @@ void HelpProc::ViewHelp()
 
 void HelpProc::ReportBug()
 {
-
+    ReportBugDialog reportBugDialog;
+    reportBugDialog.Create(IDD_REPORTBUG);
 }
 
 void HelpProc::ViewAbout()
