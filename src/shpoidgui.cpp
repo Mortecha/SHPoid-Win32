@@ -22,11 +22,11 @@ void SHPoidGUI::AddButtons(HWND hToolbar, HINSTANCE hInstance)
     const int       bitmapSize      = 16;
     const DWORD     buttonStyles    = BTNS_AUTOSIZE;
     const int       ImageListID     = 0;
-    const int       numButtons      = 9;
+    const int       numButtons      = 12;
 
         // Create the image list.
     HIMAGELIST imageList = ImageList_Create(bitmapSize, bitmapSize,   // Dimensions of individual bitmaps.
-                                            ILC_COLOR24 | ILC_MASK,   // Ensures transparent background.
+                                            ILC_COLOR32 | ILC_MASK,   // Ensures transparent background.
                                             numButtons, 0);
 
     // Set the image list.
@@ -34,8 +34,6 @@ void SHPoidGUI::AddButtons(HWND hToolbar, HINSTANCE hInstance)
 
     TBBUTTON tbButtons[numButtons] =
     {
-        //{ MAKELONG(0, 0), 0, 0, TBSTYLE_SEP, {0}, 0, 0 }, // Separator
-
         { MAKELONG(ImageList_AddIcon(imageList,
                                      LoadIcon(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_NEW))), ImageListID),
                                      MENU_FILE_ID_NEW,
@@ -85,6 +83,22 @@ void SHPoidGUI::AddButtons(HWND hToolbar, HINSTANCE hInstance)
         { MAKELONG(ImageList_AddIcon(imageList,
                                      LoadIcon(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_NEXT_FRAME))), ImageListID),
                                      TOOLBAR_ID_NEXT_FRAME,
+                                     TBSTATE_ENABLED,
+                                     buttonStyles,
+                                     {0}, 0, 0 },
+
+        { MAKELONG(0, 0), 0, 0, TBSTYLE_SEP, {0}, 0, 0 }, // Separator
+
+        { MAKELONG(ImageList_AddIcon(imageList,
+                                     LoadIcon(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_ZOOM_IN))), ImageListID),
+                                     MENU_VIEW_ID_ZOOM_IN,
+                                     TBSTATE_ENABLED,
+                                     buttonStyles,
+                                     {0}, 0, 0 },
+
+        { MAKELONG(ImageList_AddIcon(imageList,
+                                     LoadIcon(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_ZOOM_OUT))), ImageListID),
+                                     MENU_VIEW_ID_ZOOM_OUT,
                                      TBSTATE_ENABLED,
                                      buttonStyles,
                                      {0}, 0, 0 }
