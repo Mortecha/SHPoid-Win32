@@ -7,7 +7,8 @@
 
 BOOL SHPoidProc::OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct)
 {
-    m_SHPoidGUI.Create(m_hwnd, lpCreateStruct->hInstance);
+    m_hInstance = lpCreateStruct->hInstance;
+    m_SHPoidGUI.Create(m_hwnd, m_hInstance);
     return TRUE;
 }
 
@@ -21,7 +22,7 @@ void SHPoidProc::OnPaint(HWND hwnd)
     PAINTSTRUCT ps;
     HDC hdc = BeginPaint(m_hwnd, &ps);
 
-    // All painting occurs here, between BeginPaint and EndPaint.
+    // all painting occurs here
 
     FillRect(hdc, &ps.rcPaint, (HBRUSH) (COLOR_WINDOW+1));
     EndPaint(m_hwnd, &ps);

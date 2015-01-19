@@ -1,3 +1,6 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include "resource.h"
 #include "processors/fileproc.h"
 
 FileProc::FileProc()
@@ -69,3 +72,4 @@ void FileProc::Exit(HWND hwnd)
 {
     PostMessage(hwnd, WM_CLOSE, 0, 0);
 }
+

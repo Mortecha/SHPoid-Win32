@@ -39,9 +39,14 @@
 			<Add library="kernel32" />
 			<Add library="comctl32" />
 		</Linker>
-		<Unit filename="include/basewindow.h" />
-		<Unit filename="include/editproc.h" />
-		<Unit filename="include/fileproc.h" />
+		<Unit filename="include/base/basewindow.h" />
+		<Unit filename="include/processors/editproc.h" />
+		<Unit filename="include/processors/fileproc.h" />
+		<Unit filename="include/processors/filterproc.h" />
+		<Unit filename="include/processors/helpproc.h" />
+		<Unit filename="include/processors/optionsproc.h" />
+		<Unit filename="include/processors/shpproc.h" />
+		<Unit filename="include/processors/viewproc.h" />
 		<Unit filename="include/resource.h" />
 		<Unit filename="include/shpoidgui.h" />
 		<Unit filename="include/shpoidproc.h" />
@@ -49,8 +54,13 @@
 			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="shpoid.cpp" />
-		<Unit filename="src/editproc.cpp" />
-		<Unit filename="src/fileproc.cpp" />
+		<Unit filename="src/processors/editproc.cpp" />
+		<Unit filename="src/processors/fileproc.cpp" />
+		<Unit filename="src/processors/filterproc.cpp" />
+		<Unit filename="src/processors/helpproc.cpp" />
+		<Unit filename="src/processors/optionsproc.cpp" />
+		<Unit filename="src/processors/shpproc.cpp" />
+		<Unit filename="src/processors/viewproc.cpp" />
 		<Unit filename="src/shpoidgui.cpp" />
 		<Unit filename="src/shpoidproc.cpp" />
 		<Extensions>

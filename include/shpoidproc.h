@@ -24,6 +24,7 @@ public:
     LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 private:
+    HINSTANCE m_hInstance;
     SHPoidGUI m_SHPoidGUI;
     FileProc m_FileProc;
     EditProc m_EditProc;

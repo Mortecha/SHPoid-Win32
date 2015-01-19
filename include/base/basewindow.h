@@ -1,6 +1,7 @@
-#ifndef SHPOIDBASEWINDOW_H
-#define SHPOIDBASEWINDOW_H
+#ifndef BASEWINDOW_H
+#define BASEWINDOW_H
 
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <windowsx.h>
 
@@ -10,8 +11,8 @@ class BaseWindow
 public:
     static LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
-        DERIVED_TYPE *pThis = NULL;
 
+        DERIVED_TYPE *pThis = NULL;
         if (uMsg == WM_NCCREATE)
         {
             CREATESTRUCT* pCreate = (CREATESTRUCT*)lParam;
@@ -24,6 +25,7 @@ public:
         {
             pThis = (DERIVED_TYPE*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
         }
+
         if (pThis)
         {
             return pThis->HandleMessage(uMsg, wParam, lParam);
@@ -78,5 +80,4 @@ protected:
     HWND m_hwnd;
 };
 
-#endif // SHPOIDBASEWINDOW_H
-
+#endif // BASEWINDOW_H

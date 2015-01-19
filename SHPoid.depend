@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1421413968 source:c:\users\admin\dropbox\applications\shpoid\shpoid.cpp
+1421688377 source:c:\users\admin\dropbox\applications\shpoid\shpoid.cpp
 	<windows.h>
 	<windowsx.h>
 	"shpoidproc.h"
 
-1421422832 c:\users\admin\dropbox\applications\shpoid\include\shpoidproc.h
+1421594745 c:\users\admin\dropbox\applications\shpoid\include\shpoidproc.h
 	"base/basewindow.h"
 	"shpoidgui.h"
 	"processors/fileproc.h"
@@ -34,23 +34,24 @@
 1421413915 source:c:\users\admin\dropbox\applications\shpoid\src\fileproc.cpp
 	"fileproc.h"
 
-1421413930 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
+1421573612 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
 	"shpoidgui.h"
 	"resource.h"
 
-1421420924 c:\users\admin\dropbox\applications\shpoid\include\resource.h
+1421595955 c:\users\admin\dropbox\applications\shpoid\include\resource.h
 
-1421421008 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
+1421678665 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
+	<windows.h>
 	"include\resource.h"
 
-1421413955 c:\users\admin\dropbox\applications\shpoid\include\base\basewindow.h
+1421686315 c:\users\admin\dropbox\applications\shpoid\include\base\basewindow.h
 	<windows.h>
 	<windowsx.h>
 
-1421423560 c:\users\admin\dropbox\applications\shpoid\include\processors\fileproc.h
+1421688384 c:\users\admin\dropbox\applications\shpoid\include\processors\fileproc.h
 	<windows.h>
 	<windowsx.h>
 
@@ -68,4 +69,54 @@
 
 1421422579 source:c:\users\admin\dropbox\applications\shpoid\src\processors\editproc.cpp
 	"processors/editproc.h"
+
+1421688440 source:c:\users\admin\dropbox\applications\shpoid\src\processors\fileproc.cpp
+	<windows.h>
+	<commctrl.h>
+	"resource.h"
+	"processors/fileproc.h"
+	"dialogboxes/aboutdialog.h"
+
+1421426330 source:c:\users\admin\dropbox\applications\shpoid\src\processors\filterproc.cpp
+	"processors/filterproc.h"
+
+1421690950 source:c:\users\admin\dropbox\applications\shpoid\src\processors\helpproc.cpp
+	"processors/helpproc.h"
+	"dialogboxes/aboutdialog.h"
+
+1421426450 source:c:\users\admin\dropbox\applications\shpoid\src\processors\optionsproc.cpp
+	"processors/optionsproc.h"
+
+1421426877 source:c:\users\admin\dropbox\applications\shpoid\src\processors\shpproc.cpp
+	"processors/shpproc.h"
+
+1421426183 source:c:\users\admin\dropbox\applications\shpoid\src\processors\viewproc.cpp
+	"processors/viewproc.h"
+
+1421686494 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"shpoidproc.h"
+	"resource.h"
+
+1421687045 c:\users\admin\dropbox\applications\shpoid\include\aboutdialogbox.h
+	"base/basedialog.h"
+
+1421687132 c:\users\admin\dropbox\applications\shpoid\include\base\basedialog.h
+	<windows.h>
+	<tchar.h>
+	"resource.h"
+
+1421687099 source:c:\users\admin\dropbox\applications\shpoid\src\aboutdialogbox.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"aboutdialogbox.h"
+	"resource.h"
+
+1421688534 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\aboutdialog.h
+	<windows.h>
+	<tchar.h>
+	"resource.h"
 
