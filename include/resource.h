@@ -134,4 +134,4 @@
 #define TOOLBAR_ID_ZOOM_OUT                     9800
 
 // defines for dialog boxes
-#define IDD_ABOUT                               10000
+#define IDD_ABOUT                              10000
