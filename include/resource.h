@@ -121,8 +121,7 @@
 #define MENU_HELP_ID_REPORT_BUG                 8050
 #define MENU_HELP_ID_ABOUT                      8100
 
-// defines for main toolbar
-//#define TOOLBAR_ID_MAIN                         8999
+// defines for main toolbar buttons
 #define TOOLBAR_ID_NEW                          9000
 #define TOOLBAR_ID_OPEN                         9100
 #define TOOLBAR_ID_SAVE                         9200
@@ -134,5 +133,5 @@
 #define TOOLBAR_ID_ZOOM_IN                      9700
 #define TOOLBAR_ID_ZOOM_OUT                     9800
 
-#define IDD_MENU_FILE_NEWDIALOG                 10000
-#define IDD_NEWFILE                             10001
+// defines for dialog boxes
+#define IDD_ABOUT                               10000

@@ -1,3 +1,5 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 #include "include\resource.h"
 
 MENU_ID_MAIN MENU DISCARDABLE
@@ -224,6 +226,8 @@ MENU_ID_MAIN MENU DISCARDABLE
     }
 }
 
+// MAIN TOOLBAR --------------------------------------------------------------------------------------------------------
+
 TOOLBAR_ID_NEW                  ICON          "rc\\newFile.ico"
 TOOLBAR_ID_OPEN                 ICON          "rc\\openFile.ico"
 TOOLBAR_ID_SAVE                 ICON          "rc\\saveFile.ico"
@@ -233,6 +237,22 @@ TOOLBAR_ID_PREVIOUS_FRAME       ICON          "rc\\prevFrame.ico"
 TOOLBAR_ID_NEXT_FRAME           ICON          "rc\\nextFrame.ico"
 TOOLBAR_ID_ZOOM_IN              ICON          "rc\\zoomIn.ico"
 TOOLBAR_ID_ZOOM_OUT             ICON          "rc\\zoomOut.ico"
+
+// DIALOG BOXES --------------------------------------------------------------------------------------------------------
+
+IDD_ABOUT DIALOG DISCARDABLE 0,0,239,66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Box"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON "&ok", IDOK, 174,18,50,14
+    PUSHBUTTON "&Cancel", IDCANCEL, 174,18,50,14
+    //GROUPBOX "About this program...",IDC_STATIC,7,7,225,52
+    //CTEXT "This is a Modular Database program", IDC_STATIC, 16,18,144,33
+END
+
+
+
 
 
 
