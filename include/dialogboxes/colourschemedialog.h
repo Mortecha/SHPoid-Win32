@@ -49,10 +49,15 @@ public:
             GetWindowRect(m_hwnd, &m_rect);
             GetWindowRect(GetParent(m_hwnd), &m_rectParent);
 
+            m_parentWidth = (m_rectParent.right - m_rectParent.left);
+            m_parentHeight = (m_rectParent.bottom - m_rectParent.top);
+            m_dlgWidth = (m_rect.right - m_rect.left);
+            m_dlgHeight = (m_rect.bottom - m_rect.top);
+
             SetWindowPos(m_hwnd,
                          HWND_TOP,
-                         m_rectParent.left + (m_rectParent.right - m_rectParent.left) / 2 - (m_rect.right - m_rect.left) / 2,
-                         m_rectParent.top + (m_rectParent.bottom - m_rectParent.top) / 2 - (m_rect.bottom - m_rect.top) / 2,
+                         m_rectParent.left + m_parentWidth / 2 - m_dlgWidth / 2,
+                         m_rectParent.top + m_parentHeight / 2 - m_dlgHeight / 2,
                          0, 0,
                          SWP_NOSIZE);
             return 1;
@@ -70,6 +75,7 @@ public:
 private:
     HWND m_hwnd;
     RECT m_rect, m_rectParent;
+    int m_dlgWidth, m_dlgHeight, m_parentWidth, m_parentHeight;
 };
 
 #endif // COLOURSCHEMEDIALOG_H
