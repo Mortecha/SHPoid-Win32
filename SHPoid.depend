@@ -19,7 +19,7 @@
 	<windows.h>
 	<windowsx.h>
 
-1421414017 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
+1421843063 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
 	<commctrl.h>
 
 1421421194 c:\users\admin\dropbox\applications\shpoid\include\fileproc.h
@@ -34,7 +34,7 @@
 1421413915 source:c:\users\admin\dropbox\applications\shpoid\src\fileproc.cpp
 	"fileproc.h"
 
-1421573612 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
+1421843139 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
@@ -81,7 +81,7 @@
 	"dialogboxes/rotatearbdialog.h"
 	"dialogboxes/transformdialog.h"
 
-1421833406 source:c:\users\admin\dropbox\applications\shpoid\src\processors\fileproc.cpp
+1421842412 source:c:\users\admin\dropbox\applications\shpoid\src\processors\fileproc.cpp
 	<windows.h>
 	<Commdlg.h>
 	"resource.h"
@@ -119,7 +119,7 @@
 	"processors/viewproc.h"
 	"dialogboxes/previewdialog.h"
 
-1421804036 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
+1421833418 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>

@@ -17,7 +17,12 @@ SHPoidGUI::~SHPoidGUI()
     //dtor
 }
 
-void SHPoidGUI::AddButtons(HWND hToolbar, HINSTANCE hInstance)
+//void AddDrawControlButtons(HWND m_hDrawToolbar, HINSTANCE hInstance)
+//{
+//
+//}
+
+void SHPoidGUI::AddMainButtons(HWND hToolbar, HINSTANCE hInstance)
 {
     const int       bitmapSize      = 16;
     const DWORD     buttonStyles    = BTNS_AUTOSIZE;
@@ -109,16 +114,43 @@ void SHPoidGUI::AddButtons(HWND hToolbar, HINSTANCE hInstance)
     SendMessage(hToolbar, TB_ADDBUTTONS, (WPARAM)numButtons, (LPARAM)&tbButtons);
 }
 
+//void CreateDrawToolbar(HWND hwnd, HINSTANCE hInstance)
+//{
+//    m_hDrawToolbar = CreateWindowEx(0,
+//                                    TOOLBARCLASSNAME,
+//                                    NULL,
+//                                    TBSTYLE_FLAT | WS_BORDER | WS_CHILD | WS_VISIBLE,
+//                                    0, 0, 0, 0,
+//                                    hwnd,
+//                                    NULL,
+//                                    hInstance,
+//                                    NULL);
+//
+//    if (m_hDrawToolbar == NULL)
+//        return;
+//
+//    //AddMainButtons(m_hDrawToolbar, hInstance);
+//
+//    SendMessage(m_hDrawToolbar, TB_AUTOSIZE, 0, 0);
+//    ShowWindow(m_hDrawToolbar,  TRUE);
+//}
+
 void SHPoidGUI::CreateToolbar(HWND hwnd, HINSTANCE hInstance)
 {
-    m_hMainToolbar = CreateWindowEx(0, TOOLBARCLASSNAME, NULL,
-                                      TBSTYLE_FLAT | WS_BORDER | WS_CHILD | WS_VISIBLE, 0, 0, 0, 0,
-                                      hwnd, NULL, hInstance, NULL);
+    m_hMainToolbar = CreateWindowEx(0,
+                                    TOOLBARCLASSNAME,
+                                    NULL,
+                                    TBSTYLE_FLAT | WS_BORDER | WS_CHILD | WS_VISIBLE,
+                                    0, 0, 0, 0,
+                                    hwnd,
+                                    NULL,
+                                    hInstance,
+                                    NULL);
 
     if (m_hMainToolbar == NULL)
         return;
 
-    AddButtons(m_hMainToolbar, hInstance);
+    AddMainButtons(m_hMainToolbar, hInstance);
 
     SendMessage(m_hMainToolbar, TB_AUTOSIZE, 0, 0);
     ShowWindow(m_hMainToolbar,  TRUE);
@@ -128,6 +160,7 @@ void SHPoidGUI::Create(HWND hwnd, HINSTANCE hInstance)
 {
     SetMenu(hwnd, LoadMenu(hInstance, MAKEINTRESOURCE(MENU_ID_MAIN)));
     CreateToolbar(hwnd, hInstance);
+    //CreateDrawToolbar(hwnd, hInstance);
 }
 
 

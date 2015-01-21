@@ -15,6 +15,9 @@
 					<Add option="-g" />
 					<Add directory="include" />
 				</Compiler>
+				<Linker>
+					<Add library="comdlg32" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/SHPoid" prefix_auto="1" extension_auto="1" />
@@ -40,6 +43,26 @@
 			<Add library="comctl32" />
 		</Linker>
 		<Unit filename="include/base/basewindow.h" />
+		<Unit filename="include/dialogboxes/aboutdialog.h" />
+		<Unit filename="include/dialogboxes/batchdialog.h" />
+		<Unit filename="include/dialogboxes/canvasresizedialog.h" />
+		<Unit filename="include/dialogboxes/changepalettedialog.h" />
+		<Unit filename="include/dialogboxes/colourschemedialog.h" />
+		<Unit filename="include/dialogboxes/editsequencedialog.h" />
+		<Unit filename="include/dialogboxes/exportdialog.h" />
+		<Unit filename="include/dialogboxes/filtersettingsdialog.h" />
+		<Unit filename="include/dialogboxes/generatecameodialog.h" />
+		<Unit filename="include/dialogboxes/importdialog.h" />
+		<Unit filename="include/dialogboxes/newdialog.h" />
+		<Unit filename="include/dialogboxes/preferencesdialog.h" />
+		<Unit filename="include/dialogboxes/previewdialog.h" />
+		<Unit filename="include/dialogboxes/reportbug.h" />
+		<Unit filename="include/dialogboxes/reportbug.h.gch" />
+		<Unit filename="include/dialogboxes/rotatearbdialog.h" />
+		<Unit filename="include/dialogboxes/shpresizedialog.h" />
+		<Unit filename="include/dialogboxes/shptypedialog.h" />
+		<Unit filename="include/dialogboxes/transformdialog.h" />
+		<Unit filename="include/dialogboxes/updatepalettedialog.h" />
 		<Unit filename="include/processors/editproc.h" />
 		<Unit filename="include/processors/fileproc.h" />
 		<Unit filename="include/processors/filterproc.h" />
