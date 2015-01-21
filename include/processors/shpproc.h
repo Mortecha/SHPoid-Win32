@@ -16,7 +16,7 @@ class ShpProc
         void PrevFrame();
         void NextFrame();
         void SplitFrames();
-        void LoadPalette();
+        void LoadPalette(HWND hwnd);
         void ChangePalette(HWND hwnd);
         void UpdatePalettes(HWND hwnd);
         void Sequence(HWND hwnd);

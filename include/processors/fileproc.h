@@ -11,7 +11,7 @@ public:
     FileProc();
     virtual ~FileProc();
     void New(HWND hwnd);
-    void Open();
+    void Open(HWND hwnd);
     void OpenRecent();
     void Close();
     void CloseAll();

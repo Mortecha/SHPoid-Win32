@@ -1,3 +1,7 @@
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <Commdlg.h>
+
 #include "processors/shpproc.h"
 #include "dialogboxes/shptypedialog.h"
 #include "dialogboxes/changepalettedialog.h"
@@ -51,9 +55,25 @@ void ShpProc::SplitFrames()
 
 }
 
-void ShpProc::LoadPalette()
+void ShpProc::LoadPalette(HWND hwnd)
 {
+    OPENFILENAME ofn;
+    char szFileName[MAX_PATH] = "";
+    ZeroMemory(&ofn, sizeof(ofn));
 
+    ofn.lStructSize = sizeof(ofn);
+    ofn.hwndOwner = hwnd;
+    ofn.lpstrFilter = "Shp Files (*.shp)\0*.shp\0All Files (*.*)\0*.*\0";
+    ofn.lpstrFile = szFileName;
+    ofn.nMaxFile = MAX_PATH;
+    ofn.Flags = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
+    ofn.lpstrDefExt = "shp";
+    //ofn.
+
+    if(GetOpenFileName(&ofn))
+    {
+         //do something with file
+    }
 }
 
 

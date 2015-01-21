@@ -34,7 +34,7 @@ void SHPoidProc::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code)
     {
         // messages from file
         case MENU_FILE_ID_NEW:                      m_FileProc.New(hwnd); break;
-        case MENU_FILE_ID_OPEN:                     m_FileProc.Open(); break;
+        case MENU_FILE_ID_OPEN:                     m_FileProc.Open(hwnd); break;
         case MENU_FILE_ID_OPEN_RECENT:              m_FileProc.OpenRecent(); break;
         case MENU_FILE_ID_CLOSE:                    m_FileProc.Close(); break;
         case MENU_FILE_ID_CLOSE_ALL:                m_FileProc.CloseAll(); break;
@@ -68,7 +68,7 @@ void SHPoidProc::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code)
         case MENU_SHP_ID_DELETE_FRAME:              m_ShpProc.DeleteFrame(); break;
         case MENU_SHP_ID_SPLIT_FRAMES:              m_ShpProc.SplitFrames(); break;
 
-        case MENU_SHP_ID_PALETTE_LOAD:              m_ShpProc.LoadPalette(); break;
+        case MENU_SHP_ID_PALETTE_LOAD:              m_ShpProc.LoadPalette(hwnd); break;
         case MENU_SHP_ID_PALETTE_CHANGE:            m_ShpProc.ChangePalette(hwnd); break;
         case MENU_SHP_ID_PALETTE_UPDATE:            m_ShpProc.UpdatePalettes(hwnd); break;
 

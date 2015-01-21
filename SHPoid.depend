@@ -43,7 +43,7 @@
 
 1421709281 c:\users\admin\dropbox\applications\shpoid\include\resource.h
 
-1421785616 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
+1421814986 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
 	<windows.h>
 	"include\shpoidproc.h"
 	"include\resource.h"
@@ -52,14 +52,14 @@
 	<windows.h>
 	<windowsx.h>
 
-1421798674 c:\users\admin\dropbox\applications\shpoid\include\processors\fileproc.h
+1421805529 c:\users\admin\dropbox\applications\shpoid\include\processors\fileproc.h
 	<windows.h>
 	<windowsx.h>
 
 1421799641 c:\users\admin\dropbox\applications\shpoid\include\processors\editproc.h
 	<windows.h>
 
-1421799328 c:\users\admin\dropbox\applications\shpoid\include\processors\shpproc.h
+1421823496 c:\users\admin\dropbox\applications\shpoid\include\processors\shpproc.h
 	<windows.h>
 
 1421799648 c:\users\admin\dropbox\applications\shpoid\include\processors\filterproc.h
@@ -81,8 +81,9 @@
 	"dialogboxes/rotatearbdialog.h"
 	"dialogboxes/transformdialog.h"
 
-1421798751 source:c:\users\admin\dropbox\applications\shpoid\src\processors\fileproc.cpp
+1421833406 source:c:\users\admin\dropbox\applications\shpoid\src\processors\fileproc.cpp
 	<windows.h>
+	<Commdlg.h>
 	"resource.h"
 	"processors/fileproc.h"
 	"dialogboxes/newdialog.h"
@@ -104,7 +105,9 @@
 	"processors/optionsproc.h"
 	"dialogboxes/preferencesdialog.h"
 
-1421799240 source:c:\users\admin\dropbox\applications\shpoid\src\processors\shpproc.cpp
+1421833406 source:c:\users\admin\dropbox\applications\shpoid\src\processors\shpproc.cpp
+	<windows.h>
+	<Commdlg.h>
 	"processors/shpproc.h"
 	"dialogboxes/shptypedialog.h"
 	"dialogboxes/changepalettedialog.h"
@@ -116,7 +119,7 @@
 	"processors/viewproc.h"
 	"dialogboxes/previewdialog.h"
 
-1421792363 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
+1421804036 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
@@ -138,97 +141,97 @@
 	"aboutdialogbox.h"
 	"resource.h"
 
-1421800230 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\aboutdialog.h
+1421800659 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\aboutdialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\shpresizedialog.h
+1421800785 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\shpresizedialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797760 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\canvasresizedialog.h
+1421800722 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\canvasresizedialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\rotatearbdialog.h
+1421800780 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\rotatearbdialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\transformdialog.h
+1421800795 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\transformdialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\newdialog.h
+1421800760 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\newdialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797760 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\batchdialog.h
+1421800707 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\batchdialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\importdialog.h
+1421800754 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\importdialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\exportdialog.h
+1421800736 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\exportdialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\filtersettingsdialog.h
+1421800742 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\filtersettingsdialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\shptypedialog.h
+1421800790 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\shptypedialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797760 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\changepalettedialog.h
+1421800718 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\changepalettedialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\updatepalettedialog.h
+1421800799 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\updatepalettedialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\editsequencedialog.h
+1421800732 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\editsequencedialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797786 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\generatecameodialog.h
+1421800748 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\generatecameodialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\colourschemedialog.h
+1421800727 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\colourschemedialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\reportbug.h
+1421800775 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\reportbug.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\preferencesdialog.h
+1421800765 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\preferencesdialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
 
-1421797761 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\previewdialog.h
+1421800770 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\previewdialog.h
 	<windows.h>
 	<tchar.h>
 	"resource.h"
