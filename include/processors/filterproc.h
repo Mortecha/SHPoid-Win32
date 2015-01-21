@@ -1,14 +1,16 @@
 #ifndef FILTERPROC_H
 #define FILTERPROC_H
 
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 
 class FilterProc
 {
     public:
         FilterProc();
         virtual ~FilterProc();
-        void EditSettings();
-        void ChangeColourScheme();
+        void EditSettings(HWND hwnd);
+        void ChangeColourScheme(HWND hwnd);
         void SmoothConservative();
         void SmoothPolyMean();
         void SmoothMeanMin();

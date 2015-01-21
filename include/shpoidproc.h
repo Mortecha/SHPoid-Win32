@@ -33,6 +33,7 @@ private:
     ViewProc m_ViewProc;
     OptionsProc m_OptionsProc;
     HelpProc m_HelpProc;
+    RECT m_rect;
 };
 
 #endif // SHPOIDPROC_H

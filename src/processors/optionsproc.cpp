@@ -11,9 +11,9 @@ OptionsProc::~OptionsProc()
     //dtor
 }
 
-void OptionsProc::ChangePreferences()
+void OptionsProc::ChangePreferences(HWND hwnd)
 {
     PreferencesDialog preferencesDialog;
-    preferencesDialog.Create(IDD_PREFERENCES);
+    preferencesDialog.Create(IDD_PREFERENCES, hwnd);
 
 }

@@ -12,16 +12,16 @@ FilterProc::~FilterProc()
     //dtor
 }
 
-void FilterProc::EditSettings()
+void FilterProc::EditSettings(HWND hwnd)
 {
     FilterSettingsDialog filterSettingsDialog;
-    filterSettingsDialog.Create(IDD_FILTERSETTINGS);
+    filterSettingsDialog.Create(IDD_FILTERSETTINGS, hwnd);
 }
 
-void FilterProc::ChangeColourScheme()
+void FilterProc::ChangeColourScheme(HWND hwnd)
 {
     ColourSchemeDialog colourSchemeDialog;
-    colourSchemeDialog.Create(IDD_COLOURSCHEME);
+    colourSchemeDialog.Create(IDD_COLOURSCHEME, hwnd);
 }
 
 void FilterProc::SmoothConservative()

@@ -1,6 +1,8 @@
 #ifndef HELPPROC_H
 #define HELPPROC_H
 
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 
 class HelpProc
 {
@@ -8,8 +10,8 @@ class HelpProc
         HelpProc();
         virtual ~HelpProc();
         void ViewHelp();
-        void ReportBug();
-        void ViewAbout();
+        void ReportBug(HWND hwnd);
+        void ViewAbout(HWND hwnd);
     protected:
     private:
 };

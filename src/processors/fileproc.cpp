@@ -17,10 +17,10 @@ FileProc::~FileProc()
     //dtor
 }
 
-void FileProc::New()
+void FileProc::New(HWND hwnd)
 {
     NewDialog newDialog;
-    newDialog.Create(IDD_NEW);
+    newDialog.Create(IDD_NEW, hwnd);
 }
 
 void FileProc::Open()
@@ -58,22 +58,22 @@ void FileProc::SaveAll()
 
 }
 
-void FileProc::Batch()
+void FileProc::Batch(HWND hwnd)
 {
     BatchDialog batchDialog;
-    batchDialog.Create(IDD_BATCH);
+    batchDialog.Create(IDD_BATCH, hwnd);
 }
 
-void FileProc::Import()
+void FileProc::Import(HWND hwnd)
 {
     ImportDialog importDialog;
-    importDialog.Create(IDD_IMPORT);
+    importDialog.Create(IDD_IMPORT, hwnd);
 }
 
-void FileProc::Export()
+void FileProc::Export(HWND hwnd)
 {
     ExportDialog exportDialog;
-    exportDialog.Create(IDD_EXPORT);
+    exportDialog.Create(IDD_EXPORT, hwnd);
 }
 
 void FileProc::Exit(HWND hwnd)

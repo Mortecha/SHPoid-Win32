@@ -21,10 +21,10 @@ void ViewProc::ZoomOut()
 
 }
 
-void ViewProc::Preview()
+void ViewProc::Preview(HWND hwnd)
 {
     PreviewDialog previewDialog;
-    previewDialog.Create(IDD_PREVIEW);
+    previewDialog.Create(IDD_PREVIEW, hwnd);
 }
 
 void ViewProc::ShowCenter()

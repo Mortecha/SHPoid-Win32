@@ -15,10 +15,10 @@ ShpProc::~ShpProc()
     //dtor
 }
 
-void ShpProc::ChangeType()
+void ShpProc::ChangeType(HWND hwnd)
 {
     ShpTypeDialog shpTypeDialog;
-    shpTypeDialog.Create(IDD_SHPTYPE);
+    shpTypeDialog.Create(IDD_SHPTYPE, hwnd);
 }
 
 void ShpProc::AutoselectType()
@@ -57,22 +57,22 @@ void ShpProc::LoadPalette()
 }
 
 
-void ShpProc::ChangePalette()
+void ShpProc::ChangePalette(HWND hwnd)
 {
     ChangePaletteDialog changePaletteDialog;
-    changePaletteDialog.Create(IDD_CHANGEPALETTE);
+    changePaletteDialog.Create(IDD_CHANGEPALETTE, hwnd);
 }
 
-void ShpProc::UpdatePalettes()
+void ShpProc::UpdatePalettes(HWND hwnd)
 {
     UpdatePaletteDialog updatePaletteDialog;
-    updatePaletteDialog.Create(IDD_UPDATEPALETTE);
+    updatePaletteDialog.Create(IDD_UPDATEPALETTE, hwnd);
 }
 
-void ShpProc::Sequence()
+void ShpProc::Sequence(HWND hwnd)
 {
     EditSequenceDialog editSequenceDialog;
-    editSequenceDialog.Create(IDD_EDITSEQUENCE);
+    editSequenceDialog.Create(IDD_EDITSEQUENCE, hwnd);
 }
 
 void ShpProc::AutoShadows()
@@ -90,8 +90,8 @@ void ShpProc::FixShadows()
 
 }
 
-void ShpProc::GenerateCameo()
+void ShpProc::GenerateCameo(HWND hwnd)
 {
     GenerateCameoDialog generateCameoDialog;
-    generateCameoDialog.Create(IDD_GENERATECAMEO);
+    generateCameoDialog.Create(IDD_GENERATECAMEO, hwnd);
 }

@@ -1,6 +1,8 @@
 #ifndef VIEWPROC_H
 #define VIEWPROC_H
 
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 
 class ViewProc
 {
@@ -9,7 +11,7 @@ class ViewProc
         virtual ~ViewProc();
         void ZoomIn();
         void ZoomOut();
-        void Preview();
+        void Preview(HWND hwnd);
         void ShowCenter();
         void ShowGrid();
     protected:

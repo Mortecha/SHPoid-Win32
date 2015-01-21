@@ -1,6 +1,9 @@
 #ifndef EDITPROC_H
 #define EDITPROC_H
 
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+
 class EditProc
 {
     public:
@@ -12,13 +15,13 @@ class EditProc
         void Copy();
         void Paste();
         void Clear();
-        void ResizeShp();
-        void ResizeCanvas();
+        void ResizeShp(HWND hwnd);
+        void ResizeCanvas(HWND hwnd);
         void Rot180();
         void Rot90CW();
         void Rot90CCW();
-        void RotArb();
-        void Transform();
+        void RotArb(HWND hwnd);
+        void Transform(HWND hwnd);
     protected:
     private:
 };

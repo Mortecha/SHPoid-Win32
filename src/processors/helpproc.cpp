@@ -17,14 +17,14 @@ void HelpProc::ViewHelp()
 
 }
 
-void HelpProc::ReportBug()
+void HelpProc::ReportBug(HWND hwnd)
 {
-    ReportBugDialog reportBugDialog;
-    reportBugDialog.Create(IDD_REPORTBUG);
+    ReportBugDialog dialog;
+    dialog.Create(IDD_REPORTBUG, hwnd);
 }
 
-void HelpProc::ViewAbout()
+void HelpProc::ViewAbout(HWND hwnd)
 {
-    AboutDialog aboutDialog;
-    aboutDialog.Create(IDD_ABOUT);
+    AboutDialog dialog;
+    dialog.Create(IDD_ABOUT, hwnd);
 }
