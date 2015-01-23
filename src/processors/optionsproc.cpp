@@ -15,5 +15,4 @@ void OptionsProc::ChangePreferences(HWND hwnd)
 {
     PreferencesDialog preferencesDialog;
     preferencesDialog.Create(IDD_PREFERENCES, hwnd);
-
 }

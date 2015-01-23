@@ -42,6 +42,7 @@
 			<Add library="kernel32" />
 			<Add library="comctl32" />
 		</Linker>
+		<Unit filename="include/base/basedialog.h" />
 		<Unit filename="include/base/basewindow.h" />
 		<Unit filename="include/dialogboxes/aboutdialog.h" />
 		<Unit filename="include/dialogboxes/batchdialog.h" />
@@ -57,7 +58,6 @@
 		<Unit filename="include/dialogboxes/preferencesdialog.h" />
 		<Unit filename="include/dialogboxes/previewdialog.h" />
 		<Unit filename="include/dialogboxes/reportbug.h" />
-		<Unit filename="include/dialogboxes/reportbug.h.gch" />
 		<Unit filename="include/dialogboxes/rotatearbdialog.h" />
 		<Unit filename="include/dialogboxes/shpresizedialog.h" />
 		<Unit filename="include/dialogboxes/shptypedialog.h" />
@@ -77,6 +77,25 @@
 			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="shpoid.cpp" />
+		<Unit filename="src/dialogboxes/aboutdialog.cpp" />
+		<Unit filename="src/dialogboxes/batchdialog.cpp" />
+		<Unit filename="src/dialogboxes/canvasresizedialog.cpp" />
+		<Unit filename="src/dialogboxes/changepalettedialog.cpp" />
+		<Unit filename="src/dialogboxes/colourschemedialog.cpp" />
+		<Unit filename="src/dialogboxes/editsequencedialog.cpp" />
+		<Unit filename="src/dialogboxes/exportdialog.cpp" />
+		<Unit filename="src/dialogboxes/filtersettingsdialog.cpp" />
+		<Unit filename="src/dialogboxes/generatecameodialog.cpp" />
+		<Unit filename="src/dialogboxes/importdialog.cpp" />
+		<Unit filename="src/dialogboxes/newdialog.cpp" />
+		<Unit filename="src/dialogboxes/preferencesdialog.cpp" />
+		<Unit filename="src/dialogboxes/previewdialog.cpp" />
+		<Unit filename="src/dialogboxes/reportbug.cpp" />
+		<Unit filename="src/dialogboxes/rotatearbdialog.cpp" />
+		<Unit filename="src/dialogboxes/shpresizedialog.cpp" />
+		<Unit filename="src/dialogboxes/shptypedialog.cpp" />
+		<Unit filename="src/dialogboxes/transformdialog.cpp" />
+		<Unit filename="src/dialogboxes/updatepalettedialog.cpp" />
 		<Unit filename="src/processors/editproc.cpp" />
 		<Unit filename="src/processors/fileproc.cpp" />
 		<Unit filename="src/processors/filterproc.cpp" />
