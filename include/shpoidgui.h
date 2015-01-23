@@ -1,6 +1,8 @@
 #ifndef SHPOIDGUI_H
 #define SHPOIDGUI_H
 
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 #include <commctrl.h>
 
 class SHPoidGUI
@@ -24,8 +26,8 @@ class SHPoidGUI
         HWND m_hMainToolbar;
         HWND m_hDrawToolbar;
 
-        void AddDrawControlButtons(HWND m_hDrawToolbar, HINSTANCE hInstance);
-        void AddMainButtons(HWND hWndToolbar, HINSTANCE hInstance);
+        void AddDrawButtons(HWND hToolbar, HINSTANCE hInstance);
+        void AddMainButtons(HWND hToolbar, HINSTANCE hInstance);
         void CreateToolbar(HWND hwnd, HINSTANCE hInstance);
         void CreateDrawToolbar(HWND hwnd, HINSTANCE hInstance);
 };
