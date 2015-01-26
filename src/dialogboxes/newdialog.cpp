@@ -12,7 +12,7 @@ INT_PTR NewDialog::HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
     case WM_COMMAND:
         if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
         {
-            EndDialog(m_hwnd,LOWORD(wParam));
+            EndDialog(m_hDlg, LOWORD(wParam));
             return 1;
         }
     }
