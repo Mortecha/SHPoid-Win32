@@ -228,13 +228,15 @@ TOOLBAR_ID_ZOOM_OUT             ICON          "rc\\zoomOut.ico"
 
 // DIALOG BOXES --------------------------------------------------------------------------------------------------------
 
-IDD_ABOUT DIALOG DISCARDABLE 0, 0, 300,100
+IDD_ABOUT DIALOG DISCARDABLE 0, 0, 285, 75
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "About SHPoid"
+CAPTION "About"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok", IDOK, 174,18,50,14
-    PUSHBUTTON "&Cancel", IDCANCEL, 174,18,50,14
+    DEFPUSHBUTTON "&Ok", IDOK, 225,10,50,14
+    //LISTBOX
+
+
 END
 
 IDD_BATCH DIALOG DISCARDABLE 0,0,440,270

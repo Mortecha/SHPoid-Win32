@@ -146,7 +146,7 @@ void SHPoidProc::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code)
         // messages from help
         case MENU_HELP_ID_HELP:                     m_HelpProc.ViewHelp(); break;
         case MENU_HELP_ID_REPORT_BUG:               m_HelpProc.ReportBug(hwnd); break;
-        case MENU_HELP_ID_ABOUT:                    m_HelpProc.ViewAbout(hwnd); break;
+        case MENU_HELP_ID_ABOUT:                    m_HelpProc.ViewAbout(hwnd, m_hInstance); break;
 
         // messages from the main tool bar
         case TOOLBAR_ID_PREVIOUS_FRAME:             m_ShpProc.PrevFrame();break;

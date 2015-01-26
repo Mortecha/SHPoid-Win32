@@ -23,8 +23,8 @@ void HelpProc::ReportBug(HWND hwnd)
     dialog.Create(IDD_REPORTBUG, hwnd);
 }
 
-void HelpProc::ViewAbout(HWND hwnd)
+void HelpProc::ViewAbout(HWND hwnd, HINSTANCE hInstance)
 {
     AboutDialog dialog;
-    dialog.Create(IDD_ABOUT, hwnd);
+    dialog.Create(IDD_ABOUT, hwnd, hInstance);
 }

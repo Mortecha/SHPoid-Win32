@@ -10,6 +10,7 @@
 class AboutDialog : public BaseDialog<AboutDialog>
 {
 public:
+    void CreateDialogComponents();
     INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 

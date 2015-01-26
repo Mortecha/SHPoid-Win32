@@ -11,7 +11,7 @@ class HelpProc
         virtual ~HelpProc();
         void ViewHelp();
         void ReportBug(HWND hwnd);
-        void ViewAbout(HWND hwnd);
+        void ViewAbout(HWND hwnd, HINSTANCE hInstance);
     protected:
     private:
 };

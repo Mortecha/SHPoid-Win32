@@ -145,3 +145,6 @@
 #define IDD_SHPTYPE                            10016
 #define IDD_TRANSFORM                          10017
 #define IDD_UPDATEPALETTE                      10018
+
+//defines for about dialog box components
+
