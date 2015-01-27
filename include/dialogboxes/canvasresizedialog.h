@@ -10,6 +10,8 @@
 class CanvasResizeDialog : public BaseDialog<CanvasResizeDialog>
 {
 public:
+    CanvasResizeDialog(HWND hwndParent, HINSTANCE hInstance);
+    void CreateDialogComponents();
     INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 

@@ -9,6 +9,15 @@ BOOL SHPoidProc::OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct)
 {
     m_hInstance = lpCreateStruct->hInstance;
     m_SHPoidGUI.Create(m_hwnd, m_hInstance);
+
+    m_FileProc.Create(m_hwnd, m_hInstance);
+    m_EditProc.Create(m_hwnd, m_hInstance);
+    m_ShpProc.Create(m_hwnd, m_hInstance);
+    m_FilterProc.Create(m_hwnd, m_hInstance);
+    m_ViewProc.Create(m_hwnd, m_hInstance);
+    m_OptionsProc.Create(m_hwnd, m_hInstance);
+    m_HelpProc.Create(m_hwnd, m_hInstance);
+
     return TRUE;
 }
 
@@ -34,18 +43,18 @@ void SHPoidProc::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code)
     switch(id)
     {
         // messages from file
-        case MENU_FILE_ID_NEW:                      m_FileProc.New(hwnd); break;
-        case MENU_FILE_ID_OPEN:                     m_FileProc.Open(hwnd); break;
+        case MENU_FILE_ID_NEW:                      m_FileProc.New(); break;
+        case MENU_FILE_ID_OPEN:                     m_FileProc.Open(); break;
         case MENU_FILE_ID_OPEN_RECENT:              m_FileProc.OpenRecent(); break;
         case MENU_FILE_ID_CLOSE:                    m_FileProc.Close(); break;
         case MENU_FILE_ID_CLOSE_ALL:                m_FileProc.CloseAll(); break;
         case MENU_FILE_ID_SAVE:                     m_FileProc.Save(); break;
         case MENU_FILE_ID_SAVE_AS:                  m_FileProc.SaveAs(); break;
         case MENU_FILE_ID_SAVE_ALL:                 m_FileProc.SaveAll(); break;
-        case MENU_FILE_ID_BATCH_CONVERT:            m_FileProc.Batch(hwnd);break;
-        case MENU_FILE_ID_IMPORT:                   m_FileProc.Import(hwnd); break;
-        case MENU_FILE_ID_EXPORT:                   m_FileProc.Export(hwnd); break;
-        case MENU_FILE_ID_EXIT:                     m_FileProc.Exit(hwnd); break;
+        case MENU_FILE_ID_BATCH_CONVERT:            m_FileProc.Batch();break;
+        case MENU_FILE_ID_IMPORT:                   m_FileProc.Import(); break;
+        case MENU_FILE_ID_EXPORT:                   m_FileProc.Export(); break;
+        case MENU_FILE_ID_EXIT:                     m_FileProc.Exit(); break;
 
         // messages from edit
         case MENU_EDIT_ID_UNDO:                     m_EditProc.Undo(); break;
@@ -54,33 +63,33 @@ void SHPoidProc::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code)
         case MENU_EDIT_ID_COPY:                     m_EditProc.Copy(); break;
         case MENU_EDIT_ID_PASTE:                    m_EditProc.Paste(); break;
         case MENU_EDIT_ID_CLEAR:                    m_EditProc.Clear(); break;
-        case MENU_EDIT_ID_SHP_SIZE:                 m_EditProc.ResizeShp(hwnd); break;
-        case MENU_EDIT_ID_CANVAS_SIZE:              m_EditProc.ResizeCanvas(hwnd); break;
+        case MENU_EDIT_ID_SHP_SIZE:                 m_EditProc.ResizeShp(); break;
+        case MENU_EDIT_ID_CANVAS_SIZE:              m_EditProc.ResizeCanvas(); break;
         case MENU_EDIT_ID_SHP_ROT_180:              m_EditProc.Rot180(); break;
         case MENU_EDIT_ID_SHP_ROT_90CW:             m_EditProc.Rot90CW(); break;
         case MENU_EDIT_ID_SHP_ROT_90CCW:            m_EditProc.Rot90CCW(); break;
-        case MENU_EDIT_ID_SHP_ROT_ARB:              m_EditProc.RotArb(hwnd); break;
-        case MENU_EDIT_ID_TRANSFORM:                m_EditProc.Transform(hwnd); break;
+        case MENU_EDIT_ID_SHP_ROT_ARB:              m_EditProc.RotArb(); break;
+        case MENU_EDIT_ID_TRANSFORM:                m_EditProc.Transform(); break;
 
         // messages from shp
-        case MENU_SHP_ID_TYPE:                      m_ShpProc.ChangeType(hwnd); break;
+        case MENU_SHP_ID_TYPE:                      m_ShpProc.ChangeType(); break;
         case MENU_SHP_ID_AUTOSELECT_TYPE:           m_ShpProc.AutoselectType(); break;
         case MENU_SHP_ID_INSERT_FRAME:              m_ShpProc.InsertFrame(); break;
         case MENU_SHP_ID_DELETE_FRAME:              m_ShpProc.DeleteFrame(); break;
         case MENU_SHP_ID_SPLIT_FRAMES:              m_ShpProc.SplitFrames(); break;
 
-        case MENU_SHP_ID_PALETTE_LOAD:              m_ShpProc.LoadPalette(hwnd); break;
-        case MENU_SHP_ID_PALETTE_CHANGE:            m_ShpProc.ChangePalette(hwnd); break;
-        case MENU_SHP_ID_PALETTE_UPDATE:            m_ShpProc.UpdatePalettes(hwnd); break;
+        case MENU_SHP_ID_PALETTE_LOAD:              m_ShpProc.LoadPalette(); break;
+        case MENU_SHP_ID_PALETTE_CHANGE:            m_ShpProc.ChangePalette(); break;
+        case MENU_SHP_ID_PALETTE_UPDATE:            m_ShpProc.UpdatePalettes(); break;
 
-        case MENU_SHP_ID_SEQUENCE:                  m_ShpProc.Sequence(hwnd); break;
+        case MENU_SHP_ID_SEQUENCE:                  m_ShpProc.Sequence(); break;
         case MENU_SHP_ID_SHADOWS_AUTO:              m_ShpProc.AutoShadows(); break;
         case MENU_SHP_ID_SHADOWS_CONVERT:           m_ShpProc.ConvertShadows(); break;
         case MENU_SHP_ID_SHADOWS_FIX:               m_ShpProc.FixShadows(); break;
-        case MENU_SHP_ID_GENERATE_CAMEO:            m_ShpProc.GenerateCameo(hwnd); break;
+        case MENU_SHP_ID_GENERATE_CAMEO:            m_ShpProc.GenerateCameo(); break;
 
-        case MENU_FILTER_ID_SETTINGS:               m_FilterProc.EditSettings(hwnd); break;
-        case MENU_FILTER_ID_COLOURSCHEME:           m_FilterProc.ChangeColourScheme(hwnd); break;
+        case MENU_FILTER_ID_SETTINGS:               m_FilterProc.EditSettings(); break;
+        case MENU_FILTER_ID_COLOURSCHEME:           m_FilterProc.ChangeColourScheme(); break;
 
         // messages from filter->smooth
         case MENU_FILTER_ID_SMOOTH_CONSERVATIVE:    m_FilterProc.SmoothConservative(); break;
@@ -136,17 +145,17 @@ void SHPoidProc::OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code)
         // messages from view
         case MENU_VIEW_ID_ZOOM_IN:                  m_ViewProc.ZoomIn(); break;
         case MENU_VIEW_ID_ZOOM_OUT:                 m_ViewProc.ZoomOut(); break;
-        case MENU_VIEW_ID_PREVIEW:                  m_ViewProc.Preview(hwnd); break;
+        case MENU_VIEW_ID_PREVIEW:                  m_ViewProc.Preview(); break;
         case MENU_VIEW_ID_SHOW_CENTER:              m_ViewProc.ShowCenter(); break;
         case MENU_VIEW_ID_SHOW_GRID:                m_ViewProc.ShowGrid(); break;
 
         // messages from options
-        case MENU_OPTIONS_ID_PREFERENCES:           m_OptionsProc.ChangePreferences(hwnd); break;
+        case MENU_OPTIONS_ID_PREFERENCES:           m_OptionsProc.ChangePreferences(); break;
 
         // messages from help
         case MENU_HELP_ID_HELP:                     m_HelpProc.ViewHelp(); break;
-        case MENU_HELP_ID_REPORT_BUG:               m_HelpProc.ReportBug(hwnd); break;
-        case MENU_HELP_ID_ABOUT:                    m_HelpProc.ViewAbout(hwnd, m_hInstance); break;
+        case MENU_HELP_ID_REPORT_BUG:               m_HelpProc.ReportBug(); break;
+        case MENU_HELP_ID_ABOUT:                    m_HelpProc.ViewAbout(); break;
 
         // messages from the main tool bar
         case TOOLBAR_ID_PREVIOUS_FRAME:             m_ShpProc.PrevFrame();break;

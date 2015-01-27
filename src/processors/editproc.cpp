@@ -14,6 +14,12 @@ EditProc::~EditProc()
     //dtor
 }
 
+void EditProc::Create(HWND hwnd, HINSTANCE hInstance)
+{
+    m_hwnd = hwnd;
+    m_hInstance = hInstance;
+}
+
 void EditProc::Undo()
 {
 
@@ -44,16 +50,16 @@ void EditProc::Clear()
 
 }
 
-void EditProc::ResizeShp(HWND hwnd)
+void EditProc::ResizeShp()
 {
-    ShpResizeDialog shpResizeDialog;
-    shpResizeDialog.Create(IDD_SHPRESIZE, hwnd);
+    ShpResizeDialog dialog;
+    dialog.Create(IDD_SHPRESIZE, m_hwnd);
 }
 
-void EditProc::ResizeCanvas(HWND hwnd)
+void EditProc::ResizeCanvas()
 {
-    CanvasResizeDialog canvasResizeDialog;
-    canvasResizeDialog.Create(IDD_CANVASRESIZE, hwnd);
+    CanvasResizeDialog dialog(m_hwnd, m_hInstance);
+    dialog.Create(IDD_CANVASRESIZE, m_hwnd);
 }
 
 void EditProc::Rot180()
@@ -71,14 +77,14 @@ void EditProc::Rot90CCW()
 
 }
 
-void EditProc::RotArb(HWND hwnd)
+void EditProc::RotArb()
 {
-    RotateArbDialog rotateArbDialog;
-    rotateArbDialog.Create(IDD_ROTATEARB, hwnd);
+    RotateArbDialog dialog;
+    dialog.Create(IDD_ROTATEARB, m_hwnd);
 }
 
-void EditProc::Transform(HWND hwnd)
+void EditProc::Transform()
 {
-    TransformDialog transformDialog;
-    transformDialog.Create(IDD_ROTATEARB, hwnd);
+    TransformDialog dialog;
+    dialog.Create(IDD_ROTATEARB, m_hwnd);
 }

@@ -9,9 +9,12 @@ class OptionsProc
     public:
         OptionsProc();
         virtual ~OptionsProc();
-        void ChangePreferences(HWND hwnd);
+        void Create(HWND hwnd, HINSTANCE hInstance);
+        void ChangePreferences();
     protected:
     private:
+        HWND m_hwnd;
+        HINSTANCE m_hInstance;
 };
 
 #endif // OPTIONSPROC_H

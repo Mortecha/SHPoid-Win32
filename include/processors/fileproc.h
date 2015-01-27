@@ -10,20 +10,23 @@ class FileProc
 public:
     FileProc();
     virtual ~FileProc();
-    void New(HWND hwnd);
-    void Open(HWND hwnd);
+    void Create(HWND hwnd, HINSTANCE hInstance);
+    void New();
+    void Open();
     void OpenRecent();
     void Close();
     void CloseAll();
     void Save();
     void SaveAs();
-    void Batch(HWND hwnd);
+    void Batch();
     void SaveAll();
-    void Import(HWND hwnd);
-    void Export(HWND hwnd);
-    void Exit(HWND hwnd);
+    void Import();
+    void Export();
+    void Exit();
 protected:
 private:
+    HWND m_hwnd;
+    HINSTANCE m_hInstance;
 };
 
 #endif // FILEPROC_H

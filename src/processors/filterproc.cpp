@@ -12,16 +12,22 @@ FilterProc::~FilterProc()
     //dtor
 }
 
-void FilterProc::EditSettings(HWND hwnd)
+void FilterProc::Create(HWND hwnd, HINSTANCE hInstance)
 {
-    FilterSettingsDialog filterSettingsDialog;
-    filterSettingsDialog.Create(IDD_FILTERSETTINGS, hwnd);
+    m_hwnd = hwnd;
+    m_hInstance = hInstance;
 }
 
-void FilterProc::ChangeColourScheme(HWND hwnd)
+void FilterProc::EditSettings()
+{
+    FilterSettingsDialog filterSettingsDialog;
+    filterSettingsDialog.Create(IDD_FILTERSETTINGS, m_hwnd);
+}
+
+void FilterProc::ChangeColourScheme()
 {
     ColourSchemeDialog colourSchemeDialog;
-    colourSchemeDialog.Create(IDD_COLOURSCHEME, hwnd);
+    colourSchemeDialog.Create(IDD_COLOURSCHEME, m_hwnd);
 }
 
 void FilterProc::SmoothConservative()

@@ -9,23 +9,26 @@ class ShpProc
     public:
         ShpProc();
         virtual ~ShpProc();
-        void ChangeType(HWND hwnd);
+        void Create(HWND hwnd, HINSTANCE hInstance);
+        void ChangeType();
         void AutoselectType();
         void InsertFrame();
         void DeleteFrame();
         void PrevFrame();
         void NextFrame();
         void SplitFrames();
-        void LoadPalette(HWND hwnd);
-        void ChangePalette(HWND hwnd);
-        void UpdatePalettes(HWND hwnd);
-        void Sequence(HWND hwnd);
+        void LoadPalette();
+        void ChangePalette();
+        void UpdatePalettes();
+        void Sequence();
         void AutoShadows();
         void ConvertShadows();
         void FixShadows();
-        void GenerateCameo(HWND hwnd);
+        void GenerateCameo();
     protected:
     private:
+        HWND m_hwnd;
+        HINSTANCE m_hInstance;
 
 };
 

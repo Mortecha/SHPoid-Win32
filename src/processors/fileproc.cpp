@@ -19,20 +19,26 @@ FileProc::~FileProc()
     //dtor
 }
 
-void FileProc::New(HWND hwnd)
+void FileProc::Create(HWND hwnd, HINSTANCE hInstance)
 {
-    NewDialog newDialog;
-    newDialog.Create(IDD_NEW, hwnd);
+    m_hwnd = hwnd;
+    m_hInstance = hInstance;
 }
 
-void FileProc::Open(HWND hwnd)
+void FileProc::New()
+{
+    NewDialog newDialog;
+    newDialog.Create(IDD_NEW, m_hwnd);
+}
+
+void FileProc::Open()
 {
     OPENFILENAME ofn;
     char szFileName[MAX_PATH] = "";
     ZeroMemory(&ofn, sizeof(ofn));
 
     ofn.lStructSize = sizeof(ofn);
-    ofn.hwndOwner = hwnd;
+    ofn.hwndOwner = m_hwnd;
     ofn.lpstrFilter = "Shp Files (*.shp)\0*.shp\0All Files (*.*)\0*.*\0";
     ofn.lpstrFile = szFileName;
     ofn.nMaxFile = MAX_PATH;
@@ -76,26 +82,26 @@ void FileProc::SaveAll()
 
 }
 
-void FileProc::Batch(HWND hwnd)
+void FileProc::Batch()
 {
-    BatchDialog batchDialog;
-    batchDialog.Create(IDD_BATCH, hwnd);
+    BatchDialog dialog;
+    dialog.Create(IDD_BATCH, m_hwnd);
 }
 
-void FileProc::Import(HWND hwnd)
+void FileProc::Import()
 {
-    ImportDialog importDialog;
-    importDialog.Create(IDD_IMPORT, hwnd);
+    ImportDialog dialog;
+    dialog.Create(IDD_IMPORT, m_hwnd);
 }
 
-void FileProc::Export(HWND hwnd)
+void FileProc::Export()
 {
-    ExportDialog exportDialog;
-    exportDialog.Create(IDD_EXPORT, hwnd);
+    ExportDialog dialog;
+    dialog.Create(IDD_EXPORT, m_hwnd);
 }
 
-void FileProc::Exit(HWND hwnd)
+void FileProc::Exit()
 {
-    PostMessage(hwnd, WM_CLOSE, 0, 0);
+    PostMessage(m_hwnd, WM_CLOSE, 0, 0);
 }
 

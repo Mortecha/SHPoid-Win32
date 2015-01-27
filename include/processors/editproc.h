@@ -9,21 +9,24 @@ class EditProc
     public:
         EditProc();
         virtual ~EditProc();
+        void Create(HWND hwnd, HINSTANCE hInstance);
         void Undo();
         void Redo();
         void Cut();
         void Copy();
         void Paste();
         void Clear();
-        void ResizeShp(HWND hwnd);
-        void ResizeCanvas(HWND hwnd);
+        void ResizeShp();
+        void ResizeCanvas();
         void Rot180();
         void Rot90CW();
         void Rot90CCW();
-        void RotArb(HWND hwnd);
-        void Transform(HWND hwnd);
+        void RotArb();
+        void Transform();
     protected:
     private:
+        HWND m_hwnd;
+        HINSTANCE m_hInstance;
 };
 
 #endif // EDITPROC_H

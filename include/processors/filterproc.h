@@ -9,8 +9,9 @@ class FilterProc
     public:
         FilterProc();
         virtual ~FilterProc();
-        void EditSettings(HWND hwnd);
-        void ChangeColourScheme(HWND hwnd);
+        void Create(HWND hwnd, HINSTANCE hInstance);
+        void EditSettings();
+        void ChangeColourScheme();
         void SmoothConservative();
         void SmoothPolyMean();
         void SmoothMeanMin();
@@ -48,6 +49,8 @@ class FilterProc
         void ApplyUnderline();
     protected:
     private:
+        HWND m_hwnd;
+        HINSTANCE m_hInstance;
 };
 
 #endif // FILTERPROC_H

@@ -9,13 +9,16 @@ class ViewProc
     public:
         ViewProc();
         virtual ~ViewProc();
+        void Create(HWND hwnd, HINSTANCE hInstance);
         void ZoomIn();
         void ZoomOut();
-        void Preview(HWND hwnd);
+        void Preview();
         void ShowCenter();
         void ShowGrid();
     protected:
     private:
+        HWND m_hwnd;
+        HINSTANCE m_hInstance;
 };
 
 #endif // VIEWPROC_H

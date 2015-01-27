@@ -223,14 +223,14 @@ void SHPoidGUI::CreateDrawToolbar(HWND hwnd, HINSTANCE hInstance)
     GetClientRect(hwnd, &hwndRect);
     GetClientRect(m_hMainToolbar, &mainToolbarRect);
     GetClientRect(m_hDrawToolbar, &drawToolbarRect);
-//
+
     MoveWindow(m_hDrawToolbar,
                hwndRect.left,
                mainToolbarRect.bottom + 3,
                0,
                hwndRect.bottom,
                FALSE);
-//
+
 //    AddMainButtons(m_hDrawToolbar, hInstance);
 
     SendMessage(m_hDrawToolbar, TB_AUTOSIZE, 0, 0);

@@ -9,11 +9,14 @@ class HelpProc
     public:
         HelpProc();
         virtual ~HelpProc();
+        void Create(HWND hwnd, HINSTANCE hInstance);
         void ViewHelp();
-        void ReportBug(HWND hwnd);
-        void ViewAbout(HWND hwnd, HINSTANCE hInstance);
+        void ReportBug();
+        void ViewAbout();
     protected:
     private:
+        HWND m_hwnd;
+        HINSTANCE m_hInstance;
 };
 
 #endif // HELPPROC_H
