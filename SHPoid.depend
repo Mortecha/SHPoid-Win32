@@ -57,7 +57,7 @@
 	<windows.h>
 	<windowsx.h>
 
-1422324334 c:\users\admin\dropbox\applications\shpoid\include\processors\editproc.h
+1422324984 c:\users\admin\dropbox\applications\shpoid\include\processors\editproc.h
 	<windows.h>
 
 1422324402 c:\users\admin\dropbox\applications\shpoid\include\processors\shpproc.h
@@ -120,7 +120,7 @@
 	"processors/viewproc.h"
 	"dialogboxes/previewdialog.h"
 
-1422323671 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
+1422324792 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidproc.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>

@@ -11,23 +11,30 @@ void AboutDialog::CreateDialogComponents()
     HWND hVersionText = CreateWindow("Static",
                                      "Version: 0.001",
                                      WS_CHILD | WS_VISIBLE | SS_LEFT,
-                                     10, 50, 250, 20,
+                                     10, 30, 250, 20,
                                      m_hDlg, NULL, m_hInstance, NULL);
 
     HWND hAuthorText = CreateWindow("Static",
-                                     "Created By: Samuel Keightley - Mortecha",
-                                     WS_CHILD | WS_VISIBLE | SS_LEFT,
-                                     10, 80, 300, 20,
-                                     m_hDlg, NULL, m_hInstance, NULL);
+                                    "Created By: Sam Keightley - Mortecha",
+                                    WS_CHILD | WS_VISIBLE | SS_LEFT,
+                                    10, 80, 300, 20,
+                                    m_hDlg, NULL, m_hInstance, NULL);
 
-    HFONT hFontAboutTitle = CreateFont(40, 0,
-                                 0, 0,
-                                 100, FALSE, FALSE, FALSE,
-                                 ANSI_CHARSET, OUT_DEVICE_PRECIS, CLIP_MASK,
-                                 ANTIALIASED_QUALITY, DEFAULT_PITCH,
-                                 "MS Outlook");
+    HFONT hFontTitle = CreateFont(20, 0, 0, 0,
+                                  600, FALSE, FALSE, FALSE,
+                                  ANSI_CHARSET, OUT_DEVICE_PRECIS, CLIP_MASK,
+                                  ANTIALIASED_QUALITY, DEFAULT_PITCH,
+                                  NULL);
 
-    SendMessage(hAboutTitle, WM_SETFONT, WPARAM(hFontAboutTitle), TRUE);
+    HFONT hFont = CreateFont(15, 0, 0, 0,
+                             400, FALSE, FALSE, FALSE,
+                             ANSI_CHARSET, OUT_DEVICE_PRECIS, CLIP_MASK,
+                             ANTIALIASED_QUALITY, DEFAULT_PITCH,
+                             NULL);
+
+    SendMessage(hAboutTitle, WM_SETFONT, WPARAM(hFontTitle), TRUE);
+    SendMessage(hVersionText, WM_SETFONT, WPARAM(hFont), TRUE);
+    SendMessage(hAuthorText, WM_SETFONT, WPARAM(hFont), TRUE);
 }
 
 INT_PTR AboutDialog::HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
