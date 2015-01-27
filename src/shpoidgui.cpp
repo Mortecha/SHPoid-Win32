@@ -262,7 +262,7 @@ void SHPoidGUI::Create(HWND hwnd, HINSTANCE hInstance)
 {
     SetMenu(hwnd, LoadMenu(hInstance, MAKEINTRESOURCE(MENU_ID_MAIN)));
     CreateToolbar(hwnd, hInstance);
-    CreateDrawToolbar(hwnd, hInstance);
+    //CreateDrawToolbar(hwnd, hInstance);
 }
 
 

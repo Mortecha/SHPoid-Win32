@@ -2,7 +2,6 @@
 
 INT_PTR CanvasResizeDialog::HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-    //handle messages normally
     switch(uMsg)
     {
     case WM_INITDIALOG:

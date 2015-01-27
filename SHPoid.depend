@@ -19,7 +19,7 @@
 	<windows.h>
 	<windowsx.h>
 
-1421844281 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
+1422382848 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
 	<windows.h>
 	<commctrl.h>
 
@@ -35,16 +35,16 @@
 1421413915 source:c:\users\admin\dropbox\applications\shpoid\src\fileproc.cpp
 	"fileproc.h"
 
-1422320631 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
+1422383052 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
 	"shpoidgui.h"
 	"resource.h"
 
-1422253788 c:\users\admin\dropbox\applications\shpoid\include\resource.h
+1422390356 c:\users\admin\dropbox\applications\shpoid\include\resource.h
 
-1422278048 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
+1422384454 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
 	<windows.h>
 	"include\shpoidproc.h"
 	"include\resource.h"
@@ -75,7 +75,7 @@
 1422324679 c:\users\admin\dropbox\applications\shpoid\include\processors\helpproc.h
 	<windows.h>
 
-1422324314 source:c:\users\admin\dropbox\applications\shpoid\src\processors\editproc.cpp
+1422363770 source:c:\users\admin\dropbox\applications\shpoid\src\processors\editproc.cpp
 	"processors/editproc.h"
 	"dialogboxes/shpresizedialog.h"
 	"dialogboxes/canvasresizedialog.h"
@@ -141,7 +141,7 @@
 	"aboutdialogbox.h"
 	"resource.h"
 
-1422274069 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\aboutdialog.h
+1422362899 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\aboutdialog.h
 	<windows.h>
 	"base/basedialog.h"
 	"resource.h"
@@ -151,7 +151,7 @@
 	"base/basedialog.h"
 	"resource.h"
 
-1422320942 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\canvasresizedialog.h
+1422384664 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\canvasresizedialog.h
 	<windows.h>
 	"base/basedialog.h"
 	"resource.h"
@@ -241,7 +241,7 @@
 	<tchar.h>
 	"resource.h"
 
-1422280172 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\aboutdialog.cpp
+1422330500 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\aboutdialog.cpp
 	"dialogboxes/aboutdialog.h"
 
 1422271942 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\batchdialog.cpp
@@ -295,6 +295,6 @@
 1422272025 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\updatepalettedialog.cpp
 	"dialogboxes/updatepalettedialog.h"
 
-1422320995 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\canvasresizedialog.cpp
+1422384685 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\canvasresizedialog.cpp
 	"dialogboxes/canvasresizedialog.h"
 

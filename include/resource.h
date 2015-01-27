@@ -10,13 +10,8 @@
 #define MENU_FILE_ID_SAVE_AS                    1300
 #define MENU_FILE_ID_SAVE_ALL                   1350
 #define MENU_FILE_ID_BATCH_CONVERT              1400
-//#define MENU_FILE_ID_IMPORT_IMAGE_TO_SHP        1450
 #define MENU_FILE_ID_IMPORT                     1450
 #define MENU_FILE_ID_EXPORT                     1500
-//#define MENU_FILE_ID_EXPORT_FRAME_TO_IMAGE      1500
-//#define MENU_FILE_ID_EXPORT_FRAMES_TO_IMAGES    1501
-//#define MENU_FILE_ID_EXPORT_SHP_TO_IMAGES       1502
-//#define MENU_FILE_ID_EXPORT_SHP_TO_SPRITESHEET  1503
 #define MENU_FILE_ID_EXIT                       1550
 
 // defines for the top level menu EDIT
@@ -148,3 +143,24 @@
 
 //defines for about dialog box components
 
+// defines for resize canvas dialog box components
+#define IDGRPBX_CSIZE                          10200
+#define IDGRPBX_NSIZE                          10201
+
+// defines for change palette dialog box components
+#define IDGRPBX_CPAL                           10300
+#define IDGRPBX_NPAL                           10301
+
+// defines for export dialog box components
+#define IDEXPORT                               10400
+#define IDGRPBX_EXPORTAS                       10401
+#define IDGRPBX_EXPORTFRAMES                   10402
+#define IDGRPBX_EXPORTPATH                     10403
+
+// defines for filter settings dialog box components
+#define IDBTN_FILTER_DEFAULT                   10500
+#define IDGRPBX_FILTER_FRAMERANGE              10501
+#define IDGRPBX_FILTER_FRAMEREGION             10502
+#define IDGRPBX_FILTER_BACKGROUND              10503
+#define IDGRPBX_FILTER_COLOURSETTINGS          10504
+#define IDGRPBX_FILTER_COLOURCONTROL           10505

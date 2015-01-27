@@ -19,32 +19,8 @@ MENU_ID_MAIN MENU DISCARDABLE
         MENUITEM "Save All", MENU_FILE_ID_SAVE_ALL
         MENUITEM SEPARATOR
         MENUITEM "Batch Conversion", MENU_FILE_ID_BATCH_CONVERT
-
-        // "Import" will revert back to a MENUITEM at a later stage
-        // and current menu items will be contained within it
-        // the modal will have functionality to browse for a specific file
-        // and also determine how best to proceed based upon the format of
-        // the specific file in question
         MENUITEM "Import", MENU_FILE_ID_IMPORT
-//        POPUP "Import"
-//        {
-//            MENUITEM "Image -> SHP", MENU_FILE_ID_IMPORT_IMAGE_TO_SHP
-//        }
-
-        // "Export" will revert back to a MENUITEM at a later stage
-        // and current menu items will be contained within it
-        // the modal will have functionality to browse for a specific location
-        // to export too and also determine how best to proceed based upon a specific option
-        // selected by the user
         MENUITEM "Export", MENU_FILE_ID_EXPORT
-//        POPUP "Export"
-//        {
-//            MENUITEM "Frame -> Image", MENU_FILE_ID_EXPORT_FRAME_TO_IMAGE
-//            MENUITEM "Frames -> Images", MENU_FILE_ID_EXPORT_FRAMES_TO_IMAGES
-//            MENUITEM "SHP -> Images", MENU_FILE_ID_EXPORT_SHP_TO_IMAGES
-//            MENUITEM "SHP -> Sprite Sheet", MENU_FILE_ID_EXPORT_SHP_TO_SPRITESHEET
-//        }
-
         MENUITEM SEPARATOR
         MENUITEM "Exit", MENU_FILE_ID_EXIT
     }
@@ -234,9 +210,6 @@ CAPTION "About"
 FONT 8, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON "&Ok", IDOK, 225,10,50,14
-    //LISTBOX
-
-
 END
 
 IDD_BATCH DIALOG DISCARDABLE 0,0,440,270
@@ -244,26 +217,32 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Batch Conversion"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok", IDOK, 174,18,50,14
+    DEFPUSHBUTTON "&Ok", IDOK, 174,18,50,14
     PUSHBUTTON "&Cancel", IDCANCEL, 174,18,50,14
+    //TEXTINCLUDE
+    //GROUPBOX
 END
 
-IDD_CANVASRESIZE DIALOG DISCARDABLE 0,0,239,66
+IDD_CANVASRESIZE DIALOGEX DISCARDABLE 0, 0, 260, 120
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Resize Canvas"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok", IDOK, 174,18,50,14
-    PUSHBUTTON "&Cancel", IDCANCEL, 174,18,50,14
+    DEFPUSHBUTTON "&Ok", IDOK, 200, 10, 50, 14
+    PUSHBUTTON "&Cancel", IDCANCEL, 200, 29, 50, 14
+    GROUPBOX "Current Size", IDGRPBX_CSIZE, 10, 6, 180, 50
+    GROUPBOX "New Size", IDGRPBX_NSIZE, 10, 62, 180, 50
 END
 
-IDD_CHANGEPALETTE DIALOG DISCARDABLE 0,0,239,66
+IDD_CHANGEPALETTE DIALOGEX DISCARDABLE 0, 0, 260, 120
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Palette"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok", IDOK, 174,18,50,14
-    PUSHBUTTON "&Cancel", IDCANCEL, 174,18,50,14
+    DEFPUSHBUTTON "&Ok", IDOK, 200, 10, 50, 14
+    PUSHBUTTON "&Cancel", IDCANCEL, 200, 29, 50, 14
+    GROUPBOX "Current Palette", IDGRPBX_CPAL, 10, 6, 180, 50
+    GROUPBOX "New Palette", IDGRPBX_NPAL, 10, 62, 180, 50
 END
 
 IDD_COLOURSCHEME DIALOG DISCARDABLE 0,0,239,66
@@ -284,22 +263,31 @@ BEGIN
     PUSHBUTTON "&Cancel", IDCANCEL, 174,18,50,14
 END
 
-IDD_EXPORT DIALOG DISCARDABLE 0,0,239,66
+IDD_EXPORT DIALOGEX DISCARDABLE 0, 0, 260, 178
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Export"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok", IDOK, 174,18,50,14
-    PUSHBUTTON "&Cancel", IDCANCEL, 174,18,50,14
+    DEFPUSHBUTTON "&Export", IDEXPORT, 200, 10, 50, 14
+    PUSHBUTTON "&Cancel", IDCANCEL, 200, 29, 50, 14
+    GROUPBOX "Export As", IDGRPBX_EXPORTAS, 10, 6, 180, 50
+    GROUPBOX "Frame Range", IDGRPBX_EXPORTFRAMES, 10, 62, 180, 50
+    GROUPBOX "Output Path", IDGRPBX_EXPORTPATH, 10, 118, 180, 50
 END
 
-IDD_FILTERSETTINGS DIALOG DISCARDABLE 0,0,239,66
+IDD_FILTERSETTINGS DIALOG DISCARDABLE 0, 0, 260, 288
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Filter Settings"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok", IDOK, 174,18,50,14
-    PUSHBUTTON "&Cancel", IDCANCEL, 174,18,50,14
+    DEFPUSHBUTTON "&Ok", IDOK, 200, 10, 50, 14
+    PUSHBUTTON "Default", IDBTN_FILTER_DEFAULT, 200, 29, 50, 14
+    PUSHBUTTON "&Cancel", IDCANCEL, 200, 48, 50, 14
+    GROUPBOX "Frame Range", IDGRPBX_FILTER_FRAMERANGE, 10, 6, 180, 50
+    GROUPBOX "Frame Region", IDGRPBX_FILTER_FRAMEREGION, 10, 62, 180, 50
+    GROUPBOX "Background", IDGRPBX_FILTER_BACKGROUND, 10, 118, 180, 50
+    GROUPBOX "Colour Settings", IDGRPBX_FILTER_COLOURSETTINGS, 10, 174, 180, 50
+    GROUPBOX "Peak Colour Control", IDGRPBX_FILTER_COLOURCONTROL, 10, 230, 180, 50
 END
 
 IDD_GENERATECAMEO DIALOG DISCARDABLE 0,0,239,66

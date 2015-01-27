@@ -58,7 +58,7 @@ void EditProc::ResizeShp()
 
 void EditProc::ResizeCanvas()
 {
-    CanvasResizeDialog dialog(m_hwnd, m_hInstance);
+    CanvasResizeDialog dialog;
     dialog.Create(IDD_CANVASRESIZE, m_hwnd);
 }
 
