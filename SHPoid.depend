@@ -42,7 +42,7 @@
 	"shpoidgui.h"
 	"resource.h"
 
-1422390356 c:\users\admin\dropbox\applications\shpoid\include\resource.h
+1422443302 c:\users\admin\dropbox\applications\shpoid\include\resource.h
 
 1422384454 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
 	<windows.h>
@@ -141,7 +141,7 @@
 	"aboutdialogbox.h"
 	"resource.h"
 
-1422362899 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\aboutdialog.h
+1422439131 c:\users\admin\dropbox\applications\shpoid\include\dialogboxes\aboutdialog.h
 	<windows.h>
 	"base/basedialog.h"
 	"resource.h"
@@ -241,7 +241,7 @@
 	<tchar.h>
 	"resource.h"
 
-1422330500 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\aboutdialog.cpp
+1422439129 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\aboutdialog.cpp
 	"dialogboxes/aboutdialog.h"
 
 1422271942 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\batchdialog.cpp

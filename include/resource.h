@@ -142,10 +142,20 @@
 #define IDD_UPDATEPALETTE                      10018
 
 //defines for about dialog box components
+#define ID_ABOUTDLG_TITLE                      10100
+#define ID_ABOUTDLG_VERSION                    10101
+#define ID_ABOUTDLG_AUTHOR                     10102
 
 // defines for resize canvas dialog box components
 #define IDGRPBX_CSIZE                          10200
-#define IDGRPBX_NSIZE                          10201
+#define IDTEXT_CWIDTH                          10201
+#define IDTEXT_CLENGTH                         10202
+
+#define IDGRPBX_NSIZE                          10203
+#define IDTEXT_NWIDTH                          10204
+#define IDTEXT_NLENGTH                         10205
+#define IDEDITTEXT_NWIDTH                      10206
+#define IDEDITTEXT_NLENGTH                     10207
 
 // defines for change palette dialog box components
 #define IDGRPBX_CPAL                           10300
