@@ -7,7 +7,6 @@ INT_PTR AboutDialog::HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
     {
     case WM_INITDIALOG:
         CenterDialogToParent();
-//        CreateDialogComponents();
         return 1;
 
     case WM_COMMAND:

@@ -192,15 +192,16 @@ MENU_ID_MAIN MENU DISCARDABLE
 
 // MAIN TOOLBAR --------------------------------------------------------------------------------------------------------
 
-TOOLBAR_ID_NEW                  ICON          "rc\\newFile.ico"
-TOOLBAR_ID_OPEN                 ICON          "rc\\openFile.ico"
-TOOLBAR_ID_SAVE                 ICON          "rc\\saveFile.ico"
-TOOLBAR_ID_CROSSHAIR            ICON          "rc\\crosshair.ico"
-TOOLBAR_ID_GRID                 ICON          "rc\\grid.ico"
-TOOLBAR_ID_PREVIOUS_FRAME       ICON          "rc\\prevFrame.ico"
-TOOLBAR_ID_NEXT_FRAME           ICON          "rc\\nextFrame.ico"
-TOOLBAR_ID_ZOOM_IN              ICON          "rc\\zoomIn.ico"
-TOOLBAR_ID_ZOOM_OUT             ICON          "rc\\zoomOut.ico"
+TOOLBAR_ID_NEW                  BITMAP          "rc\\newfile.bmp"
+TOOLBAR_ID_OPEN                 BITMAP          "rc\\openfile.bmp"
+TOOLBAR_ID_SAVE                 BITMAP          "rc\\savefile.bmp"
+TOOLBAR_ID_CROSSHAIR            BITMAP          "rc\\crosshair.bmp"
+TOOLBAR_ID_GRID                 BITMAP          "rc\\grid.bmp"
+TOOLBAR_ID_PREVIOUS_FRAME       BITMAP          "rc\\prevframe.bmp"
+TOOLBAR_ID_NEXT_FRAME           BITMAP          "rc\\nextframe.bmp"
+TOOLBAR_ID_ZOOM_IN              BITMAP          "rc\\zoomin.bmp"
+TOOLBAR_ID_ZOOM_OUT             BITMAP          "rc\\zoomout.bmp"
+ID_TOOLBAR_BUTTONS              BITMAP          "rc\\combined.bmp"
 
 // DIALOG BOXES --------------------------------------------------------------------------------------------------------
 
@@ -210,9 +211,9 @@ CAPTION "About"
 FONT 8, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON "&Ok", IDOK, 225,10,50,14
-    LTEXT "SHPoid", ID_ABOUTDLG_TITLE, 50, 10, 140, 40
-    LTEXT "Version: 0.001", ID_ABOUTDLG_VERSION, 50, 20, 150, 20
-    LTEXT "Created By: Sam Keightley - Mortecha", ID_ABOUTDLG_AUTHOR, 50, 45, 150, 20
+    LTEXT "SHPoid", IDD_ABOUT_TEXT_TITLE, 50, 10, 140, 40
+    LTEXT "Version: 0.001", IDD_ABOUT_TEXT_VERSION, 50, 20, 150, 20
+    LTEXT "Created By: Sam Keightley - Mortecha", IDD_ABOUT_TEXT_AUTHOR, 50, 45, 150, 20
 END
 
 IDD_BATCH DIALOG DISCARDABLE 0,0,440,270
@@ -234,26 +235,38 @@ BEGIN
     DEFPUSHBUTTON "&Ok", IDOK, 200, 10, 50, 14
     PUSHBUTTON "&Cancel", IDCANCEL, 200, 29, 50, 14
 
-    GROUPBOX "Current Size", IDGRPBX_CSIZE, 10, 6, 180, 50
-    LTEXT " Width: ___ pixels", IDTEXT_CWIDTH, 61, 20, 100, 10
-    LTEXT "Length: ___ pixels", IDTEXT_CLENGTH, 60, 35, 100, 10
+    GROUPBOX "Current Size", IDD_CANVASRESIZE_CROUPBOX_CUR, 10, 6, 180, 50
+    LTEXT " Width:", IDD_CANVASRESIZE_TEXT_CUR_WIDTH, 61, 20, 50, 10
+    LTEXT "Length:", IDD_CANVASRESIZE_TEXT_CUR_LENGTH, 60, 35, 50, 10
+    LTEXT "___ pixels", IDD_CANVASRESIZE_TEXT_CUR_WIDTH_VAL, 90, 20, 50, 10
+    LTEXT "___ pixels", IDD_CANVASRESIZE_TEXT_CUR_LENGTH_VAL, 90, 35, 50, 10
 
-    GROUPBOX "New Size", IDGRPBX_NSIZE, 10, 62, 180, 50
-    LTEXT " Width:                  pixels", IDTEXT_NWIDTH, 61, 77, 100, 10
-    LTEXT "Length:                  pixels", IDTEXT_NLENGTH, 60, 92, 100, 10
-    EDITTEXT IDEDITTEXT_NWIDTH, 90, 76, 25, 10
-    EDITTEXT IDEDITTEXT_NLENGTH, 90, 91, 25, 10
+    GROUPBOX "New Size", IDD_CANVASRESIZE_CROUPBOX_NEW, 10, 62, 180, 50
+    LTEXT " Width:                  pixels", IDD_CANVASRESIZE_TEXT_NEW_WIDTH, 61, 77, 100, 10
+    LTEXT "Length:                  pixels", IDD_CANVASRESIZE_TEXT_NEW_LENGTH, 60, 92, 100, 10
+    EDITTEXT IDD_CANVASRESIZE_EDITTEXT_NEW_WIDTH, 90, 76, 25, 10
+    EDITTEXT IDD_CANVASRESIZE_EDITTEXT_NEW_LENGTH, 90, 91, 25, 10
 END
 
 IDD_CHANGEPALETTE DIALOGEX DISCARDABLE 0, 0, 260, 120
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Palette"
+CAPTION "Change Palette"
 FONT 8, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON "&Ok", IDOK, 200, 10, 50, 14
     PUSHBUTTON "&Cancel", IDCANCEL, 200, 29, 50, 14
-    GROUPBOX "Current Palette", IDGRPBX_CPAL, 10, 6, 180, 50
-    GROUPBOX "New Palette", IDGRPBX_NPAL, 10, 62, 180, 50
+
+    GROUPBOX "Current Palette", IDD_CHANGEPALETTE_GROUPBOX_CUR, 10, 6, 180, 50
+    LTEXT "   Game:", IDD_CHANGEPALETTE_TEXT_CUR_GAME, 58, 20, 100, 10
+    LTEXT "Palette:", IDD_CHANGEPALETTE_TEXT_CUR_PALETTE, 60, 35, 100, 10
+    LTEXT "___", IDD_CHANGEPALETTE_TEXT_CUR_GAME_VAL, 90, 20, 50, 10
+    LTEXT "___", IDD_CHANGEPALETTE_TEXT_CUR_PALETTE_VAL, 90, 35, 50, 10
+
+    GROUPBOX "New Palette", IDD_CHANGEPALETTE_GROUPBOX_NEW, 10, 62, 180, 50
+    LTEXT "   Game:", IDD_CHANGEPALETTE_TEXT_NEW_GAME, 58, 77, 50, 10
+    LTEXT "Palette:", IDD_CHANGEPALETTE_TEXT_NEW_PALETTE, 60, 92, 50, 10
+    COMBOBOX IDD_CHANGEPALETTE_COMBOBOX_GAME, 90, 75, 75, 10, CBS_DROPDOWNLIST
+    COMBOBOX IDD_CHANGEPALETTE_COMBOBOX_PALETTE, 90, 91, 75, 10, CBS_DROPDOWNLIST
 END
 
 IDD_COLOURSCHEME DIALOG DISCARDABLE 0,0,239,66
@@ -292,13 +305,13 @@ CAPTION "Filter Settings"
 FONT 8, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON "&Ok", IDOK, 200, 10, 50, 14
-    PUSHBUTTON "Default", IDBTN_FILTER_DEFAULT, 200, 29, 50, 14
+    PUSHBUTTON "Default", IDD_FILTERSETTINGS_BUTTON_DEFAULT, 200, 29, 50, 14
     PUSHBUTTON "&Cancel", IDCANCEL, 200, 48, 50, 14
-    GROUPBOX "Frame Range", IDGRPBX_FILTER_FRAMERANGE, 10, 6, 180, 50
-    GROUPBOX "Frame Region", IDGRPBX_FILTER_FRAMEREGION, 10, 62, 180, 50
-    GROUPBOX "Background", IDGRPBX_FILTER_BACKGROUND, 10, 118, 180, 50
-    GROUPBOX "Colour Settings", IDGRPBX_FILTER_COLOURSETTINGS, 10, 174, 180, 50
-    GROUPBOX "Peak Colour Control", IDGRPBX_FILTER_COLOURCONTROL, 10, 230, 180, 50
+    GROUPBOX "Frame Range", IDD_FILTERSETTINGS_GROUPBOX_RANGE, 10, 6, 180, 50
+    GROUPBOX "Frame Region", IDD_FILTERSETTINGS_GROUPBOX_REGION, 10, 62, 180, 50
+    GROUPBOX "Background", IDD_FILTERSETTINGS_GROUPBOX_BG, 10, 118, 180, 50
+    GROUPBOX "Colour Settings", IDD_FILTERSETTINGS_GROUPBOX_COL, 10, 174, 180, 50
+    GROUPBOX "Peak Colour Control", IDD_FILTERSETTINGS_GROUPBOX_CON, 10, 230, 180, 50
 END
 
 IDD_GENERATECAMEO DIALOG DISCARDABLE 0,0,239,66
