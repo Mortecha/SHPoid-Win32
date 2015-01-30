@@ -35,16 +35,16 @@
 1421413915 source:c:\users\admin\dropbox\applications\shpoid\src\fileproc.cpp
 	"fileproc.h"
 
-1422383052 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
+1422582305 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
 	"shpoidgui.h"
 	"resource.h"
 
-1422443302 c:\users\admin\dropbox\applications\shpoid\include\resource.h
+1422590954 c:\users\admin\dropbox\applications\shpoid\include\resource.h
 
-1422384454 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
+1422578098 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
 	<windows.h>
 	"include\shpoidproc.h"
 	"include\resource.h"
@@ -241,7 +241,7 @@
 	<tchar.h>
 	"resource.h"
 
-1422439129 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\aboutdialog.cpp
+1422530852 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\aboutdialog.cpp
 	"dialogboxes/aboutdialog.h"
 
 1422271942 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\batchdialog.cpp
