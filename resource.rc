@@ -201,7 +201,6 @@ TOOLBAR_ID_PREVIOUS_FRAME       BITMAP          "rc\\prevframe.bmp"
 TOOLBAR_ID_NEXT_FRAME           BITMAP          "rc\\nextframe.bmp"
 TOOLBAR_ID_ZOOM_IN              BITMAP          "rc\\zoomin.bmp"
 TOOLBAR_ID_ZOOM_OUT             BITMAP          "rc\\zoomout.bmp"
-ID_TOOLBAR_BUTTONS              BITMAP          "rc\\combined.bmp"
 
 // DIALOG BOXES --------------------------------------------------------------------------------------------------------
 

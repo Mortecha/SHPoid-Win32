@@ -19,7 +19,7 @@
 	<windows.h>
 	<windowsx.h>
 
-1422382848 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
+1422631756 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
 	<windows.h>
 	<commctrl.h>
 
@@ -35,7 +35,7 @@
 1421413915 source:c:\users\admin\dropbox\applications\shpoid\src\fileproc.cpp
 	"fileproc.h"
 
-1422582305 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
+1422631707 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
@@ -44,7 +44,7 @@
 
 1422590954 c:\users\admin\dropbox\applications\shpoid\include\resource.h
 
-1422578098 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
+1422631777 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
 	<windows.h>
 	"include\shpoidproc.h"
 	"include\resource.h"
@@ -297,4 +297,13 @@
 
 1422384685 source:c:\users\admin\dropbox\applications\shpoid\src\dialogboxes\canvasresizedialog.cpp
 	"dialogboxes/canvasresizedialog.h"
+
+1422591691 source:c:\users\admin\dropbox\applications\shpoid\src\components\toolbar.cpp
+	"components/toolbar.h"
+	"resource.h"
+
+1422591814 c:\users\admin\dropbox\applications\shpoid\include\components\toolbar.h
+	"base/basecomponent.h"
+
+1422591588 c:\users\admin\dropbox\applications\shpoid\include\base\basecomponent.h
 
