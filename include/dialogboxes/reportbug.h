@@ -9,8 +9,8 @@
 
 class ReportBugDialog : public BaseDialog<ReportBugDialog>
 {
-public:
-    INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
 #endif // REPORTBUGDIALOG_H

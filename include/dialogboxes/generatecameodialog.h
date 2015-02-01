@@ -9,8 +9,8 @@
 
 class GenerateCameoDialog : public BaseDialog<GenerateCameoDialog>
 {
-public:
-    INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
 #endif // GENERATECAMEODIALOG_H

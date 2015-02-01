@@ -13,27 +13,27 @@
 
 class SHPoidProc : public BaseWindow<SHPoidProc>
 {
-public:
-    LPSTR ClassName() const { return (LPSTR)"SHPoidClass"; }
-    BOOL OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct);
-    void OnSize(HWND hWnd, UINT state, int cx, int cy);
-    void OnPaint(HWND hwnd);
-    void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code);
-    void OnClose(HWND hwnd);
-    void OnDestroy(HWND hwnd);
-    LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        LPSTR ClassName() const { return (LPSTR)"SHPoidClass"; }
+        BOOL OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct);
+        void OnSize(HWND hWnd, UINT state, int cx, int cy);
+        void OnPaint(HWND hwnd);
+        void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT code);
+        void OnClose(HWND hwnd);
+        void OnDestroy(HWND hwnd);
+        LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-private:
-    HINSTANCE m_hInstance;
-    SHPoidGUI m_SHPoidGUI;
-    FileProc m_FileProc;
-    EditProc m_EditProc;
-    ShpProc m_ShpProc;
-    FilterProc m_FilterProc;
-    ViewProc m_ViewProc;
-    OptionsProc m_OptionsProc;
-    HelpProc m_HelpProc;
-    RECT m_rect;
+    private:
+        HINSTANCE m_hInstance;
+        SHPoidGUI m_SHPoidGUI;
+        FileProc m_FileProc;
+        EditProc m_EditProc;
+        ShpProc m_ShpProc;
+        FilterProc m_FilterProc;
+        ViewProc m_ViewProc;
+        OptionsProc m_OptionsProc;
+        HelpProc m_HelpProc;
+        RECT m_rect;
 };
 
 #endif // SHPOIDPROC_H

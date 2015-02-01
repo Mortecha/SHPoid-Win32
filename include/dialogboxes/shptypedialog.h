@@ -9,8 +9,8 @@
 
 class ShpTypeDialog : public BaseDialog<ShpTypeDialog>
 {
-public:
-    INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
 #endif // SHPTYPEDIALOG_H

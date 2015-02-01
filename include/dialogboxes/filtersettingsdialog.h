@@ -9,8 +9,8 @@
 
 class FilterSettingsDialog : public BaseDialog<FilterSettingsDialog>
 {
-public:
-    INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
 #endif // FILTERSETTINGSDIALOG_H

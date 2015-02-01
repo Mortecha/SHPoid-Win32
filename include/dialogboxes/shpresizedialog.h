@@ -9,8 +9,8 @@
 
 class ShpResizeDialog : public BaseDialog<ShpResizeDialog>
 {
-public:
-    INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
 #endif // SHPRESIZEDIALOG_H

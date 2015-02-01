@@ -9,8 +9,8 @@
 
 class UpdatePaletteDialog : public BaseDialog<UpdatePaletteDialog>
 {
-public:
-    INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
 #endif // UPDATEPALETTEDIALOG_H

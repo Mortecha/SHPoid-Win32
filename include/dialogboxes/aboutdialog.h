@@ -9,8 +9,8 @@
 
 class AboutDialog : public BaseDialog<AboutDialog>
 {
-public:
-    INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
 #endif // ABOUTDIALOG_H

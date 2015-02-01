@@ -9,8 +9,8 @@
 
 class CanvasResizeDialog : public BaseDialog<CanvasResizeDialog>
 {
-public:
-    INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
 #endif // CANVASRESIZEDIALOG_H

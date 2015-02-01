@@ -9,8 +9,8 @@
 
 class EditSequenceDialog : public BaseDialog<EditSequenceDialog>
 {
-public:
-    INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
 #endif // EDITSEQUENCEDIALOG_H

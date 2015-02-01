@@ -9,8 +9,8 @@
 
 class PreviewDialog : public BaseDialog<PreviewDialog>
 {
-public:
-    INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    public:
+        INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
 #endif // PREVIEWDIALOG_H
