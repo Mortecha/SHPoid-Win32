@@ -5,13 +5,13 @@
 #include <windowsx.h>
 #include <commctrl.h>
 
-#include "components/maintoolbar.h"
+#include "components/toolstoolbar.h"
 #include "resource.h"
 
 // hwnd - handle to the parent window
 // hInstance - handle to the current instance of the application
 // returns handle to newly created toolbar.
-void MainToolbar::Create(HWND hWnd, HINSTANCE hInstance)
+void ToolsToolbar::Create(HWND hWnd, HINSTANCE hInstance)
 {
     const int ImageListID    = 0;
     const int numButtons     = 12;
@@ -28,8 +28,8 @@ void MainToolbar::Create(HWND hWnd, HINSTANCE hInstance)
 
     // Create the image list.
     m_hImageList = ImageList_Create(bitmapSize, bitmapSize,   // Dimensions of individual bitmaps.
-                                    ILC_COLOR24 | ILC_MASK,   // Ensures transparent background.
-                                    numButtons, 0);
+                                             ILC_COLOR24 | ILC_MASK,   // Ensures transparent background.
+                                             numButtons, 0);
 
     // Set the image list.
     SendMessage(m_hToolbar, TB_SETIMAGELIST, (WPARAM)ImageListID, (LPARAM)m_hImageList);
@@ -69,7 +69,8 @@ void MainToolbar::Create(HWND hWnd, HINSTANCE hInstance)
     ShowWindow(m_hToolbar,  TRUE);
 }
 
-HWND MainToolbar::GetHandle()
+HWND ToolsToolbar::GetHandle()
 {
     return m_hToolbar;
 }
+

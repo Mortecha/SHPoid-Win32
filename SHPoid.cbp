@@ -42,10 +42,11 @@
 			<Add library="kernel32" />
 			<Add library="comctl32" />
 		</Linker>
-		<Unit filename="include/base/basecomponent.h" />
 		<Unit filename="include/base/basedialog.h" />
 		<Unit filename="include/base/basewindow.h" />
+		<Unit filename="include/components/mainrebar.h" />
 		<Unit filename="include/components/maintoolbar.h" />
+		<Unit filename="include/components/toolstoolbar.h" />
 		<Unit filename="include/dialogboxes/aboutdialog.h" />
 		<Unit filename="include/dialogboxes/batchdialog.h" />
 		<Unit filename="include/dialogboxes/canvasresizedialog.h" />
@@ -79,7 +80,9 @@
 			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="shpoid.cpp" />
+		<Unit filename="src/components/mainrebar.cpp" />
 		<Unit filename="src/components/maintoolbar.cpp" />
+		<Unit filename="src/components/toolstoolbar.cpp" />
 		<Unit filename="src/dialogboxes/aboutdialog.cpp" />
 		<Unit filename="src/dialogboxes/batchdialog.cpp" />
 		<Unit filename="src/dialogboxes/canvasresizedialog.cpp" />

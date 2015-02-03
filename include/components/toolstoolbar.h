@@ -1,10 +1,10 @@
-#ifndef MAINTOOLBAR_H
-#define MAINTOOLBAR_H
+#ifndef TOOLSTOOLBAR_H
+#define TOOLSTOOLBAR_H
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
-class MainToolbar
+class ToolsToolbar
 {
     public:
         void Create(HWND hwnd, HINSTANCE hInstance);
@@ -15,4 +15,4 @@ class MainToolbar
         HIMAGELIST m_hImageList;
 };
 
-#endif // MAINTOOLBAR_H
+#endif // TOOLSTOOLBAR_H

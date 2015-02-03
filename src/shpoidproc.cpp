@@ -23,8 +23,8 @@ BOOL SHPoidProc::OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct)
 
 void SHPoidProc::OnSize(HWND hWnd, UINT state, int cx, int cy)
 {
-    //SendMessage(m_SHPoidGUI.GetMainToolbarHandle(), TB_AUTOSIZE, 0, 0);
-    //SendMessage(m_SHPoidGUI.GetDrawControlsToolbarHandle(), TB_AUTOSIZE, 0, 0);
+    SendMessage(m_SHPoidGUI.GetMainRebarHandle(), TB_AUTOSIZE, 0, 0);
+    SendMessage(m_SHPoidGUI.GetToolsToolbarHandle(), TB_AUTOSIZE, 0, 0);
 }
 
 void SHPoidProc::OnPaint(HWND hwnd)

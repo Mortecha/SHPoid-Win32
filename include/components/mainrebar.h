@@ -1,18 +1,18 @@
-#ifndef MAINTOOLBAR_H
-#define MAINTOOLBAR_H
+#ifndef MAINREBAR_H
+#define MAINREBAR_H
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
-class MainToolbar
+class MainRebar
 {
     public:
         void Create(HWND hwnd, HINSTANCE hInstance);
         HWND GetHandle();
 
     protected:
-        HWND m_hToolbar;
+        HWND m_hRebar;
         HIMAGELIST m_hImageList;
 };
 
-#endif // MAINTOOLBAR_H
+#endif //MAINREBAR_H
