@@ -46,6 +46,7 @@
 		<Unit filename="include/base/basewindow.h" />
 		<Unit filename="include/components/mainrebar.h" />
 		<Unit filename="include/components/maintoolbar.h" />
+		<Unit filename="include/components/toolrebar.h" />
 		<Unit filename="include/components/toolstoolbar.h" />
 		<Unit filename="include/dialogboxes/aboutdialog.h" />
 		<Unit filename="include/dialogboxes/batchdialog.h" />
@@ -82,6 +83,7 @@
 		<Unit filename="shpoid.cpp" />
 		<Unit filename="src/components/mainrebar.cpp" />
 		<Unit filename="src/components/maintoolbar.cpp" />
+		<Unit filename="src/components/toolrebar.cpp" />
 		<Unit filename="src/components/toolstoolbar.cpp" />
 		<Unit filename="src/dialogboxes/aboutdialog.cpp" />
 		<Unit filename="src/dialogboxes/batchdialog.cpp" />

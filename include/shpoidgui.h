@@ -5,6 +5,7 @@
 #include <windows.h>
 #include <commctrl.h>
 #include "components/mainrebar.h"
+#include "components/toolrebar.h"
 #include "components/maintoolbar.h"
 #include "components/toolstoolbar.h"
 
@@ -21,6 +22,7 @@ class SHPoidGUI
 
     private:
         MainRebar m_mainRebar;
+        ToolRebar m_toolRebar;
         MainToolbar m_mainToolbar;
         ToolsToolbar m_toolsToolbar;
 };

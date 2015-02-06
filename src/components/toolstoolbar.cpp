@@ -38,26 +38,32 @@ void ToolsToolbar::Create(HWND hWnd, HINSTANCE hInstance)
     TBBUTTON tbButtons[numButtons] =
     {
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_NEW)), NULL), ImageListID),
-            MENU_FILE_ID_NEW,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
+            MENU_FILE_ID_NEW,  TBSTATE_ENABLED | TBSTATE_WRAP, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_OPEN)), NULL), ImageListID),
-            MENU_FILE_ID_OPEN,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
+            MENU_FILE_ID_OPEN,  TBSTATE_ENABLED | TBSTATE_WRAP, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_SAVE)), NULL), ImageListID),
-            MENU_FILE_ID_SAVE,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
-        { MAKELONG(0, 0), 0, 0, TBSTATE_WRAP | TBSTYLE_SEP, {0}, 0, 0 }, // Separator
+            MENU_FILE_ID_SAVE,  TBSTATE_ENABLED | TBSTATE_WRAP, buttonStyles, {0}, 0, 0 },
+
+        { MAKELONG(0, 0), 0, 0, TBSTATE_WRAP | TBSTYLE_SEP | TBSTATE_WRAP| SS_ETCHEDHORZ, {0}, 0, 0 }, // Separator
+
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_GRID)), NULL), ImageListID),
-            MENU_VIEW_ID_SHOW_GRID,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
+            MENU_VIEW_ID_SHOW_GRID,  TBSTATE_ENABLED | TBSTATE_WRAP, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_CROSSHAIR)), NULL), ImageListID),
-            MENU_VIEW_ID_SHOW_CENTER,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
-        { MAKELONG(0, 0), 0, 0, TBSTATE_WRAP | TBSTYLE_SEP, {0}, 0, 0 }, // Separator
+            MENU_VIEW_ID_SHOW_CENTER,  TBSTATE_ENABLED | TBSTATE_WRAP, buttonStyles, {0}, 0, 0 },
+
+        { MAKELONG(0, 0), 0, 0, TBSTATE_WRAP | TBSTYLE_SEP | TBSTATE_WRAP | TBSTYLE_AUTOSIZE, {0}, 0, 0 }, // Separator
+
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_PREVIOUS_FRAME)), NULL), ImageListID),
-            TOOLBAR_ID_PREVIOUS_FRAME,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
+            TOOLBAR_ID_PREVIOUS_FRAME,  TBSTATE_ENABLED | TBSTATE_WRAP | SS_ETCHEDHORZ, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_NEXT_FRAME)), NULL), ImageListID),
-            TOOLBAR_ID_NEXT_FRAME,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
-        { MAKELONG(0, 0), 0, 0, TBSTATE_WRAP | TBSTYLE_SEP, {0}, 0, 0 }, // Separator
+            TOOLBAR_ID_NEXT_FRAME,  TBSTATE_ENABLED | TBSTATE_WRAP, buttonStyles, {0}, 0, 0 },
+
+        { MAKELONG(0, 0), 0, 0, TBSTATE_WRAP | TBSTYLE_SEP | TBSTATE_WRAP, {0}, 0, 0 }, // Separator
+
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_ZOOM_IN)), NULL), ImageListID),
-            MENU_VIEW_ID_ZOOM_IN,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
+            MENU_VIEW_ID_ZOOM_IN,  TBSTATE_ENABLED | TBSTATE_WRAP, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_ZOOM_OUT)), NULL), ImageListID),
-            MENU_VIEW_ID_ZOOM_OUT,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 }
+            MENU_VIEW_ID_ZOOM_OUT,  TBSTATE_ENABLED | TBSTATE_WRAP, buttonStyles, {0}, 0, 0 }
     };
 
     // Add buttons.

@@ -5,13 +5,13 @@
 #include <windowsx.h>
 #include <commctrl.h>
 
-#include "components/mainrebar.h"
-#include "components/maintoolbar.h"
+#include "components/toolrebar.h"
+#include "components/toolstoolbar.h"
 #include "resource.h"
 
 // hwnd - handle to the parent window
 // hInstance - handle to the current instance of the application
-void MainRebar::Create(HWND hWnd, HINSTANCE hInstance)
+void ToolRebar::Create(HWND hWnd, HINSTANCE hInstance)
 {
     const int imageWidth = 16;
     const int imageHeight = 16;
@@ -35,8 +35,9 @@ void MainRebar::Create(HWND hWnd, HINSTANCE hInstance)
 
     // Create rebar control.
     m_hRebar = CreateWindowEx(0, REBARCLASSNAME, NULL,
-                              WS_VISIBLE | WS_CHILD,
-                              0, 0, parentRect.right, parentRect.bottom,
+                              WS_VISIBLE | WS_CHILD | WS_CLIPCHILDREN |
+                              CCS_NODIVIDER | CCS_NOPARENTALIGN | CCS_VERT | RBS_VERTICALGRIPPER,
+                              0, 25, parentRect.right, parentRect.bottom,
                               hWnd, NULL, hInstance, NULL);
 
     if (!m_hRebar)
@@ -47,19 +48,18 @@ void MainRebar::Create(HWND hWnd, HINSTANCE hInstance)
     rebarInfo.cbSize = sizeof(rebarInfo);
     rebarInfo.fMask = RBIM_IMAGELIST;
     rebarInfo.himl = m_hImageList;
-
     SendMessage(m_hRebar, RB_SETBARINFO, 0, (LPARAM)&rebarInfo);
 
     REBARBANDINFO rbBand;
 
     // Create main toolbar.
-    MainToolbar hToolbar;
+    ToolsToolbar hToolbar;
     hToolbar.Create(hWnd, hInstance);
 
     // Initialize REBARBANDINFO.
     rbBand.cbSize = sizeof(REBARBANDINFO);
-    rbBand.fMask = RBBIM_COLORS | //RBBIM_CHILD | RBBIM_CHILDSIZE |
-        RBBIM_STYLE | RBBIM_ID | RBBIM_TEXT | RBBIM_IMAGE;
+    rbBand.fMask = RBBIM_COLORS | RBBIM_CHILD | RBBIM_CHILDSIZE | RBBIM_STYLE |
+                   RBBIM_ID | RBBIM_TEXT | RBBIM_IMAGE;
     rbBand.clrFore = GetSysColor(COLOR_BTNTEXT);
     rbBand.clrBack = GetSysColor(COLOR_BTNFACE);
     rbBand.fStyle = RBBS_CHILDEDGE;
@@ -71,7 +71,7 @@ void MainRebar::Create(HWND hWnd, HINSTANCE hInstance)
     SendMessage(m_hRebar, RB_INSERTBAND, 0, (LPARAM)&rbBand);
 }
 
-HWND MainRebar::GetHandle()
+HWND ToolRebar::GetHandle()
 {
     return m_hRebar;
 }

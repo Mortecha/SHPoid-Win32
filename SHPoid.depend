@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1421688377 source:c:\users\admin\dropbox\applications\shpoid\shpoid.cpp
+1423094539 source:c:\users\admin\dropbox\applications\shpoid\shpoid.cpp
 	<windows.h>
 	<windowsx.h>
 	"shpoidproc.h"
@@ -19,10 +19,11 @@
 	<windows.h>
 	<windowsx.h>
 
-1422955589 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
+1423101986 c:\users\admin\dropbox\applications\shpoid\include\shpoidgui.h
 	<windows.h>
 	<commctrl.h>
 	"components/mainrebar.h"
+	"components/toolrebar.h"
 	"components/maintoolbar.h"
 	"components/toolstoolbar.h"
 
@@ -38,16 +39,16 @@
 1421413915 source:c:\users\admin\dropbox\applications\shpoid\src\fileproc.cpp
 	"fileproc.h"
 
-1422968677 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
+1423101768 source:c:\users\admin\dropbox\applications\shpoid\src\shpoidgui.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
 	"shpoidgui.h"
 	"resource.h"
 
-1422970400 c:\users\admin\dropbox\applications\shpoid\include\resource.h
+1423190794 c:\users\admin\dropbox\applications\shpoid\include\resource.h
 
-1422967701 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
+1423186706 source:c:\users\admin\dropbox\applications\shpoid\resource.rc
 	<windows.h>
 	"include\shpoidproc.h"
 	"include\resource.h"
@@ -323,7 +324,7 @@
 1422812234 c:\users\admin\dropbox\applications\shpoid\include\components\toolstoolbar.h
 	<windows.h>
 
-1422812479 source:c:\users\admin\dropbox\applications\shpoid\src\components\toolstoolbar.cpp
+1423102749 source:c:\users\admin\dropbox\applications\shpoid\src\components\toolstoolbar.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
@@ -333,11 +334,22 @@
 1422965430 c:\users\admin\dropbox\applications\shpoid\include\components\mainrebar.h
 	<windows.h>
 
-1422969027 source:c:\users\admin\dropbox\applications\shpoid\src\components\mainrebar.cpp
+1423105098 source:c:\users\admin\dropbox\applications\shpoid\src\components\mainrebar.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
 	"components/mainrebar.h"
 	"components/maintoolbar.h"
+	"resource.h"
+
+1423101915 c:\users\admin\dropbox\applications\shpoid\include\components\toolrebar.h
+	<windows.h>
+
+1423103025 source:c:\users\admin\dropbox\applications\shpoid\src\components\toolrebar.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"components/toolrebar.h"
+	"components/toolstoolbar.h"
 	"resource.h"
 
