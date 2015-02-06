@@ -197,8 +197,8 @@ TOOLBAR_ID_CROSSHAIR                BITMAP          "rc\\crosshair.bmp"
 TOOLBAR_ID_GRID                     BITMAP          "rc\\grid.bmp"
 TOOLBAR_ID_PREVIOUS_FRAME           BITMAP          "rc\\prevframe.bmp"
 TOOLBAR_ID_NEXT_FRAME               BITMAP          "rc\\nextframe.bmp"
-TOOLBAR_ID_ZOOM_IN                  BITMAP          "rc\\zoomin.bmp"
-TOOLBAR_ID_ZOOM_OUT                 BITMAP          "rc\\zoomout.bmp"
+TOOLBAR_ID_ZOOM_IN                  BITMAP          "rc\\mag.bmp"
+TOOLBAR_ID_ZOOM_OUT                 BITMAP          "rc\\demag.bmp"
 
 // DIALOG BOXES --------------------------------------------------------------------------------------------------------
 
