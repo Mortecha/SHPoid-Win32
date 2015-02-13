@@ -29,9 +29,9 @@ void MainRebar::Create(HWND hWnd, HINSTANCE hInstance)
         return;
 
     // Create the image list, load the bitmap and add it to the image list.
-    m_hImageList = ImageList_Create(imageWidth, imageHeight, 0, numImages, 0);
+    HIMAGELIST hImageList = ImageList_Create(imageWidth, imageHeight, 0, numImages, 0);
     HBITMAP hBitmap = LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_NEW));
-    ImageList_Add(m_hImageList, hBitmap, NULL);
+    ImageList_Add(hImageList, hBitmap, NULL);
 
     // Create rebar control.
     m_hRebar = CreateWindowEx(0, REBARCLASSNAME, NULL,
@@ -46,7 +46,7 @@ void MainRebar::Create(HWND hWnd, HINSTANCE hInstance)
     REBARINFO rebarInfo = {0};
     rebarInfo.cbSize = sizeof(rebarInfo);
     rebarInfo.fMask = RBIM_IMAGELIST;
-    rebarInfo.himl = m_hImageList;
+    rebarInfo.himl = hImageList;
 
     SendMessage(m_hRebar, RB_SETBARINFO, 0, (LPARAM)&rebarInfo);
 

@@ -12,7 +12,7 @@ class MainRebar
 
     protected:
         HWND m_hRebar;
-        HIMAGELIST m_hImageList;
+        //HIMAGELIST m_hImageList;
 };
 
 #endif //MAINREBAR_H

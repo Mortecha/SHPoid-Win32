@@ -20,7 +20,7 @@ void MainToolbar::Create(HWND hWnd, HINSTANCE hInstance)
 
     // Create the toolbar.
     m_hToolbar = CreateWindowEx(0, TOOLBARCLASSNAME, NULL,
-                                   WS_CHILD | TBSTYLE_FLAT, 0, 0, 0, 0,
+                                   WS_CHILD | TBSTYLE_FLAT | WS_BORDER, 0, 0, 0, 0,
                                    hWnd, NULL, hInstance, NULL);
 
     if (m_hToolbar == NULL)
@@ -28,8 +28,8 @@ void MainToolbar::Create(HWND hWnd, HINSTANCE hInstance)
 
     // Create the image list.
     m_hImageList = ImageList_Create(bitmapSize, bitmapSize,   // Dimensions of individual bitmaps.
-                                    ILC_COLOR24 | ILC_MASK,   // Ensures transparent background.
-                                    numButtons, 0);
+                                             ILC_COLOR24 | ILC_MASK,   // Ensures transparent background.
+                                             numButtons, 0);
 
     // Set the image list.
     SendMessage(m_hToolbar, TB_SETIMAGELIST, (WPARAM)ImageListID, (LPARAM)m_hImageList);
@@ -43,17 +43,23 @@ void MainToolbar::Create(HWND hWnd, HINSTANCE hInstance)
             MENU_FILE_ID_OPEN,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_SAVE)), NULL), ImageListID),
             MENU_FILE_ID_SAVE,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
-        { MAKELONG(0, 0), 0, 0, TBSTATE_WRAP | TBSTYLE_SEP, {0}, 0, 0 }, // Separator
+
+        { MAKELONG(0, 0), 0, 0, TBSTYLE_SEP | SS_ETCHEDHORZ, {0}, 0, 0 }, // Separator
+
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_GRID)), NULL), ImageListID),
             MENU_VIEW_ID_SHOW_GRID,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_CROSSHAIR)), NULL), ImageListID),
             MENU_VIEW_ID_SHOW_CENTER,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
-        { MAKELONG(0, 0), 0, 0, TBSTATE_WRAP | TBSTYLE_SEP, {0}, 0, 0 }, // Separator
+
+        { MAKELONG(0, 0), 0, 0, TBSTYLE_SEP | TBSTYLE_AUTOSIZE, {0}, 0, 0 }, // Separator
+
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_PREVIOUS_FRAME)), NULL), ImageListID),
             TOOLBAR_ID_PREVIOUS_FRAME,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_NEXT_FRAME)), NULL), ImageListID),
-            TOOLBAR_ID_NEXT_FRAME,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
-        { MAKELONG(0, 0), 0, 0, TBSTATE_WRAP | TBSTYLE_SEP, {0}, 0, 0 }, // Separator
+            TOOLBAR_ID_NEXT_FRAME, TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
+
+        { MAKELONG(0, 0), 0, 0, TBSTYLE_SEP, {0}, 0, 0 }, // Separator
+
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_ZOOM_IN)), NULL), ImageListID),
             MENU_VIEW_ID_ZOOM_IN,  TBSTATE_ENABLED, buttonStyles, {0}, 0, 0 },
         { MAKELONG(ImageList_Add(m_hImageList, LoadBitmap(hInstance, MAKEINTRESOURCE(TOOLBAR_ID_ZOOM_OUT)), NULL), ImageListID),

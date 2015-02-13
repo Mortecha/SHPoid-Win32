@@ -353,3 +353,327 @@
 	"components/toolstoolbar.h"
 	"resource.h"
 
+1423799257 source:c:\users\sam\dropbox\applications\shpoid\resource.rc
+	<windows.h>
+	"include\shpoidproc.h"
+	"include\resource.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\shpoidproc.h
+	"base/basewindow.h"
+	"shpoidgui.h"
+	"processors/fileproc.h"
+	"processors/editproc.h"
+	"processors/shpproc.h"
+	"processors/filterproc.h"
+	"processors/viewproc.h"
+	"processors/optionsproc.h"
+	"processors/helpproc.h"
+
+1423704818 c:\users\sam\dropbox\applications\shpoid\include\base\basewindow.h
+	<windows.h>
+	<windowsx.h>
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\shpoidgui.h
+	<windows.h>
+	<commctrl.h>
+	"components/mainrebar.h"
+	"components/toolrebar.h"
+	"components/maintoolbar.h"
+	"components/toolstoolbar.h"
+
+1423791618 c:\users\sam\dropbox\applications\shpoid\include\components\mainrebar.h
+	<windows.h>
+
+1423704818 c:\users\sam\dropbox\applications\shpoid\include\components\toolrebar.h
+	<windows.h>
+
+1423704818 c:\users\sam\dropbox\applications\shpoid\include\components\maintoolbar.h
+	<windows.h>
+
+1423704818 c:\users\sam\dropbox\applications\shpoid\include\components\toolstoolbar.h
+	<windows.h>
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\processors\fileproc.h
+	<windows.h>
+	<windowsx.h>
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\processors\editproc.h
+	<windows.h>
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\processors\shpproc.h
+	<windows.h>
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\processors\filterproc.h
+	<windows.h>
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\processors\viewproc.h
+	<windows.h>
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\processors\optionsproc.h
+	<windows.h>
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\processors\helpproc.h
+	<windows.h>
+
+1423806707 c:\users\sam\dropbox\applications\shpoid\include\resource.h
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\shpoid.cpp
+	<windows.h>
+	<windowsx.h>
+	"shpoidproc.h"
+
+1423717932 source:c:\users\sam\dropbox\applications\shpoid\src\components\maintoolbar.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"components/maintoolbar.h"
+	"resource.h"
+
+1423717538 source:c:\users\sam\dropbox\applications\shpoid\src\components\toolrebar.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"components/toolrebar.h"
+	"components/toolstoolbar.h"
+	"resource.h"
+
+1423717746 source:c:\users\sam\dropbox\applications\shpoid\src\components\toolstoolbar.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"components/toolstoolbar.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\aboutdialog.cpp
+	"dialogboxes/aboutdialog.h"
+
+1423704818 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\aboutdialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704818 c:\users\sam\dropbox\applications\shpoid\include\base\basedialog.h
+	<windows.h>
+	<windowsx.h>
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\batchdialog.cpp
+	"dialogboxes/batchdialog.h"
+
+1423704818 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\batchdialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\canvasresizedialog.cpp
+	"dialogboxes/canvasresizedialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\canvasresizedialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\changepalettedialog.cpp
+	"dialogboxes/changepalettedialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\changepalettedialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\colourschemedialog.cpp
+	"dialogboxes/colourschemedialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\colourschemedialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\editsequencedialog.cpp
+	"dialogboxes/editsequencedialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\editsequencedialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\exportdialog.cpp
+	"dialogboxes/exportdialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\exportdialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\generatecameodialog.cpp
+	"dialogboxes/generatecameodialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\generatecameodialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\importdialog.cpp
+	"dialogboxes/importdialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\importdialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\newdialog.cpp
+	"dialogboxes/newdialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\newdialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\preferencesdialog.cpp
+	"dialogboxes/preferencesdialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\preferencesdialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\previewdialog.cpp
+	"dialogboxes/previewdialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\previewdialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\reportbug.cpp
+	"dialogboxes/reportbug.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\reportbug.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\rotatearbdialog.cpp
+	"dialogboxes/rotatearbdialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\rotatearbdialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\shpresizedialog.cpp
+	"dialogboxes/shpresizedialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\shpresizedialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\shptypedialog.cpp
+	"dialogboxes/shptypedialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\shptypedialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\transformdialog.cpp
+	"dialogboxes/transformdialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\transformdialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\updatepalettedialog.cpp
+	"dialogboxes/updatepalettedialog.h"
+
+1423704819 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\updatepalettedialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\processors\editproc.cpp
+	"processors/editproc.h"
+	"dialogboxes/shpresizedialog.h"
+	"dialogboxes/canvasresizedialog.h"
+	"dialogboxes/rotatearbdialog.h"
+	"dialogboxes/transformdialog.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\processors\fileproc.cpp
+	<windows.h>
+	<Commdlg.h>
+	"resource.h"
+	"processors/fileproc.h"
+	"dialogboxes/newdialog.h"
+	"dialogboxes/batchdialog.h"
+	"dialogboxes/importdialog.h"
+	"dialogboxes/exportdialog.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\processors\filterproc.cpp
+	"processors/filterproc.h"
+	"dialogboxes/filtersettingsdialog.h"
+	"dialogboxes/colourschemedialog.h"
+
+1423792199 c:\users\sam\dropbox\applications\shpoid\include\dialogboxes\filtersettingsdialog.h
+	<windows.h>
+	"base/basedialog.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\processors\helpproc.cpp
+	"processors/helpproc.h"
+	"dialogboxes/reportbug.h"
+	"dialogboxes/aboutdialog.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\processors\optionsproc.cpp
+	"processors/optionsproc.h"
+	"dialogboxes/preferencesdialog.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\processors\shpproc.cpp
+	<windows.h>
+	<Commdlg.h>
+	"processors/shpproc.h"
+	"dialogboxes/shptypedialog.h"
+	"dialogboxes/changepalettedialog.h"
+	"dialogboxes/updatepalettedialog.h"
+	"dialogboxes/editsequencedialog.h"
+	"dialogboxes/generatecameodialog.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\processors\viewproc.cpp
+	"processors/viewproc.h"
+	"dialogboxes/previewdialog.h"
+
+1423717374 source:c:\users\sam\dropbox\applications\shpoid\src\shpoidgui.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"shpoidgui.h"
+	"resource.h"
+
+1423704819 source:c:\users\sam\dropbox\applications\shpoid\src\shpoidproc.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"shpoidproc.h"
+	"resource.h"
+
+1423791817 source:c:\users\sam\dropbox\applications\shpoid\src\components\mainrebar.cpp
+	<windows.h>
+	<windowsx.h>
+	<commctrl.h>
+	"components/mainrebar.h"
+	"components/maintoolbar.h"
+	"resource.h"
+
+1423806514 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\filtersettingsdialog.cpp
+	<windows.h>
+	<commctrl.h>
+	"dialogboxes/filtersettingsdialog.h"
+
+1423704818 source:c:\users\sam\dropbox\applications\shpoid\include\base\basedialog.h
+	<windows.h>
+	<windowsx.h>
+
+1423704818 source:c:\users\sam\dropbox\applications\shpoid\include\base\basewindow.h
+	<windows.h>
+	<windowsx.h>
+

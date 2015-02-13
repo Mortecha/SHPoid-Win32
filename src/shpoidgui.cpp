@@ -22,7 +22,7 @@ void SHPoidGUI::Create(HWND hwnd, HINSTANCE hInstance)
 {
     SetMenu(hwnd, LoadMenu(hInstance, MAKEINTRESOURCE(MENU_ID_MAIN)));
     m_mainRebar.Create(hwnd, hInstance);
-    m_toolRebar.Create(hwnd, hInstance);
+    //m_toolRebar.Create(hwnd, hInstance);
 }
 
 HWND SHPoidGUI::GetMainRebarHandle()

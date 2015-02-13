@@ -11,6 +11,9 @@ class FilterSettingsDialog : public BaseDialog<FilterSettingsDialog>
 {
     public:
         INT_PTR HandleDialogProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    private:
+        HWND m_hTabControl;
+        HWND m_hCurrentTab;
 };
 
 #endif // FILTERSETTINGSDIALOG_H
