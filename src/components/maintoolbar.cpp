@@ -20,7 +20,7 @@ void MainToolbar::Create(HWND hWnd, HINSTANCE hInstance)
 
     // Create the toolbar.
     m_hToolbar = CreateWindowEx(0, TOOLBARCLASSNAME, NULL,
-                                   WS_CHILD | TBSTYLE_FLAT | WS_BORDER, 0, 0, 0, 0,
+                                   WS_CHILD | TBSTYLE_FLAT | WS_BORDER | CCS_NODIVIDER, 0, 0, 0, 0,
                                    hWnd, NULL, hInstance, NULL);
 
     if (m_hToolbar == NULL)

@@ -21,13 +21,15 @@ SHPoidGUI::~SHPoidGUI()
 void SHPoidGUI::Create(HWND hwnd, HINSTANCE hInstance)
 {
     SetMenu(hwnd, LoadMenu(hInstance, MAKEINTRESOURCE(MENU_ID_MAIN)));
-    m_mainRebar.Create(hwnd, hInstance);
-    //m_toolRebar.Create(hwnd, hInstance);
+    //m_mainRebar.Create(hwnd, hInstance);
+    m_mainToolbar.Create(hwnd, hInstance);
+    m_toolRebar.Create(hwnd, hInstance);
 }
 
 HWND SHPoidGUI::GetMainRebarHandle()
 {
-    return m_mainRebar.GetHandle();
+    return m_mainToolbar.GetHandle();
+    //return m_mainRebar.GetHandle();
 }
 
 HWND SHPoidGUI::GetToolsToolbarHandle()
