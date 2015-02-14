@@ -190,15 +190,15 @@ MENU_ID_MAIN MENU DISCARDABLE
 
 // MAIN TOOLBAR --------------------------------------------------------------------------------------------------------
 
-TOOLBAR_ID_NEW                      BITMAP          "rc\\newfile.bmp"
-TOOLBAR_ID_OPEN                     BITMAP          "rc\\openfile.bmp"
-TOOLBAR_ID_SAVE                     BITMAP          "rc\\savefile.bmp"
-TOOLBAR_ID_CROSSHAIR                BITMAP          "rc\\crosshair.bmp"
-TOOLBAR_ID_GRID                     BITMAP          "rc\\grid.bmp"
-TOOLBAR_ID_PREVIOUS_FRAME           BITMAP          "rc\\prevframe.bmp"
-TOOLBAR_ID_NEXT_FRAME               BITMAP          "rc\\nextframe.bmp"
-TOOLBAR_ID_ZOOM_IN                  BITMAP          "rc\\mag.bmp"
-TOOLBAR_ID_ZOOM_OUT                 BITMAP          "rc\\demag.bmp"
+TOOLBAR_ID_NEW              BITMAP "rc\\newfile.bmp"
+TOOLBAR_ID_OPEN             BITMAP "rc\\openfile.bmp"
+TOOLBAR_ID_SAVE             BITMAP "rc\\savefile.bmp"
+TOOLBAR_ID_CROSSHAIR        BITMAP "rc\\crosshair.bmp"
+TOOLBAR_ID_GRID             BITMAP "rc\\grid.bmp"
+TOOLBAR_ID_PREVIOUS_FRAME   BITMAP "rc\\prevframe.bmp"
+TOOLBAR_ID_NEXT_FRAME       BITMAP "rc\\nextframe.bmp"
+TOOLBAR_ID_ZOOM_IN          BITMAP "rc\\mag.bmp"
+TOOLBAR_ID_ZOOM_OUT         BITMAP "rc\\demag.bmp"
 
 // DIALOG BOXES --------------------------------------------------------------------------------------------------------
 
@@ -207,14 +207,10 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&Ok", IDOK, 225,10,50,14
-    LTEXT "SHPoid",                 IDD_ABOUT_TEXT_TITLE,                    50,  10, 140,  40
-    LTEXT "Version: 0.001",         IDD_ABOUT_TEXT_VERSION,                  50,  20, 150,  20
-
-    LTEXT
-        "Created By: Sam Keightley - Mortecha",
-        IDD_ABOUT_TEXT_AUTHOR,
-        50, 45, 150, 20
+    DEFPUSHBUTTON   "&Ok", IDOK, 225,10,50,14
+    LTEXT           "SHPoid", IDD_ABOUT_TEXT_TITLE, 50,  10, 140,  40
+    LTEXT           "Version: 0.001", IDD_ABOUT_TEXT_VERSION, 50,  20, 150,  20
+    LTEXT           "Created By: Sam Keightley - Mortecha", IDD_ABOUT_TEXT_AUTHOR, 50, 45, 150, 20
 END
 
 IDD_BATCH DIALOG DISCARDABLE 0,0,440,270
@@ -222,8 +218,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Batch Conversion"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50  14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_CANVASRESIZE DIALOGEX DISCARDABLE 0, 0, 260, 120
@@ -231,20 +227,20 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Resize Canvas"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&Ok",            IDOK,                                   200,  10,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               200,  29,  50,  14
-    GROUPBOX "Current Size",        IDD_CANVASRESIZE_CROUPBOX_CUR,           10,   6, 180,  50
-    LTEXT " Width:",                IDD_CANVASRESIZE_TEXT_CUR_WIDTH,         61,  20,  50,  10
-    LTEXT "Length:",                IDD_CANVASRESIZE_TEXT_CUR_LENGTH,        60,  35,  50,  10
-    LTEXT "xxx pixels",             IDD_CANVASRESIZE_TEXT_CUR_WIDTH_VAL,     90,  20,  50,  10
-    LTEXT "xxx pixels",             IDD_CANVASRESIZE_TEXT_CUR_LENGTH_VAL,    90,  35,  50,  10
-    GROUPBOX "New Size",            IDD_CANVASRESIZE_CROUPBOX_NEW,           10,  62, 180,  50
-    LTEXT " Width:",                IDD_CANVASRESIZE_TEXT_NEW_WIDTH,         61,  77, 100,  10
-    EDITTEXT                        IDD_CANVASRESIZE_EDITTEXT_NEW_WIDTH,     90,  76,  25,  10
-    LTEXT "pixels",                 IDD_CANVASRESIZE_TEXT_NEW_WIDTH_UNIT,   120,  77,  50,  10
-    LTEXT "Length:",                IDD_CANVASRESIZE_TEXT_NEW_LENGTH,        60,  92, 100,  10
-    EDITTEXT                        IDD_CANVASRESIZE_EDITTEXT_NEW_LENGTH,    90,  91,  25,  10
-    LTEXT "pixels",                 IDD_CANVASRESIZE_TEXT_NEW_LENGTH_UNIT,  120,  92,  50,  10
+    DEFPUSHBUTTON   "&Ok", IDOK, 200, 10, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 200, 29, 50, 14
+    GROUPBOX        "Current Size", IDD_CANVASRESIZE_CROUPBOX_CUR, 10, 6, 180, 50
+    LTEXT           " Width:", IDD_CANVASRESIZE_TEXT_CUR_WIDTH, 61, 20, 50, 10
+    LTEXT           "Length:", IDD_CANVASRESIZE_TEXT_CUR_LENGTH, 60, 35, 50, 10
+    LTEXT           "xxx pixels", IDD_CANVASRESIZE_TEXT_CUR_WIDTH_VAL, 90, 20, 50, 10
+    LTEXT           "xxx pixels", IDD_CANVASRESIZE_TEXT_CUR_LENGTH_VAL, 90, 35, 50, 10
+    GROUPBOX        "New Size", IDD_CANVASRESIZE_CROUPBOX_NEW, 10, 62, 180, 50
+    LTEXT           " Width:", IDD_CANVASRESIZE_TEXT_NEW_WIDTH, 61, 77, 100, 10
+    EDITTEXT        IDD_CANVASRESIZE_EDITTEXT_NEW_WIDTH, 90, 76, 25, 10
+    LTEXT           "pixels", IDD_CANVASRESIZE_TEXT_NEW_WIDTH_UNIT, 120, 77, 50, 10
+    LTEXT           "Length:", IDD_CANVASRESIZE_TEXT_NEW_LENGTH, 60, 92, 100, 10
+    EDITTEXT        IDD_CANVASRESIZE_EDITTEXT_NEW_LENGTH, 90, 91, 25, 10
+    LTEXT           "pixels", IDD_CANVASRESIZE_TEXT_NEW_LENGTH_UNIT, 120, 92, 50, 10
 END
 
 IDD_CHANGEPALETTE DIALOGEX DISCARDABLE 0, 0, 260, 120
@@ -252,18 +248,18 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Change Palette"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&Ok",            IDOK,                                   200,  10,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               200,  29,  50,  14
-    GROUPBOX "Current Palette",     IDD_CHANGEPALETTE_GROUPBOX_CUR,          10,   6, 180,  50
-    LTEXT "   Game:",               IDD_CHANGEPALETTE_TEXT_CUR_GAME,         58,  20, 100,  10
-    LTEXT "Palette:",               IDD_CHANGEPALETTE_TEXT_CUR_PALETTE,      60,  35, 100,  10
-    LTEXT "___",                    IDD_CHANGEPALETTE_TEXT_CUR_GAME_VAL,     90,  20,  50,  10
-    LTEXT "___",                    IDD_CHANGEPALETTE_TEXT_CUR_PALETTE_VAL,  90,  35,  50,  10
-    GROUPBOX "New Palette",         IDD_CHANGEPALETTE_GROUPBOX_NEW,          10,  62, 180,  50
-    LTEXT "   Game:",               IDD_CHANGEPALETTE_TEXT_NEW_GAME,         58,  77,  50,  10
-    LTEXT "Palette:",               IDD_CHANGEPALETTE_TEXT_NEW_PALETTE,      60,  92,  50,  10
-    COMBOBOX                        IDD_CHANGEPALETTE_COMBOBOX_GAME,         90,  75,  75,  10,     CBS_DROPDOWNLIST
-    COMBOBOX                        IDD_CHANGEPALETTE_COMBOBOX_PALETTE,      90,  91,  75,  10,     CBS_DROPDOWNLIST
+    DEFPUSHBUTTON   "&Ok", IDOK, 200, 10, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 200, 29, 50, 14
+    GROUPBOX        "Current Palette", IDD_CHANGEPALETTE_GROUPBOX_CUR, 10, 6, 180, 50
+    LTEXT           "   Game:", IDD_CHANGEPALETTE_TEXT_CUR_GAME, 58, 20, 100, 10
+    LTEXT           "Palette:", IDD_CHANGEPALETTE_TEXT_CUR_PALETTE, 60, 35, 100, 10
+    LTEXT           "___", IDD_CHANGEPALETTE_TEXT_CUR_GAME_VAL, 90, 20, 50, 10
+    LTEXT           "___", IDD_CHANGEPALETTE_TEXT_CUR_PALETTE_VAL, 90, 35, 50, 10
+    GROUPBOX        "New Palette", IDD_CHANGEPALETTE_GROUPBOX_NEW, 10, 62, 180, 50
+    LTEXT           "   Game:", IDD_CHANGEPALETTE_TEXT_NEW_GAME, 58, 77, 50, 10
+    LTEXT           "Palette:", IDD_CHANGEPALETTE_TEXT_NEW_PALETTE, 60, 92, 50, 10
+    COMBOBOX        IDD_CHANGEPALETTE_COMBOBOX_GAME, 90, 75, 75, 10, CBS_DROPDOWNLIST
+    COMBOBOX        IDD_CHANGEPALETTE_COMBOBOX_PALETTE, 90, 91, 75, 10, CBS_DROPDOWNLIST
 END
 
 IDD_COLOURSCHEME DIALOG DISCARDABLE 0,0,239,66
@@ -271,8 +267,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Colour Scheme"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_EDITSEQUENCE DIALOG DISCARDABLE 0,0,239,66
@@ -280,8 +276,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Sequence Editor"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_EXPORT DIALOGEX DISCARDABLE 0, 0, 260, 178
@@ -289,20 +285,20 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Export"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&Export",        IDD_EXPORT_BUTTON_EXPORT,               200,  10,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               200,  29,  50,  14
-    GROUPBOX "Export As",           IDD_EXPORT_GROUPBOX_EXPORTAS,            10,   6, 180,  50
-    RADIOBUTTON "Images",           IDD_EXPORT_RADIOBUTTON_IMAGES,           70,  21,  50,  10
-    RADIOBUTTON "Spritesheet",      IDD_EXPORT_RADIOBUTTON_SPRITESHEET,      70,  36,  50,  10
-    CHECKBOX "Specify frame range", IDD_EXPORT_CHECKBOX_FRAMERANGE,          10,  60, 100,  10
-    GROUPBOX "Frame Range",         IDD_EXPORT_GROUPBOX_EXPORTFRAMES,        10,  72, 180,  50
-    LTEXT "From frame:",            IDD_EXPORT_TEXT_FROMFRAME,               70,  86,  50,  10
-    EDITTEXT                        IDD_EXPORT_EDITTEXT_FROMFRAME,          110,  86,  30,  10
-    LTEXT "To frame:",              IDD_EXPORT_TEXT_TOFRAME,                 70, 101,  50,  10
-    EDITTEXT                        IDD_EXPORT_EDITTEXT_TOFRAME,            110, 101,  30,  10
-    GROUPBOX "Output Path",         IDD_EXPORT_GROUPBOX_EXPORTPATH,          10, 128, 180,  40
-    EDITTEXT                        IDD_EXPORT_EDITTEXT_EXPORTPATH,          20, 145, 110,  10
-    PUSHBUTTON "Browse",            IDD_EXPORT_PUSHBUTTON_BROWSE,           140, 143,  40,  14
+    DEFPUSHBUTTON   "&Export", IDD_EXPORT_BUTTON_EXPORT, 200, 10, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 200, 29, 50, 14
+    GROUPBOX        "Export As", IDD_EXPORT_GROUPBOX_EXPORTAS, 10, 6, 180, 50
+    RADIOBUTTON     "Images", IDD_EXPORT_RADIOBUTTON_IMAGES, 70, 21, 50, 10
+    RADIOBUTTON     "Spritesheet", IDD_EXPORT_RADIOBUTTON_SPRITESHEET, 70, 36, 50, 10
+    CHECKBOX        "Specify frame range", IDD_EXPORT_CHECKBOX_FRAMERANGE, 10, 60, 100, 10
+    GROUPBOX        "Frame Range", IDD_EXPORT_GROUPBOX_EXPORTFRAMES, 10, 72, 180, 50
+    LTEXT           "From frame:", IDD_EXPORT_TEXT_FROMFRAME, 70, 86, 50, 10
+    EDITTEXT        IDD_EXPORT_EDITTEXT_FROMFRAME, 110, 86, 30, 10
+    LTEXT           "To frame:", IDD_EXPORT_TEXT_TOFRAME, 70, 101,  50, 10
+    EDITTEXT        IDD_EXPORT_EDITTEXT_TOFRAME, 110, 101, 30, 10
+    GROUPBOX        "Output Path", IDD_EXPORT_GROUPBOX_EXPORTPATH, 10, 128, 180,  40
+    EDITTEXT        IDD_EXPORT_EDITTEXT_EXPORTPATH, 20, 145, 110,  10
+    PUSHBUTTON      "Browse", IDD_EXPORT_PUSHBUTTON_BROWSE, 140, 143, 40, 14
 END
 
 IDD_FILTERSETTINGS DIALOG DISCARDABLE 0, 0, 260, 158
@@ -310,38 +306,34 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Filter Settings"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&Ok",            IDOK,                                   200,  10,  50,  14
-    PUSHBUTTON "Default",           IDD_FILTERSETTINGS_BUTTON_DEFAULT,      200,  29,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               200,  48,  50,  14
-    CONTROL "",
-        IDD_FILTERSETTINGS_TAB_MAIN,
-        "SysTabControl32",
-        WS_CHILD,
-        10, 10, 180, 138
+    DEFPUSHBUTTON   "&Ok", IDOK, 200, 10, 50, 14
+    PUSHBUTTON      "Default", IDD_FILTERSETTINGS_BUTTON_DEFAULT, 200, 29, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 200, 48, 50, 14
+    CONTROL         "", IDD_FILTERSETTINGS_TAB_MAIN, "SysTabControl32", WS_CHILD, 10, 10, 180, 138
 END
 
 IDD_FILTERSETTINGS_TAB_FRAMES DIALOGEX 4, 15, 165, 115
-STYLE WS_VISIBLE | WS_CHILDWINDOW// | WS_DLGFRAME
+STYLE WS_VISIBLE | WS_CHILDWINDOW
 FONT 8, "MS Sans Serif"
 BEGIN
-    GROUPBOX "Frame Range",         IDD_FILTERSETTINGS_GROUPBOX_RANGE,       10,   6, 152,  50
-    LTEXT "Current:",               IDD_FILTERSETTINGS_TEXT_CURRENT,         20,  16,  50,  10
-    GROUPBOX "Frame Region",        IDD_FILTERSETTINGS_GROUPBOX_REGION,      10,  62, 152,  50
+    GROUPBOX        "Frame Range", IDD_FILTERSETTINGS_GROUPBOX_RANGE, 10, 6, 152, 50
+    LTEXT           "Current:", IDD_FILTERSETTINGS_TEXT_CURRENT, 20, 16, 50, 10
+    GROUPBOX        "Frame Region", IDD_FILTERSETTINGS_GROUPBOX_REGION, 10, 62, 152, 50
 END
 
 IDD_FILTERSETTINGS_TAB_COLOURS DIALOGEX 4, 15, 165, 115
-STYLE WS_VISIBLE | WS_CHILDWINDOW// | WS_DLGFRAME
+STYLE WS_VISIBLE | WS_CHILDWINDOW
 FONT 8, "MS Sans Serif"
 BEGIN
-    GROUPBOX "Colour Settings",     IDD_FILTERSETTINGS_GROUPBOX_COL,         10,   6, 152,  50
-    GROUPBOX "Peak Colour Control", IDD_FILTERSETTINGS_GROUPBOX_CON,         10,  62, 152,  50
+    GROUPBOX        "Colour Settings", IDD_FILTERSETTINGS_GROUPBOX_COL, 10, 6, 152, 50
+    GROUPBOX        "Peak Colour Control", IDD_FILTERSETTINGS_GROUPBOX_CON, 10,  62, 152, 50
 END
 
 IDD_FILTERSETTINGS_TAB_BACKGROUND DIALOGEX 4, 15, 165, 115
-STYLE WS_VISIBLE | WS_CHILDWINDOW// | WS_DLGFRAME
+STYLE WS_VISIBLE | WS_CHILDWINDOW
 FONT 8, "MS Sans Serif"
 BEGIN
-    GROUPBOX "Background",          IDD_FILTERSETTINGS_GROUPBOX_BG,          10,   6, 152,  50
+    GROUPBOX        "Background", IDD_FILTERSETTINGS_GROUPBOX_BG, 10, 6, 152, 50
 END
 
 IDD_GENERATECAMEO DIALOG DISCARDABLE 0, 0, 239, 66
@@ -349,8 +341,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Generate Cameo"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_IMPORT DIALOG DISCARDABLE 0,0,239,66
@@ -358,8 +350,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Import"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_NEW DIALOG DISCARDABLE 0,0,239,66
@@ -367,8 +359,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "New"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_PREFERENCES DIALOG DISCARDABLE 0,0,239,66
@@ -376,8 +368,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Preferences"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_PREVIEW DIALOG DISCARDABLE 0,0,239,66
@@ -385,8 +377,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Preview"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_REPORTBUG DIALOG DISCARDABLE 0,0,239,66
@@ -394,8 +386,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Report Bug"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_ROTATEARB DIALOG DISCARDABLE 0,0,239,66
@@ -403,8 +395,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Rotate Arbitrary"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_SHPRESIZE DIALOGEX DISCARDABLE 0, 0, 260, 120
@@ -412,20 +404,20 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Resize Shp"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&Ok",            IDOK,                                   200,  10,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               200,  29,  50,  14
-    GROUPBOX "Current Size",        IDD_SHPRESIZE_CROUPBOX_CUR,              10,   6, 180,  50
-    LTEXT " Width:",                IDD_SHPRESIZE_TEXT_CUR_WIDTH,            61,  20,  50,  10
-    LTEXT "Length:",                IDD_SHPRESIZE_TEXT_CUR_LENGTH,           60,  35,  50,  10
-    LTEXT "xxx pixels",             IDD_SHPRESIZE_TEXT_CUR_WIDTH_VAL,        90,  20,  50,  10
-    LTEXT "xxx pixels",             IDD_SHPRESIZE_TEXT_CUR_LENGTH_VAL,       90,  35,  50,  10
-    GROUPBOX "New Size",            IDD_SHPRESIZE_CROUPBOX_NEW,              10,  62, 180,  50
-    LTEXT " Width:",                IDD_SHPRESIZE_TEXT_NEW_WIDTH,            61,  77, 100,  10
-    EDITTEXT                        IDD_SHPRESIZE_EDITTEXT_NEW_WIDTH,        90,  76,  25,  10
-    LTEXT "pixels",                 IDD_SHPRESIZE_TEXT_NEW_WIDTH_UNIT,      120,  77,  50,  10
-    LTEXT "Length:",                IDD_SHPRESIZE_TEXT_NEW_LENGTH,           60,  92, 100,  10
-    EDITTEXT                        IDD_SHPRESIZE_EDITTEXT_NEW_LENGTH,       90,  91,  25,  10
-    LTEXT "pixels",                 IDD_SHPRESIZE_TEXT_NEW_LENGTH_UNIT,     120,  92,  50,  10
+    DEFPUSHBUTTON   "&Ok", IDOK, 200, 10, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 200, 29, 50, 14
+    GROUPBOX        "Current Size", IDD_SHPRESIZE_CROUPBOX_CUR, 10, 6, 180, 50
+    LTEXT           " Width:", IDD_SHPRESIZE_TEXT_CUR_WIDTH, 61, 20, 50, 10
+    LTEXT           "Length:", IDD_SHPRESIZE_TEXT_CUR_LENGTH, 60, 35, 50, 10
+    LTEXT           "xxx pixels", IDD_SHPRESIZE_TEXT_CUR_WIDTH_VAL, 90, 20, 50, 10
+    LTEXT           "xxx pixels", IDD_SHPRESIZE_TEXT_CUR_LENGTH_VAL, 90, 35, 50, 10
+    GROUPBOX        "New Size", IDD_SHPRESIZE_CROUPBOX_NEW, 10, 62, 180, 50
+    LTEXT           " Width:", IDD_SHPRESIZE_TEXT_NEW_WIDTH, 61, 77, 100, 10
+    EDITTEXT        IDD_SHPRESIZE_EDITTEXT_NEW_WIDTH, 90, 76, 25, 10
+    LTEXT           "pixels", IDD_SHPRESIZE_TEXT_NEW_WIDTH_UNIT, 120, 77, 50, 10
+    LTEXT           "Length:", IDD_SHPRESIZE_TEXT_NEW_LENGTH, 60,  92, 100, 10
+    EDITTEXT        IDD_SHPRESIZE_EDITTEXT_NEW_LENGTH, 90, 91, 25, 10
+    LTEXT           "pixels", IDD_SHPRESIZE_TEXT_NEW_LENGTH_UNIT, 120, 92, 50, 10
 END
 
 IDD_SHPTYPE DIALOG DISCARDABLE 0,0,239,66
@@ -433,8 +425,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Shp Type"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_TRANSFORM DIALOG DISCARDABLE 0,0,239,66
@@ -442,8 +434,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Transform"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 IDD_UPDATEPALETTE DIALOG DISCARDABLE 0,0,239,66
@@ -451,8 +443,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Update Palette"
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON "&ok",            IDOK,                                   174,  18,  50,  14
-    PUSHBUTTON "&Cancel",           IDCANCEL,                               174,  18,  50,  14
+    DEFPUSHBUTTON   "&ok", IDOK, 174, 18, 50, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 174, 18, 50, 14
 END
 
 

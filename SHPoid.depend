@@ -353,7 +353,7 @@
 	"components/toolstoolbar.h"
 	"resource.h"
 
-1423799257 source:c:\users\sam\dropbox\applications\shpoid\resource.rc
+1423809733 source:c:\users\sam\dropbox\applications\shpoid\resource.rc
 	<windows.h>
 	"include\shpoidproc.h"
 	"include\resource.h"
