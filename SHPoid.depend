@@ -353,7 +353,7 @@
 	"components/toolstoolbar.h"
 	"resource.h"
 
-1423908864 source:c:\users\sam\dropbox\applications\shpoid\resource.rc
+1424020054 source:c:\users\sam\dropbox\applications\shpoid\resource.rc
 	<windows.h>
 	"include\shpoidproc.h"
 	"include\resource.h"
@@ -373,10 +373,9 @@
 	<windows.h>
 	<windowsx.h>
 
-1423704819 c:\users\sam\dropbox\applications\shpoid\include\shpoidgui.h
+1423999997 c:\users\sam\dropbox\applications\shpoid\include\shpoidgui.h
 	<windows.h>
 	<commctrl.h>
-	"components/mainrebar.h"
 	"components/toolrebar.h"
 	"components/maintoolbar.h"
 	"components/toolstoolbar.h"
@@ -415,14 +414,14 @@
 1423704819 c:\users\sam\dropbox\applications\shpoid\include\processors\helpproc.h
 	<windows.h>
 
-1423806707 c:\users\sam\dropbox\applications\shpoid\include\resource.h
+1424020042 c:\users\sam\dropbox\applications\shpoid\include\resource.h
 
 1423704819 source:c:\users\sam\dropbox\applications\shpoid\shpoid.cpp
 	<windows.h>
 	<windowsx.h>
 	"shpoidproc.h"
 
-1423908839 source:c:\users\sam\dropbox\applications\shpoid\src\components\maintoolbar.cpp
+1423911737 source:c:\users\sam\dropbox\applications\shpoid\src\components\maintoolbar.cpp
 	<windows.h>
 	<windowsx.h>
 	<commctrl.h>
@@ -664,7 +663,7 @@
 	"components/maintoolbar.h"
 	"resource.h"
 
-1423806514 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\filtersettingsdialog.cpp
+1424021151 source:c:\users\sam\dropbox\applications\shpoid\src\dialogboxes\filtersettingsdialog.cpp
 	<windows.h>
 	<commctrl.h>
 	"dialogboxes/filtersettingsdialog.h"
